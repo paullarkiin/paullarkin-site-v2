@@ -11,7 +11,7 @@ export const siteConfig = {
   nowAtUrl: "https://www.opera.com",
   product: "MiniPay",
   productUrl: "https://www.minipay.to",
-  copyright: `© ${new Date().getFullYear()}`,
+  copyright: `Copyright ${new Date().getFullYear()}`,
 };
 
 export const siteFloatingNav: SiteNavItem[] = [
