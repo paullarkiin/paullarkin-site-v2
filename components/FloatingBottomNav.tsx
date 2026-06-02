@@ -30,7 +30,7 @@ export function FloatingBottomNav({
       aria-label="Primary pages"
     >
       <div
-        className={`pointer-events-auto flex max-w-full items-center gap-0.5 overflow-x-auto rounded-2xl border px-1 py-1 backdrop-blur-md [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-1 sm:px-1.5 ${shell}`}
+        className={`pointer-events-auto flex max-w-full items-center gap-0.5 overflow-x-auto rounded-2xl border px-1 py-1 backdrop-blur-md [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden sm:gap-1 sm:px-1.5 ${shell}`}
       >
         {siteFloatingNav.map((item) => {
           const active = navItemActive(pathname, item.href);
