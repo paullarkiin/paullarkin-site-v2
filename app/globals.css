@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F8F8F8;
+  --background: #f8f8f8;
   --foreground: #202020;
 }
 
@@ -12,17 +12,17 @@
   /* Semantic text colors */
   --color-text: #202020;
   --color-text-muted: #656564;
-  --color-text-dim: #9E9E9D;
+  --color-text-dim: #9e9e9d;
 
   /* Surface colors */
-  --color-surface: #FFFFFF;
-  --color-surface-2: #F0F0EF;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0f0ef;
 
   /* Border colors */
-  --color-border-strong: #C8C8C7;
+  --color-border-strong: #f6f6f6;
 
   /* Fonts */
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-manrope);
   --font-mono: var(--font-geist-mono);
 }
 

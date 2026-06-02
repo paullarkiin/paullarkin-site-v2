@@ -2,15 +2,16 @@ import type { LabItem } from "@/lib/site";
 
 type LabCardProps = {
   item: LabItem;
+  disableHover?: boolean;
 };
 
-export function LabCard({ item }: LabCardProps) {
+export function LabCard({ item, disableHover = false }: LabCardProps) {
   return (
     <a
       href={item.href}
-      className="group flex flex-col gap-3.5 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-border-strong"
+      className={`group flex flex-col gap-3.5 rounded-xl border border-border-strong bg-surface/90 p-4 transition-colors${disableHover ? "" : " hover:bg-surface-2/70"}`}
     >
-      <div className="aspect-16/10 flex items-center justify-center rounded-md border border-border bg-bg">
+      <div className="aspect-16/10 flex items-center justify-center rounded-md border border-border-strong bg-surface-2/50">
         <Preview kind={item.preview} label={item.previewLabel} />
       </div>
 

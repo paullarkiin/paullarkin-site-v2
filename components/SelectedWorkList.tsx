@@ -24,10 +24,10 @@ export function SelectedWorkList({
   const sorted = sortByYearDesc(items);
 
   return (
-    <section className="mt-16 mb-16">
+    <section className="mb-24">
       <SectionHead label={label} meta={meta} />
 
-      <div className="divide-y divide-border">
+      <div className="group/list">
         {sorted.map((item, idx) => {
           const prev = sorted[idx - 1];
           const showYear = !prev || prev.year !== item.year;
@@ -36,18 +36,18 @@ export function SelectedWorkList({
             <a
               key={item.title}
               href={item.href}
-              className="group block py-4 transition-colors hover:bg-surface-2/70 sm:py-5"
+              className="group block rounded-xl px-3 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-2/70 sm:py-5"
             >
               <div className="flex gap-3 sm:grid sm:grid-cols-[3.25rem_1fr_minmax(0,1fr)] sm:items-center sm:gap-x-6 sm:px-1">
                 {/* Year column — desktop */}
-                <span className="hidden text-right text-[13px] tabular-nums text-text-dim sm:block">
+                <span className="hidden text-[14px] tabular-nums text-text-muted sm:block">
                   {showYear ? item.year : "\u00a0"}
                 </span>
 
                 {/* Icon + title — mobile shows year inline */}
-                <div className="flex min-w-0 flex-1 items-start gap-3">
+                <div className="flex min-w-0 flex-1 items-center gap-3">
                   {showYear ? (
-                    <span className="w-11 shrink-0 pt-0.5 text-right text-[13px] tabular-nums text-text-dim sm:hidden">
+                    <span className="w-11 shrink-0 pt-0.5 text-right text-[14px] tabular-nums text-text-muted sm:hidden">
                       {item.year}
                     </span>
                   ) : (
@@ -58,11 +58,11 @@ export function SelectedWorkList({
 
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                      <span className="text-[15px] font-semibold tracking-tight underline-offset-4 group-hover:underline text-text">
+                      <span className="text-base font-medium tracking-tight text-text">
                         {item.title}
                       </span>
                       {item.wip ? (
-                        <span className="font-mono text-[10px] uppercase tracking-widest text-text-dim">
+                        <span className="rounded-3xl px-3 py-0.5 font-mono text-[10px] uppercase tracking-widest text-text-muted bg-transparent outline outline-text-dim">
                           WIP
                         </span>
                       ) : null}

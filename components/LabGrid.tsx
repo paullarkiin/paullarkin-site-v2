@@ -13,19 +13,11 @@ type LabGridProps = {
   meta?: string;
 };
 
-const ROTATIONS = [
-  "-rotate-[1.1deg]",
-  "rotate-[0.85deg]",
-  "-rotate-[0.55deg]",
-];
+const ROTATIONS = ["-rotate-[1.1deg]", "rotate-[0.85deg]", "-rotate-[0.55deg]"];
 
-export function LabGrid({
-  items,
-  label = "Lab",
-  meta,
-}: LabGridProps) {
+export function LabGrid({ items, label = "Lab", meta }: LabGridProps) {
   return (
-    <section className="mb-16">
+    <section className="mb-24">
       <SectionHead label={label} meta={meta} />
 
       <div className="-mx-2 overflow-x-auto overflow-y-visible py-3 pb-6 sm:mx-0 sm:overflow-visible sm:py-4">
@@ -50,10 +42,10 @@ export function LabGrid({
 
               <div className="my-3 h-px w-full bg-border" aria-hidden />
 
-              <p className="text-[15px] font-semibold leading-snug tracking-tight text-text">
+              <p className="text-base font-medium leading-snug tracking-tight text-text">
                 {item.title}
               </p>
-              <p className="mt-2 text-[12px] leading-normal text-text-muted">
+              <p className="mt-2 text-[14px] leading-normal text-text-muted">
                 {item.description}
               </p>
             </a>

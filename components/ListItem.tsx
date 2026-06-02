@@ -1,18 +1,22 @@
 type ListItemProps = {
   /** Drives which of four abstract marks is shown (seed % 4). */
   seed: number;
+  /** Force a specific pattern instead of cycling. */
+  variant?: "dots" | "lines" | "ring" | "corners";
 };
 
 /**
  * Small decorative "page" thumbnail mark used in list rows.
  * Displays one of four patterns: dots, lines, ring, or corner brackets.
  */
-export function ListItem({ seed }: ListItemProps) {
-  const pattern = seed % 4;
+export function ListItem({ seed, variant }: ListItemProps) {
+  const pattern = variant
+    ? { dots: 0, lines: 1, ring: 2, corners: 3 }[variant]
+    : seed % 4;
 
   return (
     <span
-      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-surface-2 text-text-muted"
+      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border-strong bg-surface/90 text-text-muted"
       aria-hidden
     >
       {pattern === 0 && <DotsPattern />}

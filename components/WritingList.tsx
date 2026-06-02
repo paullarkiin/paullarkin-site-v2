@@ -18,7 +18,7 @@ export function WritingList({
   showSummary = false,
 }: WritingListProps) {
   return (
-    <section className="mb-16">
+    <section className="mb-16 w-full">
       <SectionHead label={label} meta={meta} />
 
       <div className="flex flex-col">
@@ -27,23 +27,21 @@ export function WritingList({
             key={note.slug}
             href={`/writing/${note.slug}`}
             className={`group flex items-start gap-3 py-3 transition-[padding] duration-150 hover:pl-1 ${
-              idx < notes.length - 1 ? "border-b border-border" : ""
+              idx < notes.length - 1 ? "border-b border-border-strong" : ""
             }`}
           >
-            <ListItem seed={idx} />
+            <ListItem seed={idx} variant="lines" />
 
             <div className="min-w-0 flex-1">
-              <p className="text-[14px] font-medium text-text">
-                {note.title}
-              </p>
+              <p className="text-base font-medium text-text">{note.title}</p>
 
               {showSummary && note.summary ? (
-                <p className="text-[13px] text-text-muted leading-normal mt-1 max-w-140">
+                <p className="text-[14px] text-text-muted leading-normal mt-1 max-w-140">
                   {note.summary}
                 </p>
               ) : null}
 
-              <p className="text-[12px] text-text-dim font-mono mt-1">
+              <p className="text-[14px] text-text-dim font-mono mt-1">
                 {formatNoteDate(note.date)}
                 {note.readingTime ? ` · ${note.readingTime}` : null}
               </p>

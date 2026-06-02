@@ -14,12 +14,12 @@ export function ProjectGrid({
   meta,
 }: ProjectGridProps) {
   return (
-    <section className="mb-16">
+    <section className="mb-24 w-full">
       <SectionHead label={label} meta={meta} />
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {items.map((item) => (
-          <LabCard key={item.title} item={item} />
+          <LabCard key={item.title} item={item} disableHover />
         ))}
       </div>
     </section>
