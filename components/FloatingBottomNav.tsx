@@ -21,8 +21,8 @@ export function FloatingBottomNav({
   const isDark = variant === "onDark";
 
   const shell = isDark
-    ? "border-white/12 bg-white/[0.07] shadow-[0_12px_40px_rgba(0,0,0,0.65)]"
-    : "border-border-strong bg-surface/90 shadow-[0_8px_32px_rgba(0,0,0,0.45)]";
+    ? "border-white/12 bg-white/[0.07] shadow-lg"
+    : "border-border-strong bg-surface/90 shadow-lg";
 
   return (
     <nav
@@ -35,13 +35,13 @@ export function FloatingBottomNav({
         {siteFloatingNav.map((item) => {
           const active = navItemActive(pathname, item.href);
           const base =
-            "shrink-0 rounded-xl px-3 py-2.5 text-[13px] font-medium transition-colors sm:px-3.5";
+            "shrink-0 rounded-xl px-3 py-2.5 text-[14px] font-medium transition-colors sm:px-3.5";
           const state = isDark
             ? active
               ? "bg-white/14 text-white shadow-sm"
               : "text-neutral-400 hover:bg-white/10 hover:text-neutral-100"
             : active
-              ? "bg-surface-2 text-text shadow-sm"
+              ? "bg-surface-2 text-text"
               : "text-text-muted hover:bg-surface-2 hover:text-text";
           return (
             <Link
