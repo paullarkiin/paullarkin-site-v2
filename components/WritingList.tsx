@@ -41,7 +41,7 @@ export function WritingList({
                 </p>
               ) : null}
 
-              <p className="text-[14px] text-text-dim font-mono mt-1">
+              <p className="text-[14px] text-text-dim font-sans mt-1">
                 {formatNoteDate(note.date)}
                 {note.readingTime ? ` · ${note.readingTime}` : null}
               </p>

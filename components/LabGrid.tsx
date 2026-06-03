@@ -35,7 +35,7 @@ export function LabGrid({ items, label = "Lab", meta }: LabGridProps) {
                 i < items.length - 1 ? "-mr-11 sm:-mr-14" : "",
               ].join(" ")}
             >
-              <div className="flex items-baseline justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-text-dim">
+              <div className="flex items-baseline justify-between gap-3 font-sans text-[10px] uppercase tracking-widest text-text-dim">
                 <span className="truncate">{tag}</span>
                 <span className="shrink-0 tabular-nums">{date}</span>
               </div>

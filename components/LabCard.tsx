@@ -44,7 +44,7 @@ function Preview({
 
     case "mono":
       return (
-        <span className="font-mono text-[12px] text-text-muted">
+        <span className="font-sans text-[12px] text-text-muted">
           {label ?? "$ > _"}
         </span>
       );

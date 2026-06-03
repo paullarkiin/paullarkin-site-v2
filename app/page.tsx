@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { ProjectGrid } from "@/components/ProjectGrid";
+import { WorkList } from "@/components/WorkList";
 import { SelectedWorkList } from "@/components/SelectedWorkList";
 import { WritingList } from "@/components/WritingList";
 import { intro, notes, projects, selectedWork } from "@/lib/site";

@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Manrope, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { FloatingBottomNav } from "@/components/FloatingBottomNav";
 import { Footer } from "@/components/Footer";
 
 const manrope = Manrope({
   variable: "--font-manrope",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -27,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {children}

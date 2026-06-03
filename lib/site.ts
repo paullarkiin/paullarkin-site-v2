@@ -47,33 +47,29 @@ export type Note = {
 
 export const selectedWork: WorkItem[] = [
   {
-    title: "Lakrits UI Library",
-    description: "Components, tokens, Figma → React with Code Connect",
+    title: "Lakrits UI Website",
+    description: "Coming soon site",
     year: "2026",
     href: "#",
-    wip: true,
+    // wip: true,
   },
   {
     title: "User Research Dashboard",
-    description: "Internal tooling for the design team at Opera",
+    description: "Internal tooling",
     year: "2026",
     href: "#",
   },
+
   {
-    title: "Aria Browser AI",
-    description: "Prototyping kit for shared web-core components",
+    title: "Opera Mobile Browser AI",
+    description: "React UI Refresh",
     year: "2025",
     href: "#",
   },
-  {
-    title: "Figma Strings Plugin",
-    description: "UX copy and visual system for failure states",
-    year: "2024",
-    href: "#",
-  },
+
   {
     title: "Design System Previewer",
-    description: "Internal tool for live previewing design system changes",
+    description: "Internal tooling",
     year: "2025",
     href: "#",
   },
@@ -81,8 +77,8 @@ export const selectedWork: WorkItem[] = [
 
 export const projects: LabItem[] = [
   {
-    title: "Summaries",
-    description: "Book summaries and reviews",
+    title: "Lakrits UI",
+    description: "React component library",
     preview: "dots",
     href: "#",
   },
@@ -124,34 +120,55 @@ export const labItems: (LabItem & { tag: string; date: string })[] = [
 
 export const notes: Note[] = [
   {
-    slug: "building-minipay-primitives",
-    title: "Building MiniPay's component primitives",
+    slug: "exe-to-pixels-image-generation",
+    title: "From Exe to Pixels: Image Generation For Malware Classification",
     date: "2026-03-15",
-    summary: "How we built a shared component library from scratch.",
+    summary: "Exploring how to build a image dataset of windows executables",
+  },
+  {
+    slug: "publishing-app-google-play-store",
+    title: "Publishing an App on the Google Play Store",
+    date: "2026-03-15",
+    summary: "Process of buiding an Android password generation app",
     readingTime: "6 min",
   },
   {
-    slug: "figma-to-code-pipeline",
-    title: "Our Figma to code pipeline",
-    date: "2025-11-20",
-    summary: "Connecting design tokens to production React components.",
-    readingTime: "4 min",
+    slug: "analyzing-android-premium-sms-malware",
+    title: "Analyizing Android Premium SMS Malware",
+    date: "2026-03-15",
+    summary:
+      "Detailing the steps that I took when analyzing a malicious sample",
+    readingTime: "6 min",
   },
-  {
-    slug: "design-engineering-role",
-    title: "What design engineering means to me",
-    date: "2025-08-10",
-    readingTime: "3 min",
-  },
+  // {
+  //   slug: "building-minipay-primitives",
+  //   title: "Building MiniPay's component primitives",
+  //   date: "2026-03-15",
+  //   summary: "How we built a shared component library from scratch.",
+  //   readingTime: "6 min",
+  // },
+  // {
+  //   slug: "figma-to-code-pipeline",
+  //   title: "Our Figma to code pipeline",
+  //   date: "2025-11-20",
+  //   summary: "Connecting design tokens to production React components.",
+  //   readingTime: "4 min",
+  // },
+  // {
+  //   slug: "design-engineering-role",
+  //   title: "What design engineering means to me",
+  //   date: "2025-08-10",
+  //   readingTime: "3 min",
+  // },
 ];
 
 export const intro = {
   currentlyAt: "Currently at ",
   currentlyWorkingOn: "working on ",
   currentlyDoing:
-    " — building interfaces, design systems, and the tooling that connects Figma to production code.",
+    " — crafting interfaces, managing design systems and building design tooling. Driven by an insatiable curiosity to learn and build things people can use day to day.",
   secondary:
-    "I care about interfaces that feel inevitable, the small interaction details others overlook, and bridging design and engineering on real products.",
+    "Previously at Salt Communications. Always open to chat. You can reach me at email or on Github.",
   href: siteConfig.nowAtUrl,
   hrefLabel: siteConfig.nowAt,
   productHref: siteConfig.productUrl,

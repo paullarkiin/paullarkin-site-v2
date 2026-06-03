@@ -24,7 +24,7 @@ export function SelectedWorkList({
   const sorted = sortByYearDesc(items);
 
   return (
-    <section className="mb-24">
+    <section className="mb-24 w-full">
       <SectionHead label={label} meta={meta} />
 
       <div className="group/list">
@@ -62,7 +62,7 @@ export function SelectedWorkList({
                         {item.title}
                       </span>
                       {item.wip ? (
-                        <span className="rounded-3xl px-3 py-0.5 font-mono text-[10px] uppercase tracking-widest text-text-muted bg-transparent outline outline-text-dim">
+                        <span className="rounded-3xl px-3 py-0.5 font-sans text-[10px] uppercase tracking-widest text-text-muted bg-transparent outline outline-text-dim">
                           WIP
                         </span>
                       ) : null}

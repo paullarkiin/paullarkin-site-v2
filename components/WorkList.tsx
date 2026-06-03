@@ -6,7 +6,7 @@ type WorkListProps = {
   label?: string;
 };
 
-export function WorkList({ items, label = "Side Projects" }: WorkListProps) {
+export function WorkList({ items, label = "Recent Work" }: WorkListProps) {
   return (
     <section className="mb-24 w-full">
       <h5 className="mb-4 text-[14px] font-medium text-text">{label}</h5>
