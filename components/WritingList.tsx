@@ -21,12 +21,12 @@ export function WritingList({
     <section className="mb-16 w-full">
       <SectionHead label={label} meta={meta} />
 
-      <div className="flex flex-col">
+      <div className="group/list flex flex-col">
         {notes.map((note, idx) => (
           <Link
             key={note.slug}
             href={`/writing/${note.slug}`}
-            className={`group flex items-start gap-3 py-3 transition-[padding] duration-150 hover:pl-1 ${
+            className={`group flex items-start gap-3 rounded-xl px-3 py-3 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-2/70 ${
               idx < notes.length - 1 ? "border-b border-border-strong" : ""
             }`}
           >

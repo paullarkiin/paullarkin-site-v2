@@ -15,7 +15,7 @@ export default function Home() {
             {intro.currentlyAt}
             <a
               href={intro.href}
-              className="whitespace-nowrap text-text underline underline-offset-4 decoration-border-strong hover:decoration-text transition-colors"
+              className="whitespace-nowrap text-text underline underline-offset-4 decoration-text transition-colors"
             >
               {/* <OperaIcon className="mr-1 mb-0.5 inline-block size-4 align-[-0.15em]" /> */}
               {intro.hrefLabel}
@@ -23,7 +23,7 @@ export default function Home() {
             {intro.currentlyWorkingOn}
             <a
               href={intro.productHref}
-              className="whitespace-nowrap text-text underline underline-offset-4 decoration-border-strong hover:decoration-text transition-colors"
+              className="whitespace-nowrap text-text underline underline-offset-4 decoration-text transition-colors"
             >
               {/* <MiniPayIcon className="mr-1 mb-0.5 inline-block size-4 align-[-0.15em]" /> */}
               {intro.productLabel}

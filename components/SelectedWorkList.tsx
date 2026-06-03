@@ -36,9 +36,9 @@ export function SelectedWorkList({
             <a
               key={item.title}
               href={item.href}
-              className="group block rounded-xl px-3 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-2/70 sm:py-5"
+              className="group block rounded-xl px-3 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-2/70 sm:-mx-3 sm:py-5"
             >
-              <div className="flex gap-3 sm:grid sm:grid-cols-[3.25rem_1fr_minmax(0,1fr)] sm:items-center sm:gap-x-6 sm:px-1">
+              <div className="flex gap-3 sm:grid sm:grid-cols-[3.25rem_1fr_minmax(0,1fr)] sm:items-center sm:gap-x-6">
                 {/* Year column — desktop */}
                 <span className="hidden text-[14px] tabular-nums text-text-muted sm:block">
                   {showYear ? item.year : "\u00a0"}

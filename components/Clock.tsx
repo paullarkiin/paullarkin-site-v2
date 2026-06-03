@@ -19,8 +19,8 @@ export function LiveClock() {
   }, []);
 
   return (
-    <span className="font-sans text-small text-muted">
-      Linköping, Sweden {time}
+    <span>
+      {time}
     </span>
   );
 }
