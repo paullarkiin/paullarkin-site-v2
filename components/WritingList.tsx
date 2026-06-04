@@ -18,8 +18,12 @@ export function WritingList({
   showSummary = false,
 }: WritingListProps) {
   return (
-    <section className="mb-16 w-full">
+    <section className="mb-24 w-full">
       <SectionHead label={label} meta={meta} />
+      <p className="pt-3.5 mb-8">
+        Deep dives and loose thoughts on design, technology, and the space in
+        between.
+      </p>
 
       <div className="group/list flex flex-col">
         {notes.map((note, idx) => (

@@ -8,7 +8,7 @@ import { intro, notes, projects, selectedWork } from "@/lib/site";
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between px-16 pt-24 sm:items-start">
+      <main className="flex flex-1 w-full max-w-3xl flex-col px-16 pt-24 sm:items-start">
         <Header layout="col" />
         <section className="mb-24">
           <p className="mb-4">
@@ -30,7 +30,7 @@ export default function Home() {
             </a>{" "}
             {intro.currentlyDoing}
           </p>
-          <p className="text-text-muted">{intro.secondary}</p>
+          <p className="text-text">{intro.secondary}</p>
         </section>
         {/* <WorkList items={selectedWork} /> */}
         <SelectedWorkList items={selectedWork} />

@@ -162,6 +162,32 @@ export const notes: Note[] = [
   // },
 ];
 
+export type ExperienceItem = {
+  company: string;
+  role: string;
+  period: string;
+  href?: string;
+};
+
+export const experience: ExperienceItem[] = [
+  {
+    company: "Opera",
+    role: "Design engineer · MiniPay",
+    period: "2023 — Present",
+    href: "https://www.opera.com",
+  },
+  {
+    company: "Salt communications",
+    role: "Intern software engineer",
+    period: "2021 — 2022",
+  },
+  {
+    company: "Independent",
+    role: "Product design + front-end",
+    period: "2018 - 2023",
+  },
+];
+
 export const intro = {
   currentlyAt: "Currently at ",
   currentlyWorkingOn: "working on ",

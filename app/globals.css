@@ -19,10 +19,15 @@
   --color-surface-2: #f0f0ef;
 
   /* Border colors */
-  --color-border-strong: #f6f6f6;
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+  --color-border: #e8e8e8;
 
   /* Fonts */
   --font-sans: var(--font-manrope);
+}
+
+html {
+  overflow-y: scroll;
 }
 
 body {
