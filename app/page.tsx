@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { ProjectGrid } from "@/components/ProjectGrid";
-import { WorkList } from "@/components/WorkList";
 import { SelectedWorkList } from "@/components/SelectedWorkList";
 import { WritingList } from "@/components/WritingList";
 import { intro, projects, selectedWork, siteConfig } from "@/lib/site";
@@ -79,15 +78,7 @@ export default function Home() {
           </p>
         </section>
         <SelectedWorkList items={selectedWork} />
-
         <ProjectGrid items={projects} />
-        {/* <LabGrid
-          items={labItems.map(({ tag, date, ...item }) => ({
-            item,
-            tag,
-            date,
-          }))}
-        /> */}
         <WritingList notes={getAllPosts()} />
       </main>
     </div>
