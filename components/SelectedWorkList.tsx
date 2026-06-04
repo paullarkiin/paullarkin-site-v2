@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { WorkItem } from "@/lib/site";
 import { ListItem } from "@/components/ListItem";
 import { SectionHead } from "@/components/SectionHead";
@@ -33,7 +34,7 @@ export function SelectedWorkList({
           const showYear = !prev || prev.year !== item.year;
 
           return (
-            <a
+            <Link
               key={item.title}
               href={item.href}
               className="group block rounded-xl px-3 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-2/70 sm:-mx-3 sm:py-5"
@@ -80,7 +81,7 @@ export function SelectedWorkList({
                   {item.description}
                 </p>
               </div>
-            </a>
+            </Link>
           );
         })}
       </div>

@@ -8,7 +8,8 @@ export interface PostMeta {
   slug: string;
   title: string;
   date: string;
-  summary: string;
+  summary?: string;
+  readingTime?: string;
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -25,7 +26,8 @@ export function getAllPosts(): PostMeta[] {
         slug,
         title: data.title ?? slug,
         date: data.date ?? "",
-        summary: data.summary ?? "",
+        summary: data.summary,
+        readingTime: data.readingTime,
       };
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
@@ -46,7 +48,8 @@ export function getPostBySlug(slug: string) {
       slug,
       title: data.title ?? slug,
       date: data.date ?? "",
-      summary: data.summary ?? "",
+      summary: data.summary,
+      readingTime: data.readingTime,
     },
     content,
   };

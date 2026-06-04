@@ -11,7 +11,9 @@ export const siteConfig = {
   nowAtUrl: "https://www.opera.com",
   product: "MiniPay",
   productUrl: "https://www.minipay.to",
-  copyright: `Copyright ${new Date().getFullYear()}`,
+  email: "hello@paullarkin.info",
+  github: "https://github.com/paullarkiin",
+  copyright: `© ${new Date().getFullYear()} Paul Larkin`,
 };
 
 export const siteFloatingNav: SiteNavItem[] = [
@@ -80,13 +82,13 @@ export const projects: LabItem[] = [
     title: "Lakrits UI",
     description: "React component library",
     preview: "dots",
-    href: "#",
+    href: "https://github.com/paullarkiin/lakrits",
   },
   {
     title: "ElevateNI",
     description: "Student Conference",
     preview: "mono",
-    href: "#",
+    href: "https://www.instagram.com/ElevateNI",
   },
 ];
 
@@ -193,8 +195,7 @@ export const intro = {
   currentlyWorkingOn: "working on ",
   currentlyDoing:
     " — crafting interfaces, managing design systems and building design tooling. Driven by an insatiable curiosity to learn and build things people can use day to day.",
-  secondary:
-    "Previously at Salt Communications. Always open to chat. You can reach me at email or on Github.",
+  secondary: "Always open to chat.",
   href: siteConfig.nowAtUrl,
   hrefLabel: siteConfig.nowAt,
   productHref: siteConfig.productUrl,

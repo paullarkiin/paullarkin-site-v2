@@ -1,11 +1,11 @@
 import Link from "next/link";
-import type { Note } from "@/lib/site";
+import type { PostMeta } from "@/lib/posts";
 import { formatNoteDate } from "@/lib/format";
 import { ListItem } from "@/components/ListItem";
 import { SectionHead } from "@/components/SectionHead";
 
 type WritingListProps = {
-  notes: Note[];
+  notes: PostMeta[];
   label?: string;
   meta?: string;
   showSummary?: boolean;
@@ -20,10 +20,6 @@ export function WritingList({
   return (
     <section className="mb-24 w-full">
       <SectionHead label={label} meta={meta} />
-      <p className="pt-3.5 mb-8">
-        Deep dives and loose thoughts on design, technology, and the space in
-        between.
-      </p>
 
       <div className="group/list flex flex-col">
         {notes.map((note, idx) => (

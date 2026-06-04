@@ -1,10 +1,12 @@
 import { experience } from "@/lib/site";
 import { SectionHead } from "@/components/SectionHead";
+import { BackLink } from "@/components/BackLink";
 
 export default function About() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
       <main className="flex flex-1 w-full max-w-3xl flex-col px-16 pt-24 sm:items-start">
+        <BackLink />
         <section className="mb-24 w-full">
           <SectionHead label="About" />
 
@@ -46,12 +48,11 @@ export default function About() {
                 }`}
               >
                 <div className="flex-1 min-w-0">
-                  <p className="text-[15px] font-medium text-text">
+                  <p className="text-base font-medium text-text">
                     {item.href ? (
                       <a
                         href={item.href}
                         target="_blank"
-                        rel="noopener noreferrer"
                         className="underline underline-offset-4 decoration-border-strong hover:decoration-text transition-colors"
                       >
                         {item.company}
@@ -88,7 +89,7 @@ export default function About() {
         <section className="mb-24 w-full">
           <SectionHead label="Colophon" />
 
-          <p className="text-[16px] text-text-muted leading-normal pt-3.5">
+          <p className="text-base text-text-muted leading-normal pt-3.5">
             This site is built with Next.js and Tailwind CSS, set in Manrope,
             and deployed on Vercel. Designed and developed by hand — no
             templates, no themes.
