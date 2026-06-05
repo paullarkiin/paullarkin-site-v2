@@ -195,7 +195,6 @@ export const intro = {
   currentlyWorkingOn: "working on ",
   currentlyDoing:
     " — crafting interfaces, managing design systems and building design tooling. Driven by an insatiable curiosity to learn and build things people can use day to day.",
-  secondary: "Always open to chat.",
   href: siteConfig.nowAtUrl,
   hrefLabel: siteConfig.nowAt,
   productHref: siteConfig.productUrl,

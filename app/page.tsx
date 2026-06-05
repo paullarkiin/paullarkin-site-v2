@@ -63,7 +63,6 @@ export default function Home() {
               <GithubIcon className="mr-1 inline-block size-4.5 align-middle" />
               Github
             </a>
-            . {intro.secondary}
           </p>
         </section>
         <SelectedWorkList items={selectedWork} />
