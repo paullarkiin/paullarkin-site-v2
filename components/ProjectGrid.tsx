@@ -19,7 +19,7 @@ export function ProjectGrid({
 
       <div className="pt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
         {items.map((item) => (
-          <LabCard key={item.title} item={item} disableHover />
+          <LabCard key={item.title} item={item} />
         ))}
       </div>
     </section>

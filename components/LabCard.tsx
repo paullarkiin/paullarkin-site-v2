@@ -1,23 +1,26 @@
 import type { LabItem } from "@/lib/site";
+import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
 
 type LabCardProps = {
   item: LabItem;
-  disableHover?: boolean;
 };
 
-export function LabCard({ item, disableHover = false }: LabCardProps) {
+export function LabCard({ item }: LabCardProps) {
   return (
     <a
       href={item.href}
       target="_blank"
-      className={`group flex flex-col gap-3.5 rounded-xl border border-border-strong bg-surface/90 p-4 transition-colors${disableHover ? "" : " hover:bg-surface-2/70"}`}
+      className="group flex flex-col gap-3.5 rounded-xl bg-surface/90 p-4"
     >
       <div className="aspect-16/10 flex items-center justify-center rounded-md border border-border-strong bg-surface-2/50">
         <Preview kind={item.preview} label={item.previewLabel} />
       </div>
 
       <div>
-        <p className="text-[14px] font-medium text-text">{item.title}</p>
+        <p className="flex items-center gap-1.5 text-[14px] font-medium text-text">
+          {item.title}
+          <ArrowUpRightIcon className="size-3.5 opacity-0 transition-opacity duration-200 group-hover:opacity-100 text-text-muted" />
+        </p>
         <p className="text-[12px] text-text-muted leading-normal mt-0.5">
           {item.description}
         </p>

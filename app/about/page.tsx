@@ -53,7 +53,7 @@ export default function About() {
                       <a
                         href={item.href}
                         target="_blank"
-                        className="underline underline-offset-4 decoration-border-strong hover:decoration-text transition-colors"
+                        className="underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
                       >
                         {item.company}
                       </a>
