@@ -29,6 +29,7 @@ export type WorkItem = {
   year: string;
   href: string;
   wip?: boolean;
+  icon?: "dots" | "lines" | "ring" | "corners" | "grid" | "chat" | "layers";
 };
 
 export type LabItem = {
@@ -60,6 +61,7 @@ export const selectedWork: WorkItem[] = [
     description: "Internal tooling",
     year: "2026",
     href: "#",
+    icon: "grid",
   },
 
   {
@@ -67,6 +69,7 @@ export const selectedWork: WorkItem[] = [
     description: "React UI Refresh",
     year: "2025",
     href: "#",
+    icon: "chat",
   },
 
   {
@@ -74,6 +77,7 @@ export const selectedWork: WorkItem[] = [
     description: "Internal tooling",
     year: "2025",
     href: "#",
+    icon: "layers",
   },
 ];
 
@@ -184,8 +188,8 @@ export const experience: ExperienceItem[] = [
     period: "2021 — 2022",
   },
   {
-    company: "Independent",
-    role: "Product design + front-end",
+    company: "Freelance",
+    role: "Design + Web development",
     period: "2018 - 2023",
   },
 ];

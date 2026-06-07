@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { experience } from "@/lib/site";
 import { SectionHead } from "@/components/SectionHead";
 import { BackLink } from "@/components/BackLink";
@@ -77,11 +78,23 @@ export default function About() {
           <SectionHead label="Photos" />
 
           <div className="grid grid-cols-3 gap-2 pt-3.5">
-            {[1, 2, 3].map((i) => (
+            {[
+              { src: "/pride.webp", alt: "Pride parade" },
+              { src: "/lake.webp", alt: "Lake view" },
+              { src: "/hackathon.webp", alt: "Hackathon" },
+            ].map(({ src, alt }) => (
               <div
-                key={i}
-                className="aspect-4/3 rounded-lg bg-surface-2 border border-border-strong"
-              />
+                key={src}
+                className="relative aspect-4/3 rounded-lg overflow-hidden border border-border-strong"
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 33vw, 256px"
+                />
+              </div>
             ))}
           </div>
         </section>
@@ -90,9 +103,8 @@ export default function About() {
           <SectionHead label="Colophon" />
 
           <p className="text-base text-text-muted leading-normal pt-3.5">
-            This site is built with Next.js and Tailwind CSS, set in Manrope,
-            and deployed on Vercel. Designed and developed by hand — no
-            templates, no themes.
+            This site is built with Next.js, Tailwind CSS, and MDX. The typeface
+            used is Manrope, a modern sans-serif font.
           </p>
         </section>
       </main>

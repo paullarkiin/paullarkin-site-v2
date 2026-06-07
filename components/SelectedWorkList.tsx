@@ -55,7 +55,7 @@ export function SelectedWorkList({
                     <span className="w-11 shrink-0 sm:hidden" aria-hidden />
                   )}
 
-                  <ListItem seed={idx} />
+                  <ListItem seed={idx} variant={item.icon} />
 
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
