@@ -88,7 +88,7 @@ export const projects: LabItem[] = [
   {
     title: "Lakrits UI",
     description: "React component library",
-    icon: "circle",
+    icon: "ring",
     href: "https://github.com/paullarkiin/lakrits",
   },
   {
