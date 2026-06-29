@@ -23,20 +23,22 @@ export const siteFloatingNav: SiteNavItem[] = [
   { label: "Writing", href: "/writing" },
 ];
 
+import type { IconName } from "@/lib/icons";
+
 export type WorkItem = {
   title: string;
   description: string;
   year: string;
   href: string;
   wip?: boolean;
-  icon?: "dots" | "lines" | "ring" | "corners" | "grid" | "chat" | "layers";
+  icon: IconName;
 };
 
 export type LabItem = {
   title: string;
   description: string;
-  preview: "dots" | "mono" | "bars" | "circle" | "elevate";
-  previewLabel?: string;
+  icon: IconName;
+  iconLabel?: string;
   href: string;
 };
 
@@ -54,6 +56,7 @@ export const selectedWork: WorkItem[] = [
     description: "Coming soon site",
     year: "2026",
     href: "https://lakrits.paullarkin.info/",
+    icon: "ring",
     // wip: true,
   },
   {
@@ -85,13 +88,13 @@ export const projects: LabItem[] = [
   {
     title: "Lakrits UI",
     description: "React component library",
-    preview: "circle",
+    icon: "circle",
     href: "https://github.com/paullarkiin/lakrits",
   },
   {
     title: "ElevateNI",
     description: "Student Conference",
-    preview: "elevate",
+    icon: "elevate",
     href: "https://www.instagram.com/ElevateNI",
   },
 ];
@@ -100,7 +103,7 @@ export const labItems: (LabItem & { tag: string; date: string })[] = [
   {
     title: "Summaries",
     description: "Book summaries and reviews",
-    preview: "dots",
+    icon: "dots",
     href: "#",
     tag: "INTERACTION",
     date: "12/18/25",
@@ -108,8 +111,8 @@ export const labItems: (LabItem & { tag: string; date: string })[] = [
   {
     title: "Malware workbench",
     description: "UI concept for static analysis",
-    preview: "mono",
-    previewLabel: "$ > analyze",
+    icon: "mono",
+    iconLabel: "$ > analyze",
     href: "#",
     tag: "TOOLING",
     date: "02/03/26",
@@ -117,7 +120,7 @@ export const labItems: (LabItem & { tag: string; date: string })[] = [
   {
     title: "Savings tracker",
     description: "React Native + Expo",
-    preview: "bars",
+    icon: "bars",
     href: "#",
     tag: "PRODUCT",
     date: "04/22/26",

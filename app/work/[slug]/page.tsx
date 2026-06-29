@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -14,6 +15,24 @@ export function generateStaticParams() {
 }
 
 type Params = Promise<{ slug: string }>;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  try {
+    const post = getContentBySlug(PROJECTS_DIR, slug);
+    return {
+      title: `${post.meta.title} | Paul Larkin`,
+      description: post.meta.summary,
+    };
+  } catch {
+    return {};
+  }
+}
 
 export default async function WritingPost({ params }: { params: Params }) {
   const { slug } = await params;

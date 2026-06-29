@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { WorkItem } from "@/lib/site";
-import { ListItem } from "@/components/ListItem";
+import { IconBadge } from "@/components/IconBadge";
 import { SectionHead } from "@/components/SectionHead";
 
 type SelectedWorkListProps = {
@@ -55,7 +55,7 @@ export function SelectedWorkList({
                     <span className="w-11 shrink-0 sm:hidden" aria-hidden />
                   )}
 
-                  <ListItem seed={idx} variant={item.icon} />
+                  <IconBadge icon={item.icon} />
 
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-x-2 gap-y-1">

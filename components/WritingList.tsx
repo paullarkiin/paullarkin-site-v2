@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { PostMeta } from "@/lib/posts";
 import { formatNoteDate } from "@/lib/format";
-import { ListItem } from "@/components/ListItem";
+import { IconBadge } from "@/components/IconBadge";
 import { SectionHead } from "@/components/SectionHead";
 
 type WritingListProps = {
@@ -22,13 +22,13 @@ export function WritingList({
       <SectionHead label={label} meta={meta} />
 
       <div className="group/list flex flex-col">
-        {notes.map((note, idx) => (
+        {notes.map((note) => (
           <Link
             key={note.slug}
             href={`/writing/${note.slug}`}
             className="group flex items-start gap-3 rounded-xl px-3 py-3 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-2/70 sm:-mx-3"
           >
-            <ListItem seed={idx} variant="lines" />
+            <IconBadge icon="lines" />
 
             <div className="min-w-0 flex-1">
               <p className="text-base font-medium text-text">{note.title}</p>
