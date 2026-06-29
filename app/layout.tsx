@@ -4,6 +4,7 @@ import { ViewTransition } from "react";
 import "./globals.css";
 import { FloatingBottomNav } from "@/components/FloatingBottomNav";
 import { Footer } from "@/components/Footer";
+import { siteConfig } from "@/lib/site";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -11,6 +12,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: "Paul Larkin",
   description: "Personal website for Paul Larkin. Designer Engineer",
 };

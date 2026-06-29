@@ -4,6 +4,7 @@ export type SiteNavItem = {
 };
 
 export const siteConfig = {
+  url: "https://paullarkin.info",
   name: "Paul Larkin",
   role: "Design engineer",
   status: "Linköping, Sweden",
