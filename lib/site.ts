@@ -35,7 +35,7 @@ export type WorkItem = {
 export type LabItem = {
   title: string;
   description: string;
-  preview: "dots" | "mono" | "bars" | "circle";
+  preview: "dots" | "mono" | "bars" | "circle" | "elevate";
   previewLabel?: string;
   href: string;
 };
@@ -53,7 +53,7 @@ export const selectedWork: WorkItem[] = [
     title: "Lakrits UI Website",
     description: "Coming soon site",
     year: "2026",
-    href: "#",
+    href: "https://lakrits.paullarkin.info/",
     // wip: true,
   },
   {
@@ -85,13 +85,13 @@ export const projects: LabItem[] = [
   {
     title: "Lakrits UI",
     description: "React component library",
-    preview: "dots",
+    preview: "circle",
     href: "https://github.com/paullarkiin/lakrits",
   },
   {
     title: "ElevateNI",
     description: "Student Conference",
-    preview: "mono",
+    preview: "elevate",
     href: "https://www.instagram.com/ElevateNI",
   },
 ];

@@ -1,5 +1,6 @@
 import type { LabItem } from "@/lib/site";
 import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
+import { ElevateIcon } from "@/components/icons/ElevateIcon";
 
 type LabCardProps = {
   item: LabItem;
@@ -68,5 +69,8 @@ function Preview({
           <span className="h-3 w-3 rounded-full bg-text" />
         </div>
       );
+
+    case "elevate":
+      return <ElevateIcon className="h-7 w-7 text-text" />;
   }
 }

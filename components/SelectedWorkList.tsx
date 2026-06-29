@@ -58,7 +58,7 @@ export function SelectedWorkList({
                   <ListItem seed={idx} variant={item.icon} />
 
                   <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                       <span className="text-base font-medium tracking-tight text-text">
                         {item.title}
                       </span>
