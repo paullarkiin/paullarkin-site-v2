@@ -27,6 +27,7 @@ export function FloatingBottomNav({
   return (
     <nav
       className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center px-3 pb-[max(16px,env(safe-area-inset-bottom))] pt-4"
+      style={{ viewTransitionName: "floating-nav" }}
       aria-label="Primary pages"
     >
       <div

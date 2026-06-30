@@ -27,6 +27,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ViewTransition>{children}</ViewTransition>
         <Footer />
+        <FloatingBottomNav />
       </body>
     </html>
   );
