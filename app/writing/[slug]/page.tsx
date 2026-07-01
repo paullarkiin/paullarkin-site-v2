@@ -48,7 +48,7 @@ export default async function WritingPost({ params }: { params: Params }) {
         <header className="mb-8">
           <h1 className="text-2xl font-bold text-text">{post.meta.title}</h1>
           {post.meta.date && (
-            <p className="text-sm text-text-dim mt-2">
+            <p className="text-sm text-text-muted mt-2">
               {formatNoteDate(post.meta.date)}
             </p>
           )}

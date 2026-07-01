@@ -15,7 +15,7 @@ export function LabCard({ item }: LabCardProps) {
       target="_blank"
       className="group flex flex-col gap-3.5 rounded-xl bg-surface/90 p-4"
     >
-      <div className="aspect-16/10 flex items-center justify-center rounded-md border border-border-strong bg-surface-2/50">
+      <div className="aspect-16/10 flex items-center justify-center rounded-md border border-border-strong bg-surface-higher/50">
         <Icon className="h-7 w-7 text-text" label={item.iconLabel} />
       </div>
 

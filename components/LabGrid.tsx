@@ -27,7 +27,7 @@ export function LabGrid({ items, label = "Lab", meta }: LabGridProps) {
               key={item.title}
               href={item.href}
               className={[
-                "group relative flex w-[min(248px,78vw)] shrink-0 flex-col rounded-lg border border-border-strong bg-surface-2 p-4 shadow-none transition-[transform,box-shadow] duration-200",
+                "group relative flex w-[min(248px,78vw)] shrink-0 flex-col rounded-lg border border-border-strong bg-surface-higher p-4 shadow-none transition-[transform,box-shadow] duration-200",
                 "hover:z-50 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)]",
                 "focus-visible:z-50 focus-visible:outline-2 focus-visible:outline-offset-2",
                 ROTATIONS[i % ROTATIONS.length],
@@ -35,7 +35,7 @@ export function LabGrid({ items, label = "Lab", meta }: LabGridProps) {
                 i < items.length - 1 ? "-mr-11 sm:-mr-14" : "",
               ].join(" ")}
             >
-              <div className="flex items-baseline justify-between gap-3 font-sans text-[10px] uppercase tracking-widest text-text-dim">
+              <div className="flex items-baseline justify-between gap-3 font-sans text-[10px] uppercase tracking-widest text-text-muted">
                 <span className="truncate">{tag}</span>
                 <span className="shrink-0 tabular-nums">{date}</span>
               </div>

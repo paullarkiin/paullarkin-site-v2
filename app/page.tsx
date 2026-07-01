@@ -16,7 +16,7 @@ export default function Home() {
       <main className="flex flex-1 w-full max-w-3xl flex-col px-16 pt-24 sm:items-start">
         <Header layout="col" />
         <section className="mb-24">
-          <p className="mb-4">
+          <p className="mb-4 text-text dark:text-text-muted">
             {intro.currentlyAt}
             <a
               href={intro.href}
@@ -37,11 +37,11 @@ export default function Home() {
             </a>{" "}
             {intro.currentlyDoing}
           </p>
-          <p className="text-text">
+          <p className="text-text dark:text-text-muted">
             You can read more{" "}
             <Link
               href="/about"
-              className="ml-0.5 font-semibold underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="ml-0.5 font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               about me
             </Link>{" "}
@@ -49,7 +49,7 @@ export default function Home() {
             <a
               href={`mailto:${siteConfig.email}`}
               target="_blank"
-              className="ml-0.5 whitespace-nowrap font-semibold underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="ml-0.5 whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               <EmailIcon className="mr-1 inline-block size-4 align-middle" />
               email
@@ -58,7 +58,7 @@ export default function Home() {
             <a
               href={siteConfig.github}
               target="_blank"
-              className="ml-0.5 whitespace-nowrap font-semibold underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="ml-0.5 whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               <GithubIcon className="mr-1 inline-block size-4.5 align-middle" />
               Github

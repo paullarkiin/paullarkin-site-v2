@@ -8,7 +8,7 @@ export function SectionHead({ label, meta }: SectionHeadProps) {
     <div className="flex items-baseline justify-between mb-4">
       <h2 className="text-[14px] text-text-muted font-normal">{label}</h2>
       {meta ? (
-        <p className="text-[14px] text-text-dim font-sans">{meta}</p>
+        <p className="text-[14px] text-text-muted font-sans">{meta}</p>
       ) : null}
     </div>
   );

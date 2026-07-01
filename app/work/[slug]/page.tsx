@@ -71,7 +71,7 @@ export default async function WritingPost({ params }: { params: Params }) {
         <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-x-10 gap-y-8 mb-12">
           {typeof meta.about === "string" && (
             <div>
-              <h2 className="text-sm font-medium text-text-dim mb-2">About</h2>
+              <h2 className="text-sm font-medium text-text-muted mb-2">About</h2>
               <p className="text-sm text-text leading-relaxed">
                 {meta.about}
               </p>
@@ -81,19 +81,19 @@ export default async function WritingPost({ params }: { params: Params }) {
           <div className="flex flex-col gap-6">
             {typeof meta.role === "string" && (
               <div>
-                <h2 className="text-sm font-medium text-text-dim mb-1">Role</h2>
+                <h2 className="text-sm font-medium text-text-muted mb-1">Role</h2>
                 <p className="text-sm text-text">{meta.role}</p>
               </div>
             )}
             {typeof meta.tools === "string" && (
               <div>
-                <h2 className="text-sm font-medium text-text-dim mb-1">Tools</h2>
+                <h2 className="text-sm font-medium text-text-muted mb-1">Tools</h2>
                 <p className="text-sm text-text">{meta.tools}</p>
               </div>
             )}
             {typeof meta.timeline === "string" && (
               <div>
-                <h2 className="text-sm font-medium text-text-dim mb-1">Timeline</h2>
+                <h2 className="text-sm font-medium text-text-muted mb-1">Timeline</h2>
                 <p className="text-sm text-text">{meta.timeline}</p>
               </div>
             )}
