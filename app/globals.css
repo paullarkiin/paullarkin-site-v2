@@ -3,6 +3,25 @@
 :root {
   --background: #f8f8f8;
   --foreground: #202020;
+  --text: #202020;
+  --text-muted: #656564;
+  --surface: #ffffff;
+  --surface-higher: #f0f0ef;
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --border: #e8e8e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #202124;
+    --foreground: #e8e8e8;
+    --text: #e8e8e8;
+    --text-muted: #b0b0b0;
+    --surface: #262629;
+    --surface-higher: #2f2f33;
+    --border-strong: rgba(255, 255, 255, 0.06);
+    --border: #3a3a3e;
+  }
 }
 
 @theme inline {
@@ -10,17 +29,15 @@
   --color-foreground: var(--foreground);
 
   /* Semantic text colors */
-  --color-text: #202020;
-  --color-text-muted: #656564;
-  --color-text-dim: #9e9e9d;
-
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
   /* Surface colors */
-  --color-surface: #ffffff;
-  --color-surface-2: #f0f0ef;
+  --color-surface: var(--surface);
+  --color-surface-higher: var(--surface-higher);
 
   /* Border colors */
-  --color-border-strong: rgba(255, 255, 255, 0.14);
-  --color-border: #e8e8e8;
+  --color-border-strong: var(--border-strong);
+  --color-border: var(--border);
 
   /* Fonts */
   --font-sans: var(--font-manrope);

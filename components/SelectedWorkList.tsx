@@ -37,7 +37,7 @@ export function SelectedWorkList({
             <Link
               key={item.title}
               href={item.href}
-              className="group block rounded-xl px-3 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-2/70 sm:-mx-3 sm:py-5"
+              className="group block rounded-xl px-3 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-higher/70 sm:-mx-3 sm:py-5"
             >
               <div className="flex gap-3 sm:grid sm:grid-cols-[3.25rem_1fr_minmax(0,1fr)] sm:items-center sm:gap-x-6">
                 {/* Year column — desktop */}
@@ -63,7 +63,7 @@ export function SelectedWorkList({
                         {item.title}
                       </span>
                       {item.wip ? (
-                        <span className="rounded-3xl px-3 py-0.5 font-sans text-[10px] uppercase tracking-widest text-text-muted bg-transparent outline outline-text-dim">
+                        <span className="rounded-3xl px-3 py-0.5 font-sans text-[10px] uppercase tracking-widest text-text-muted bg-transparent outline outline-text-muted">
                           WIP
                         </span>
                       ) : null}

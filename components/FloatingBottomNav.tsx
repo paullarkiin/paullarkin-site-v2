@@ -41,8 +41,8 @@ export function FloatingBottomNav({
               ? "bg-white/14 text-white shadow-sm"
               : "text-neutral-400 hover:bg-white/10 hover:text-neutral-100"
             : active
-              ? "bg-surface-2 text-text"
-              : "text-text-muted hover:bg-surface-2 hover:text-text";
+              ? "bg-surface-higher text-text"
+              : "text-text-muted hover:bg-surface-higher hover:text-text";
           return (
             <Link
               key={item.href}

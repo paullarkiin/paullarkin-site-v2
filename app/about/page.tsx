@@ -66,7 +66,7 @@ export default function About() {
                     {item.role}
                   </p>
                 </div>
-                <span className="text-[12px] text-text-dim font-mono shrink-0 whitespace-nowrap">
+                <span className="text-[12px] text-text-muted font-mono shrink-0 whitespace-nowrap">
                   {item.period}
                 </span>
               </div>
