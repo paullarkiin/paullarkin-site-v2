@@ -100,29 +100,29 @@ export const projects: LabItem[] = [
 
 export const labItems: (LabItem & { tag: string; date: string })[] = [
   {
-    title: "Summaries",
-    description: "Book summaries and reviews",
+    title: "ElevateNI",
+    description: "Student Confernece",
     icon: "dots",
     href: "#",
-    tag: "INTERACTION",
-    date: "12/18/25",
+    tag: "",
+    date: "",
   },
   {
-    title: "Malware workbench",
+    title: "UI Kitchen",
     description: "UI concept for static analysis",
     icon: "mono",
     iconLabel: "$ > analyze",
     href: "#",
-    tag: "TOOLING",
-    date: "02/03/26",
+    tag: "",
+    date: "",
   },
   {
-    title: "Savings tracker",
+    title: "NASA Picture of the day",
     description: "React Native + Expo",
     icon: "bars",
     href: "#",
-    tag: "PRODUCT",
-    date: "04/22/26",
+    tag: "",
+    date: "",
   },
 ];
 

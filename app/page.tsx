@@ -73,8 +73,13 @@ export default function Home() {
           </p>
         </section>
         <SelectedWorkList items={selectedWork} />
-        <ProjectGrid items={projects} />
-        {/* <LabGrid items={labItems.map(({ tag, date, ...item }) => ({ item, tag, date }))} /> */}
+        <LabGrid
+          items={labItems.map(({ tag, date, ...item }) => ({
+            item,
+            tag,
+            date,
+          }))}
+        />
         <WritingList notes={getAllPosts()} />
       </main>
     </div>
