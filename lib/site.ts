@@ -53,29 +53,27 @@ export type Note = {
 
 export const selectedWork: WorkItem[] = [
   {
-    title: "Lakrits UI Website",
-    description: "Coming soon site",
+    title: "Lakrits UI",
+    description: "Component Library",
     year: "2026",
     href: "https://lakrits.paullarkin.info/",
     icon: "ring",
-    // wip: true,
+    wip: true,
+  },
+  {
+    title: "Book Summaries",
+    description: "React App",
+    year: "2026",
+    href: "#",
+    icon: "chat",
   },
   {
     title: "User Research Dashboard",
     description: "Internal tooling",
-    year: "2026",
+    year: "2025",
     href: "#",
     icon: "grid",
   },
-
-  {
-    title: "Opera Mobile Browser AI",
-    description: "React UI Refresh",
-    year: "2025",
-    href: "#",
-    icon: "chat",
-  },
-
   {
     title: "Design System Previewer",
     description: "Internal tooling",

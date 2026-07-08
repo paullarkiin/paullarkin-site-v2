@@ -7,8 +7,15 @@ import { EmailIcon } from "@/components/icons/EmailIcon";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { OperaIcon } from "@/components/icons/OperaIcon";
 import { PlaneIcon } from "@/components/icons/PlaneIcon";
-import { intro, projects, selectedWork, siteConfig } from "@/lib/site";
+import {
+  intro,
+  labItems,
+  projects,
+  selectedWork,
+  siteConfig,
+} from "@/lib/site";
 import { getAllPosts } from "@/lib/posts";
+import { LabGrid } from "@/components/LabGrid";
 
 export default function Home() {
   return (
@@ -67,6 +74,7 @@ export default function Home() {
         </section>
         <SelectedWorkList items={selectedWork} />
         <ProjectGrid items={projects} />
+        {/* <LabGrid items={labItems.map(({ tag, date, ...item }) => ({ item, tag, date }))} /> */}
         <WritingList notes={getAllPosts()} />
       </main>
     </div>
