@@ -19,7 +19,7 @@ function sortByYearDesc(items: WorkItem[]) {
 
 export function SelectedWorkList({
   items,
-  label = "Selected work",
+  label = "Featured work",
   meta,
 }: SelectedWorkListProps) {
   const sorted = sortByYearDesc(items);
