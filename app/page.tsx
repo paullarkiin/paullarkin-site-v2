@@ -17,16 +17,16 @@ export default function Home() {
         <Header layout="col" />
         <section className="mb-24">
           <p className="mb-4 text-text dark:text-text-muted">
-            {intro.currentlyAt}
+            {intro.currentlyAt}{" "}
             <a
               href={intro.href}
               target="_blank"
-              className="group ml-0.5 whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="group whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
-              <OperaIcon className="mr-1 inline-block size-3.5 align-[-0.125em] transition-colors group-hover:text-[#FF1B2D]" />
+              <OperaIcon className="ml-0.5 mr-1 inline-block size-3.5 align-[-0.125em] transition-colors group-hover:text-[#FF1B2D]" />
               {intro.hrefLabel}
-            </a>
-            {intro.currentlyWorkingOn}
+            </a>{" "}
+            {intro.currentlyWorkingOn}{" "}
             <a
               href={intro.productHref}
               target="_blank"
@@ -38,27 +38,27 @@ export default function Home() {
             {intro.currentlyDoing}
           </p>
           <p className="text-text dark:text-text-muted">
-            You can read more
+            You can read more{" "}
             <Link
               href="/about"
               className="font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               about me
-            </Link>
-            or reach me by
+            </Link>{" "}
+            or reach me by{" "}
             <a
               href={`mailto:${siteConfig.email}`}
               target="_blank"
-              className="ml-0.5 whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               <EmailIcon className="mr-1 inline-block size-4 align-middle" />
               email
-            </a>
-            or on
+            </a>{" "}
+            or on{" "}
             <a
               href={siteConfig.github}
               target="_blank"
-              className="ml-0.5 whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               <GithubIcon className="mr-1 inline-block size-4.5 align-middle" />
               Github
