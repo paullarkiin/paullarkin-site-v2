@@ -155,8 +155,8 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const intro = {
-  currentlyAt: "Currently at ",
-  currentlyWorkingOn: "working on ",
+  currentlyAt: "Currently at",
+  currentlyWorkingOn: "working on",
   currentlyDoing:
     " — crafting interfaces, managing design systems and building design tooling. Driven by an insatiable curiosity to learn and build things people can use day to day.",
   href: siteConfig.nowAtUrl,
