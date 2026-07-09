@@ -1,9 +1,9 @@
 export function CircleIcon({ className }: { className?: string }) {
   return (
-    <div
-      className={`h-7 w-7 rounded-full border-[1.5px] border-text flex items-center justify-center ${className ?? ""}`}
+    <span
+      className={`flex h-5 w-5 items-center justify-center rounded-full border-[1.5px] border-current ${className ?? ""}`}
     >
-      <span className="h-3 w-3 rounded-full bg-text" />
-    </div>
+      <span className="h-2 w-2 rounded-full bg-current" />
+    </span>
   );
 }

@@ -1,6 +1,40 @@
+import type { IconName } from "@/lib/icons";
+
 export type SiteNavItem = {
   label: string;
   href: string;
+};
+
+export type WorkItem = {
+  title: string;
+  description: string;
+  year: string;
+  href: string;
+  icon: IconName;
+};
+
+export type ProjectItem = {
+  title: string;
+  description: string;
+  icon: IconName;
+  iconLabel?: string;
+  href: string;
+  comingSoon?: boolean;
+};
+
+export type Note = {
+  slug: string;
+  title: string;
+  date: string;
+  summary?: string;
+  readingTime?: string;
+};
+
+export type ExperienceItem = {
+  company: string;
+  role: string;
+  period: string;
+  href?: string;
 };
 
 export const siteConfig = {
@@ -24,33 +58,6 @@ export const siteFloatingNav: SiteNavItem[] = [
   { label: "Writing", href: "/writing" },
 ];
 
-import type { IconName } from "@/lib/icons";
-
-export type WorkItem = {
-  title: string;
-  description: string;
-  year: string;
-  href: string;
-  wip?: boolean;
-  icon: IconName;
-};
-
-export type LabItem = {
-  title: string;
-  description: string;
-  icon: IconName;
-  iconLabel?: string;
-  href: string;
-};
-
-export type Note = {
-  slug: string;
-  title: string;
-  date: string;
-  summary?: string;
-  readingTime?: string;
-};
-
 export const selectedWork: WorkItem[] = [
   {
     title: "Lakrits UI",
@@ -58,7 +65,6 @@ export const selectedWork: WorkItem[] = [
     year: "2026",
     href: "https://lakrits.paullarkin.info/",
     icon: "ring",
-    wip: true,
   },
   {
     title: "Book Summaries",
@@ -72,57 +78,36 @@ export const selectedWork: WorkItem[] = [
     description: "Internal tooling",
     year: "2025",
     href: "#",
-    icon: "grid",
+    icon: "bars",
   },
   {
     title: "Design System Previewer",
     description: "Internal tooling",
     year: "2025",
     href: "#",
-    icon: "layers",
+    icon: "grid",
   },
 ];
 
-export const projects: LabItem[] = [
-  {
-    title: "Lakrits UI",
-    description: "React component library",
-    icon: "ring",
-    href: "https://github.com/paullarkiin/lakrits",
-  },
-  {
-    title: "ElevateNI",
-    description: "Student Conference",
-    icon: "elevate",
-    href: "https://www.instagram.com/ElevateNI",
-  },
-];
-
-export const labItems: (LabItem & { tag: string; date: string })[] = [
-  {
-    title: "ElevateNI",
-    description: "Student Confernece",
-    icon: "dots",
-    href: "#",
-    tag: "",
-    date: "",
-  },
+export const projects: ProjectItem[] = [
   {
     title: "UI Kitchen",
-    description: "UI concept for static analysis",
-    icon: "mono",
-    iconLabel: "$ > analyze",
+    description: "Exploration of UI concepts",
+    icon: "layers",
     href: "#",
-    tag: "",
-    date: "",
+    comingSoon: true,
   },
   {
-    title: "NASA Picture of the day",
-    description: "React Native + Expo",
-    icon: "bars",
-    href: "#",
-    tag: "",
-    date: "",
+    title: "Trigger Free",
+    description: "Hackathon project",
+    icon: "planet",
+    href: "https://www.behance.net/gallery/150200543/UIUX-Case-Study-Trigger-Free",
+  },
+  {
+    title: "ElevateNI",
+    description: "Conference organizing",
+    icon: "elevate",
+    href: "https://www.instagram.com/ElevateNI",
   },
 ];
 
@@ -148,34 +133,7 @@ export const notes: Note[] = [
       "Detailing the steps that I took when analyzing a malicious sample",
     readingTime: "6 min",
   },
-  // {
-  //   slug: "building-minipay-primitives",
-  //   title: "Building MiniPay's component primitives",
-  //   date: "2026-03-15",
-  //   summary: "How we built a shared component library from scratch.",
-  //   readingTime: "6 min",
-  // },
-  // {
-  //   slug: "figma-to-code-pipeline",
-  //   title: "Our Figma to code pipeline",
-  //   date: "2025-11-20",
-  //   summary: "Connecting design tokens to production React components.",
-  //   readingTime: "4 min",
-  // },
-  // {
-  //   slug: "design-engineering-role",
-  //   title: "What design engineering means to me",
-  //   date: "2025-08-10",
-  //   readingTime: "3 min",
-  // },
 ];
-
-export type ExperienceItem = {
-  company: string;
-  role: string;
-  period: string;
-  href?: string;
-};
 
 export const experience: ExperienceItem[] = [
   {

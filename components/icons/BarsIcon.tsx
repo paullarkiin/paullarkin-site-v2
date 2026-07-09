@@ -1,9 +1,9 @@
 export function BarsIcon({ className }: { className?: string }) {
   return (
-    <div className={`flex flex-col gap-1 w-1/2 ${className ?? ""}`}>
-      <span className="block h-1 rounded-xs bg-text-muted" />
-      <span className="block h-1 rounded-xs bg-text-muted w-[70%]" />
-      <span className="block h-1 rounded-xs bg-text w-[40%]" />
-    </div>
+    <span className={`flex h-3.5 items-end gap-0.5 ${className ?? ""}`}>
+      <span className="w-0.5 h-2/4 rounded-full bg-current" />
+      <span className="w-0.5 h-full rounded-full bg-current" />
+      <span className="w-0.5 h-3/4 rounded-full bg-current" />
+    </span>
   );
 }

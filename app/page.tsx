@@ -1,21 +1,14 @@
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { ProjectGrid } from "@/components/ProjectGrid";
 import { SelectedWorkList } from "@/components/SelectedWorkList";
 import { WritingList } from "@/components/WritingList";
 import { EmailIcon } from "@/components/icons/EmailIcon";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { OperaIcon } from "@/components/icons/OperaIcon";
 import { PlaneIcon } from "@/components/icons/PlaneIcon";
-import {
-  intro,
-  labItems,
-  projects,
-  selectedWork,
-  siteConfig,
-} from "@/lib/site";
+import { intro, projects, selectedWork, siteConfig } from "@/lib/site";
 import { getAllPosts } from "@/lib/posts";
-import { LabGrid } from "@/components/LabGrid";
+import { ProjectGrid } from "@/components/ProjectGrid";
 
 export default function Home() {
   return (
@@ -28,31 +21,31 @@ export default function Home() {
             <a
               href={intro.href}
               target="_blank"
-              className="group ml-1 whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="group ml-0.5 whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
-              <OperaIcon className="mr-1 inline-block size-3.5 align-middle transition-colors group-hover:text-[#FF1B2D]" />
+              <OperaIcon className="mr-1 inline-block size-3.5 align-[-0.125em] transition-colors group-hover:text-[#FF1B2D]" />
               {intro.hrefLabel}
-            </a>{" "}
+            </a>
             {intro.currentlyWorkingOn}
             <a
               href={intro.productHref}
               target="_blank"
-              className="group ml-0.5 whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="group whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               <PlaneIcon className="mr-1 inline-block size-4 align-middle transition-colors group-hover:text-[#07955F]" />
               {intro.productLabel}
-            </a>{" "}
+            </a>
             {intro.currentlyDoing}
           </p>
           <p className="text-text dark:text-text-muted">
-            You can read more{" "}
+            You can read more
             <Link
               href="/about"
-              className="ml-0.5 font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              className="font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               about me
-            </Link>{" "}
-            or reach me by{" "}
+            </Link>
+            or reach me by
             <a
               href={`mailto:${siteConfig.email}`}
               target="_blank"
@@ -60,8 +53,8 @@ export default function Home() {
             >
               <EmailIcon className="mr-1 inline-block size-4 align-middle" />
               email
-            </a>{" "}
-            or on{" "}
+            </a>
+            or on
             <a
               href={siteConfig.github}
               target="_blank"
@@ -73,13 +66,7 @@ export default function Home() {
           </p>
         </section>
         <SelectedWorkList items={selectedWork} />
-        <LabGrid
-          items={labItems.map(({ tag, date, ...item }) => ({
-            item,
-            tag,
-            date,
-          }))}
-        />
+        <ProjectGrid items={projects} />
         <WritingList notes={getAllPosts()} />
       </main>
     </div>

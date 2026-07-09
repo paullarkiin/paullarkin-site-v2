@@ -1,26 +1,35 @@
-import type { LabItem } from "@/lib/site";
-import { LabCard } from "@/components/LabCard";
+import type { ProjectItem } from "@/lib/site";
 import { SectionHead } from "@/components/SectionHead";
+import { ProjectCard } from "@/components/ProjectCard";
 
 type ProjectGridProps = {
-  items: LabItem[];
+  items: ProjectItem[];
   label?: string;
   meta?: string;
 };
 
+const ROTATIONS = ["-rotate-[1.1deg]", "rotate-[0.85deg]", "-rotate-[0.55deg]"];
+
 export function ProjectGrid({
   items,
-  label = "Side projects",
+  label = "Side Projects",
   meta,
 }: ProjectGridProps) {
   return (
-    <section className="mb-24 w-full">
+    <section className="mb-24">
       <SectionHead label={label} meta={meta} />
-
-      <div className="pt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {items.map((item) => (
-          <LabCard key={item.title} item={item} />
-        ))}
+      <div className="-mx-2 overflow-x-auto overflow-y-visible py-3 pb-6 sm:mx-0 sm:overflow-visible sm:py-4">
+        <div className="flex min-w-min flex-row items-stretch justify-start gap-0 pl-1 pr-6 sm:justify-center sm:px-0">
+          {items.map((item, i) => (
+            <ProjectCard
+              key={item.title}
+              item={item}
+              rotation={ROTATIONS[i % ROTATIONS.length]}
+              zClass={`z-${30 - i * 10}`}
+              isLast={i === items.length - 1}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
