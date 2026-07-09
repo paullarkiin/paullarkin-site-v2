@@ -62,11 +62,6 @@ export function SelectedWorkList({
                       <span className="text-base font-medium tracking-tight text-text">
                         {item.title}
                       </span>
-                      {item.wip ? (
-                        <span className="rounded-3xl px-3 py-0.5 font-sans text-[10px] uppercase tracking-widest text-text-muted bg-transparent outline outline-text-muted">
-                          WIP
-                        </span>
-                      ) : null}
                     </div>
 
                     {/* Description — mobile only */}

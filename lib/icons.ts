@@ -9,6 +9,7 @@ import { GridIcon } from "@/components/icons/GridIcon";
 import { LayersIcon } from "@/components/icons/LayersIcon";
 import { LinesIcon } from "@/components/icons/LinesIcon";
 import { MonoIcon } from "@/components/icons/MonoIcon";
+import { PlanetIcon } from "@/components/icons/PlanetIcon";
 import { RingIcon } from "@/components/icons/RingIcon";
 
 export const iconMap: Record<
@@ -24,6 +25,7 @@ export const iconMap: Record<
   layers: LayersIcon,
   lines: LinesIcon,
   mono: MonoIcon,
+  planet: PlanetIcon,
   ring: RingIcon,
 };
 

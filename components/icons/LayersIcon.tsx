@@ -1,10 +1,14 @@
 export function LayersIcon({ className }: { className?: string }) {
   return (
-    <span className={`grid size-2.5 grid-cols-2 gap-0.5 ${className ?? ""}`}>
-      <span className="rounded-[1px] bg-current" />
-      <span className="rounded-[1px] bg-current" />
-      <span className="rounded-[1px] bg-current" />
-      <span className="rounded-[1px] bg-current" />
-    </span>
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <rect x="1" y="1" width="12" height="12" rx="2" opacity="0.15" />
+      <rect x="6" y="6" width="12" height="12" rx="2" opacity="0.35" />
+      <rect x="11" y="11" width="12" height="12" rx="2" opacity="0.6" />
+    </svg>
   );
 }
