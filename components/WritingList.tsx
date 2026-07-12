@@ -18,7 +18,7 @@ export function WritingList({
   showSummary = false,
 }: WritingListProps) {
   return (
-    <section className="mb-24 w-full">
+    <section className=" w-full">
       <SectionHead label={label} meta={meta} />
 
       <div className="group/list flex flex-col">

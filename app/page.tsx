@@ -13,9 +13,9 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col px-16 pt-24 sm:items-start">
-        <Header layout="col" />
-        <section className="mb-24">
+      <main className="flex flex-1 w-full max-w-3xl flex-col px-16 p-32 sm:items-start">
+        <Header />
+        <section className="mb-32">
           <p className="mb-4 text-text dark:text-text-muted">
             {intro.currentlyAt}{" "}
             <a
