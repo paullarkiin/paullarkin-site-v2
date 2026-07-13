@@ -81,7 +81,7 @@ export const selectedWork: WorkItem[] = [
     icon: "bars",
   },
   {
-    title: "Design System Previewer",
+    title: "Design System Preview",
     description: "Internal tooling",
     year: "2025",
     href: "/work/design-system-preview",

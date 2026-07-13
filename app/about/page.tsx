@@ -1,4 +1,3 @@
-import { experience } from "@/lib/site";
 import { SectionHead } from "@/components/SectionHead";
 import { BackLink } from "@/components/BackLink";
 import { PhotoGrid } from "@/components/PhotoGrid";
