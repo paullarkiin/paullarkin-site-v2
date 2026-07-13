@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { SelectedWorkList } from "@/components/SelectedWorkList";
 import { WritingList } from "@/components/WritingList";
 import { EmailIcon } from "@/components/icons/EmailIcon";
-import { GithubIcon } from "@/components/icons/GithubIcon";
 import { OperaIcon } from "@/components/icons/OperaIcon";
 import { PlaneIcon } from "@/components/icons/PlaneIcon";
 import { intro, projects, selectedWork, siteConfig } from "@/lib/site";
@@ -13,7 +12,7 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col px-16 p-32 sm:items-start">
+      <main className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 p-32 sm:items-start">
         <Header />
         <section className="mb-32">
           <p className="mb-4 text-text dark:text-text-muted">
@@ -54,15 +53,6 @@ export default function Home() {
               <EmailIcon className="mr-1 inline-block size-4 align-middle" />
               email
             </a>{" "}
-            or on{" "}
-            <a
-              href={siteConfig.github}
-              target="_blank"
-              className="whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
-            >
-              <GithubIcon className="mr-1 inline-block size-4.5 align-middle" />
-              Github
-            </a>
           </p>
         </section>
         <SelectedWorkList items={selectedWork} />

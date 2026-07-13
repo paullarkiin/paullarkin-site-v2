@@ -26,7 +26,7 @@ export function WritingList({
           <Link
             key={note.slug}
             href={`/writing/${note.slug}`}
-            className="group flex items-start gap-3 rounded-xl px-3 py-3 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-higher/70 sm:-mx-3"
+            className="group flex items-start gap-3 rounded-xl px-0 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-higher/70 sm:-mx-3 sm:px-3"
           >
             <IconBadge icon="lines" />
 

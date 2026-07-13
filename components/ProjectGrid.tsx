@@ -19,12 +19,12 @@ export function ProjectGrid({
     <section className="mb-24">
       <SectionHead label={label} meta={meta} />
       <div className="-mx-2 overflow-x-auto overflow-y-visible py-3 pb-6 sm:mx-0 sm:overflow-visible sm:py-4">
-        <div className="flex min-w-min flex-row items-stretch justify-start gap-0 pl-1 pr-6 sm:justify-center sm:px-0">
+        <div className="flex min-w-min flex-row items-stretch justify-start gap-3 pl-1 pr-6 sm:justify-center sm:gap-0 sm:px-0">
           {items.map((item, i) => (
             <ProjectCard
               key={item.title}
               item={item}
-              rotation={ROTATIONS[i % ROTATIONS.length]}
+              rotation={`sm:${ROTATIONS[i % ROTATIONS.length]}`}
               zClass={`z-${30 - i * 10}`}
               isLast={i === items.length - 1}
             />

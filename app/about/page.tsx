@@ -1,12 +1,12 @@
-import Image from "next/image";
 import { experience } from "@/lib/site";
 import { SectionHead } from "@/components/SectionHead";
 import { BackLink } from "@/components/BackLink";
+import { PhotoGrid } from "@/components/PhotoGrid";
 
 export default function About() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col px-16 pt-24 sm:items-start">
+      <main className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 pt-24 sm:items-start">
         <BackLink />
         <section className="mb-24 w-full">
           <SectionHead label="About" />
@@ -35,9 +35,11 @@ export default function About() {
               societies, co-organising events and mentoring other students.
             </p>
           </div>
+
+          <PhotoGrid />
         </section>
 
-        <section className="mb-24 w-full">
+        {/* <section className="mb-24 w-full">
           <SectionHead label="Experience" />
 
           <div className="flex flex-col">
@@ -72,32 +74,7 @@ export default function About() {
               </div>
             ))}
           </div>
-        </section>
-
-        <section className="mb-24 w-full">
-          <SectionHead label="Photos" />
-
-          <div className="grid grid-cols-3 gap-2 pt-3.5">
-            {[
-              { src: "/pride.webp", alt: "Pride parade" },
-              { src: "/lake.webp", alt: "Lake view" },
-              { src: "/hackathon.webp", alt: "Hackathon" },
-            ].map(({ src, alt }) => (
-              <div
-                key={src}
-                className="relative aspect-4/3 rounded-lg overflow-hidden border border-border-strong"
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 33vw, 256px"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+        </section> */}
 
         <section className="mb-24 w-full">
           <SectionHead label="Colophon" />

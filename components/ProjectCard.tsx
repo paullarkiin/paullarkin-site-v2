@@ -9,13 +9,18 @@ type ProjectCardProps = {
   isLast: boolean;
 };
 
-export function ProjectCard({ item, rotation, zClass, isLast }: ProjectCardProps) {
+export function ProjectCard({
+  item,
+  rotation,
+  zClass,
+  isLast,
+}: ProjectCardProps) {
   const Icon = iconMap[item.icon];
   const Tag = item.comingSoon ? "div" : "a";
 
   return (
     <Tag
-      {...(!item.comingSoon ? { href: item.href } : {})}
+      {...(!item.comingSoon ? { href: item.href, target: "_blank" } : {})}
       className={[
         "group relative flex h-60 w-[min(248px,78vw)] shrink-0 flex-col overflow-hidden rounded-2xl outline-1 outline-black/5 bg-surface transition-[transform,box-shadow] duration-200 dark:outline-white/10",
         "hover:z-50 hover:scale-[1.02] hover:shadow-sm",
@@ -23,7 +28,7 @@ export function ProjectCard({ item, rotation, zClass, isLast }: ProjectCardProps
         item.comingSoon ? "cursor-not-allowed" : "",
         rotation,
         zClass,
-        isLast ? "" : "-mr-11 sm:-mr-14",
+        isLast ? "" : "sm:-mr-14",
       ].join(" ")}
     >
       <div className="flex-1 p-3 pb-0">
@@ -43,7 +48,7 @@ export function ProjectCard({ item, rotation, zClass, isLast }: ProjectCardProps
             <ArrowUpRightIcon className="size-3.5 text-text-muted opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
           )}
         </p>
-        <p className="text-[12px] leading-normal text-text-muted">
+        <p className="text-[13px] leading-normal text-text-muted sm:text-[12px]">
           {item.description}
         </p>
       </div>
