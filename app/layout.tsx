@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { ViewTransition } from "react";
 import "./globals.css";
-import { FloatingBottomNav } from "@/components/FloatingBottomNav";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
 
@@ -10,6 +9,11 @@ const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
 });
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
