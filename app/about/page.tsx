@@ -11,28 +11,45 @@ export default function About() {
         <section className="mb-24 w-full">
           <SectionHead label="About" />
 
-          <div className="space-y-4 text-base text-text pt-3.5">
+          <div className="space-y-6 text-base leading-relaxed text-text pt-3.5">
             <p>
-              I&apos;m Paul, a designer and developer based in Belfast,
-              currently in my final year of computer science at Queen&apos;s
-              University. I&apos;m excited by purposeful design and innovation,
-              with a great love for simplicity.
+              I&apos;m Paul, Irish, living in Sweden. I&apos;m a designer and
+              developer inspired by purposeful design, with a great love for
+              simplicity.
             </p>
 
             <p>
-              Originally, I was a chef until I went back into education and
-              since then have found myself between the worlds of design and
-              development. Always trying to merge the two. In doing so,
-              I&apos;ve been able to explore my interests and work as a
-              freelance digital designer and intern as a mobile software
-              engineer. Learning to apply design from different perspectives.
-              Which I am hoping to use to further my career in the design space.
+              Right now I&apos;m a UI engineer at Opera, working primarily on
+              MiniPay. More recently, I&apos;ve focused on bringing design and
+              engineering closer together — working across teams, building
+              product concepts, and informing product decisions through
+              prototyping and internal tooling.
             </p>
 
             <p>
-              When I am not studying or working, you can find me in the gym
-              lifting weights, helping to shape the visual identity of student
-              societies, co-organising events and mentoring other students.
+              Before that, I was a chef until returning to education, where I
+              fell into a cybersecurity rabbit hole and thought I might become a
+              malware analyst. That was until COVID, when I reconnected with
+              design and interned as a software engineer at Salt Communications,
+              combining all three worlds.
+            </p>
+
+            <p>
+              On the side, I co-founded ElevateNI student conference with
+              friends, have been featured by Adobe, and I'm dabbling in the
+              open-soucing some of my projects.
+            </p>
+
+            <p>Thanks for stopping by. Always happy to chat.</p>
+
+            <p>
+              Reach me at{" "}
+              <a
+                href="mailto:hello@paullarkin.info"
+                className="font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
+              >
+                hello@paullarkin.info
+              </a>
             </p>
           </div>
 
