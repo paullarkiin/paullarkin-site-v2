@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { siteFloatingNav } from "@/lib/site";
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Writing", href: "/writing" },
+];
 
 function navItemActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -33,7 +39,7 @@ export function FloatingBottomNav({
       <div
         className={`pointer-events-auto flex max-w-full items-center gap-0.5 overflow-x-auto rounded-2xl border px-1 py-1 backdrop-blur-md [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden sm:gap-1 sm:px-1.5 ${shell}`}
       >
-        {siteFloatingNav.map((item) => {
+        {navItems.map((item) => {
           const active = navItemActive(pathname, item.href);
           const base =
             "shrink-0 rounded-xl px-3 py-2.5 text-[14px] font-medium transition-colors sm:px-3.5";

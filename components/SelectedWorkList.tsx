@@ -1,36 +1,26 @@
 import Link from "next/link";
-import type { WorkItem } from "@/lib/site";
+import type { WorkMeta } from "@/lib/work";
 import { IconBadge } from "@/components/IconBadge";
 import { SectionHead } from "@/components/SectionHead";
 
 type SelectedWorkListProps = {
-  items: WorkItem[];
+  items: WorkMeta[];
   label?: string;
   meta?: string;
 };
-
-function sortByYearDesc(items: WorkItem[]) {
-  return [...items].sort((a, b) => {
-    const ya = parseInt(a.year, 10) || 0;
-    const yb = parseInt(b.year, 10) || 0;
-    return yb - ya || a.title.localeCompare(b.title);
-  });
-}
 
 export function SelectedWorkList({
   items,
   label = "Featured work",
   meta,
 }: SelectedWorkListProps) {
-  const sorted = sortByYearDesc(items);
-
   return (
     <section className="mb-24 w-full">
       <SectionHead label={label} meta={meta} />
 
       <div className="group/list">
-        {sorted.map((item, idx) => {
-          const prev = sorted[idx - 1];
+        {items.map((item, idx) => {
+          const prev = items[idx - 1];
           const showYear = !prev || prev.year !== item.year;
 
           return (
@@ -45,7 +35,7 @@ export function SelectedWorkList({
                   {showYear ? item.year : "\u00a0"}
                 </span>
 
-                <div className="flex min-w-0 flex-1 items-start gap-3">
+                <div className="flex min-w-0 flex-1 items-start gap-3 sm:items-center">
                   <IconBadge icon={item.icon} />
 
                   <div className="min-w-0 flex-1">
