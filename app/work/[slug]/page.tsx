@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
 import { getAllWork, getWorkBySlug } from "@/lib/work";
 import { BackLink } from "@/components/BackLink";
 import { HeroImage } from "@/components/HeroImage";
+import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
 
 export function generateStaticParams() {
   return getAllWork().map((item) => ({ slug: item.slug }));
@@ -49,9 +49,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
   }
 
   const { meta } = post;
-  const { default: Content } = await import(
-    `@/content/projects/${slug}.mdx`
-  );
+  const { default: Content } = await import(`@/content/projects/${slug}.mdx`);
 
   const year = meta.date
     ? new Date(meta.date as string).getFullYear().toString()
@@ -76,11 +74,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
         <BackLink />
 
         <div className="mb-10">
-          {typeof meta.heroImage === "string" ? (
-            <HeroImage src={meta.heroImage as string} alt={meta.title} />
-          ) : (
-            <div className="w-full aspect-video rounded-lg bg-surface-higher" />
-          )}
+          <HeroImage src={meta.heroImage} alt={meta.title} />
         </div>
 
         <h1 className="text-2xl font-bold text-text">{meta.title}</h1>
@@ -109,7 +103,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
                       className="inline-flex items-center gap-1 text-sm text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
                     >
                       {link.label}
-                      <ArrowUpRight className="w-3.5 h-3.5" />
+                      <ArrowUpRightIcon className="w-3.5 h-3.5" />
                     </a>
                   ))}
                 </div>
