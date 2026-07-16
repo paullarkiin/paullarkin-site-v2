@@ -8,7 +8,29 @@ export interface ContentMeta {
   date: string;
   summary?: string;
   readingTime?: string;
+  heroImage?: string;
   [key: string]: unknown;
+}
+
+const allowedExtensions = [".png", ".jpg", ".jpeg", ".webp", ".avif"];
+
+function isValidImage(src: unknown): src is string {
+  if (typeof src !== "string" || !src) {
+    return false;
+  }
+
+  const filePath = path.join(process.cwd(), "public", src);
+
+  try {
+    const stat = fs.statSync(filePath);
+
+    return (
+      stat.isFile() &&
+      allowedExtensions.some((ext) => filePath.toLowerCase().endsWith(ext))
+    );
+  } catch {
+    return false;
+  }
 }
 
 function resolveDir(dir: string) {
@@ -55,6 +77,7 @@ export function getContentBySlug(dir: string, slug: string) {
       summary: data.summary,
       readingTime: data.readingTime,
       ...data,
+      heroImage: isValidImage(data.heroImage) ? data.heroImage : undefined,
     } as ContentMeta,
     content,
   };
