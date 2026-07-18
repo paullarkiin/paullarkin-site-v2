@@ -3,7 +3,7 @@ title: "User Research Dashboard"
 date: "2025-01-15"
 description: "Internal tooling"
 icon: "bars"
-heroImage: ""
+heroImage: "/img/dashboard.png"
 summary: "A research knowledge hub built to improve how teams access and share user insights."
 role: "Design & Development"
 links:
@@ -19,21 +19,13 @@ This project focused on improving how user research was shared and accessed inte
 
 The goal was to make research insights easier to discover, helping designers, product managers, and other stakeholders make better-informed product decisions.
 
+Due to the sensitive nature of the research content, the final internal version cannot be shared publicly. A prototype with representative data is available below to demonstrate the functionality and interaction patterns.
+
 <Highlights>
   <>One</>
   <>Two</>
   <>Three</>
 </Highlights>
----
-
-### Prototype
-
-Due to the sensitive nature of the research content, the final internal version cannot be shared publicly.
-
-A prototype with representative data is available below to demonstrate the functionality and interaction patterns.
-
-> Link to prototype
-
 ---
 
 ### The Problem
@@ -80,8 +72,16 @@ After initial feedback, I created a proof of concept to explore:
 
 The final stage involved working with engineering and DevOps to host the solution internally and test how it could work beyond the initial group.
 
-> Image:
-> Early concepts, wireframes, or prototype iterations.
+<figure>
+  <img
+    src="/img/dashConcepts.png"
+    alt="user dashboard"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
 
 ---
 
@@ -95,17 +95,9 @@ The solution used:
 
 - Notion API as the data source
 - Next.js for the frontend
-- Vercel for hosting
+- Vercel for inital prototype hosting
 - Internal APIs for additional functionality
 - Caching to improve performance
-
-> Image:
-> Architecture diagram showing Notion → API → Dashboard.
-
-<img
-  src="https://placehold.co/768x280?text=Highlights+component"
-  alt="placeholder"
-/>
 
 ---
 
@@ -119,13 +111,46 @@ Users could browse and search research content through a dedicated interface.
 
 Research could be filtered by teams and categories to make relevant insights easier to find.
 
+<figure>
+  <img
+    src="/img/dashboard.png"
+    alt="user dashboard"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
+
 #### AI summaries
 
 Longer research documents were enhanced with AI-generated summaries to help users quickly understand key findings.
 
+<figure>
+  <img
+    src="/img/dashboard-summary.png"
+    alt="user dashboard"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
+
 #### Notion integration
 
 The dashboard automatically pulled content from Notion, allowing researchers to manage content without needing technical knowledge.
+
+<figure>
+  <img
+    src="/img/dashboard-inner.png"
+    alt="user dashboard"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
 
 ---
 
