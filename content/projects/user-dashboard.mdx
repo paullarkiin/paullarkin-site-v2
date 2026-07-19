@@ -1,11 +1,173 @@
 ---
 title: "User Research Dashboard"
-date: "2026-01-15"
-summary: "Something about this here."
+date: "2025-01-15"
+description: "Internal tooling"
+icon: "bars"
+heroImage: "/img/dashboard.png"
+summary: "A research knowledge hub built to improve how teams access and share user insights."
 role: "Design & Development"
 links:
   - label: "Prototype"
     url: "#"
 ---
 
-Add content here
+### Overview
+
+A short introduction.
+
+This project focused on improving how user research was shared and accessed internally by the design team.
+
+The goal was to make research insights easier to discover, helping designers, product managers, and other stakeholders make better-informed product decisions.
+
+Due to the sensitive nature of the research content, the final internal version cannot be shared publicly. A prototype with representative data is available below to demonstrate the functionality and interaction patterns.
+
+<Highlights>
+  <>One</>
+  <>Two</>
+  <>Three</>
+</Highlights>
+---
+
+### The Problem
+
+The design team was conducting valuable research, but there was no simple way to share and manage those insights across the organisation.
+
+Research lived across different locations, making it difficult for teams to know:
+
+- What research already existed
+- What insights were relevant to their work
+- Where to find previous findings
+
+A key challenge was creating something that people would actually use. Rather than introducing another standalone tool requiring a new login or workflow, the solution needed to fit into existing processes.
+
+---
+
+### Approach
+
+The project was guided by a few key principles:
+
+#### Reduce friction
+
+The tool should work with existing workflows rather than creating additional overhead.
+
+#### Empower non-technical users
+
+The research team needed to manage content without depending on developers.
+
+#### Improve discoverability
+
+Finding relevant research should be quick and intuitive.
+
+---
+
+### From Concept to Prototype
+
+I started by designing and presenting the concept internally to design management to gather feedback and validate the direction.
+
+After initial feedback, I created a proof of concept to explore:
+
+- How research could be structured
+- How users would discover content
+- How existing tools could support the experience
+
+The final stage involved working with engineering and DevOps to host the solution internally and test how it could work beyond the initial group.
+
+<figure>
+  <img
+    src="/img/dashConcepts.png"
+    alt="user dashboard"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+---
+
+### Technical Approach
+
+The main challenge was creating a custom experience while keeping content management simple.
+
+Instead of building a separate content management system, I used Notion as the backend. This allowed the research team to continue working in a tool they already knew while the dashboard handled presentation and discovery.
+
+The solution used:
+
+- Notion API as the data source
+- Next.js for the frontend
+- Vercel for inital prototype hosting
+- Internal APIs for additional functionality
+- Caching to improve performance
+
+---
+
+### Key Features
+
+#### Research discovery
+
+Users could browse and search research content through a dedicated interface.
+
+#### Filtering
+
+Research could be filtered by teams and categories to make relevant insights easier to find.
+
+<figure>
+  <img
+    src="/img/dashboard.png"
+    alt="user dashboard"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+#### AI summaries
+
+Longer research documents were enhanced with AI-generated summaries to help users quickly understand key findings.
+
+<figure>
+  <img
+    src="/img/dashboard-summary.png"
+    alt="user dashboard"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+#### Notion integration
+
+The dashboard automatically pulled content from Notion, allowing researchers to manage content without needing technical knowledge.
+
+<figure>
+  <img
+    src="/img/dashboard-inner.png"
+    alt="user dashboard"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+---
+
+### Challenges & Learnings
+
+Some areas that required exploration:
+
+- Creating a useful structure for research content
+- Balancing flexibility with consistency
+- Working with Notion as a backend
+- Designing a system that could be maintained without developer involvement
+- Exploring where AI could support research discovery
+
+---
+
+### Reflection
+
+This project explored how design, engineering, and existing tools can come together to solve internal workflow problems.
+
+The biggest learning was that improving access to information is often less about creating new systems and more about understanding the tools and processes teams already use.

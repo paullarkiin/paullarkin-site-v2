@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import remarkGfm from "remark-gfm";
-import remarkFrontmatter from "remark-frontmatter";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { formatNoteDate } from "@/lib/format";
 import { BackLink } from "@/components/BackLink";
@@ -41,9 +38,11 @@ export default async function WritingPost({ params }: { params: Params }) {
     notFound();
   }
 
+  const { default: Content } = await import(`@/content/writing/${slug}.mdx`);
+
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <article className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 pt-24">
+      <article className="flex flex-1 w-full max-w-3xl flex-col pt-32 px-8 sm:px-16 ">
         <BackLink />
         <header className="mb-8">
           <h1 className="text-2xl font-bold text-text">{post.meta.title}</h1>
@@ -54,15 +53,8 @@ export default async function WritingPost({ params }: { params: Params }) {
           )}
         </header>
 
-        <div className="prose dark:prose-invert max-w-none text-text">
-          <MDXRemote
-            source={post.content}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm, remarkFrontmatter],
-              },
-            }}
-          />
+        <div className="prose dark:prose-invert max-w-none text-text mb-32">
+          <Content />
         </div>
       </article>
     </div>

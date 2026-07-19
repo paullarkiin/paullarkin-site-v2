@@ -2,57 +2,44 @@
 title: "Publishing a Password Generation App on the Google Play Store"
 date: "2021-06-16"
 summary: Process of building an Android password generation app
-readingTime: "6 min"
 ---
 
-![SecureCS App](/img/playstore/SecureCS.png)
+During my internship, I wanted a side project that I could build in phases, something to help me learn and practice the full app creation cycle from design to deployment.
 
-**Project:** Solo Designer & Developer
+I'd been looking at security-related project ideas when I noticed that most password generator apps on the Play Store had confusing layouts, looked visually unappealing, didn't enforce any kind of secure password functionality, and didn't even offer pin generation. I figured I could do better, so I set about building my own using Kotlin and Android Studio.
 
-**Tools:** Kotlin, Android Studio, Google Play Console, Adobe Photoshop, Adobe XD
+### Concepts
 
-View app on the [Google Play Store](https://play.google.com/store/apps/details?id=com.paullarkin.passwordgenerator)
+I started by sketching out the screens, trying to simplify the process for the user while still offering the option to generate either a password or a pin. I considered different flows including bottom navigation, and ended up splitting the feature list across two versions to keep the first release focused.
 
-### Background
+<figure>
+  <Image src="/img/playstore/Sketches.jpeg" alt="Sketches" width={1920} height={1502} />
+</figure>
 
-During my internship, I wanted a personal project that I could build in vases so that I could improve, learn, and practice the app creation cycle from design to deployment.
+### Finding the Look
 
-While researching security-related projects, I found that a number of published apps were had confusing layouts that, were visual unappealing, didn't enforce any kind of secure password functionality and didn't offer pin generation.
+For the visual direction, I leaned on Google's Material Design guidelines to keep things clean and approachable. I wanted the app to feel minimal, so I went with card-based elements throughout.
 
-So for my own app, I took on these points and set about including them in the design and development, using card-based elements for a minimal clean look.
+<figure>
+  <Image src="/img/playstore/visualSystem.jpeg" alt="Visual System" width={2500} height={1457} />
+</figure>
 
-### Sketches
+### Final Screens
 
-While sketching out the screen, I made an effort to simplify the process for the user to generate while making available the option to generate either a password or pin. I considered different flows to do this with and with bottom navigation and ended up splitting the feature list across two versions.
+After a few rounds of iteration, these are the screens I landed on. They cover the main flow as well as the feedback and error states when the user generates a new password.
 
-![Sketches](/img/playstore/Sketches.jpeg)
+<figure>
+  <Image src="/img/playstore/finalScreens.png" alt="Final Screens" width={2500} height={2155} />
+</figure>
 
-### Visual System
+### Getting It Live
 
-The visual system reflects my vision for the app, using references from the Google material design guidelines to allow for a clear and approachable theme.
+The app is now live on the [Google Play Store](https://play.google.com/store/apps/details?id=com.paullarkin.passwordgenerator). I've had positive feedback from senior developers on my team, and more importantly, positive reviews from actual users.
 
-![Visual System](/img/playstore/visualSystem.jpeg)
-
-### Finished Designs
-
-These are the final screens I choose to go with after iterating on them. They include the feedback and error paths for the app when the user presses to generate a new password.
-
-![Final Screens](/img/playstore/finalScreens.png)
-
-### Outcomes
-
-The design and implementation had a positive outcome with the app now live. I have received positive feedback from senior developers in my team, but more importantly, positive feedback from user reviews.
-
-![User Reviews](/img/playstore/reviews.jpeg)
-
-### Next Steps
-
-- Reflect on user feedback and make adjustments to version one
-
-- Review version two designs and iterate on them to see if I can improve the user experience and feature list
-
-- Start building version two
+<figure>
+  <Image src="/img/playstore/reviews.jpeg" alt="User Reviews" width={2500} height={792} />
+</figure>
 
 ### Reflection
 
-I gained a lot of understanding and functional knowledge of the app end-to-end process from design to shipping the app. This not only made me feel more confident in my ability, but gave me an insight into how designs get translated and implemented in code.
+I gained a lot of understanding of the end-to-end process from design to shipping. It made me more confident in my ability and gave me an insight into how designs get translated and implemented in code. Looking ahead, I want to reflect on the user feedback, iterate on the version two designs, and start building them out.

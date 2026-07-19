@@ -1,4 +1,4 @@
-import type { ProjectItem } from "@/lib/site";
+import type { ProjectItem } from "@/lib/projects";
 import { SectionHead } from "@/components/SectionHead";
 import { ProjectCard } from "@/components/ProjectCard";
 

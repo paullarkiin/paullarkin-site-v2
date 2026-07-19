@@ -5,8 +5,10 @@ import { WritingList } from "@/components/WritingList";
 import { EmailIcon } from "@/components/icons/EmailIcon";
 import { OperaIcon } from "@/components/icons/OperaIcon";
 import { PlaneIcon } from "@/components/icons/PlaneIcon";
-import { intro, projects, selectedWork, siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
+import { projects } from "@/lib/projects";
 import { getAllPosts } from "@/lib/posts";
+import { getAllWork } from "@/lib/work";
 import { ProjectGrid } from "@/components/ProjectGrid";
 
 export default function Home() {
@@ -16,25 +18,25 @@ export default function Home() {
         <Header />
         <section className="mb-32">
           <p className="mb-4 text-text dark:text-text-muted">
-            {intro.currentlyAt}{" "}
+            Currently at{" "}
             <a
-              href={intro.href}
+              href={siteConfig.nowAtUrl}
               target="_blank"
               className="group whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               <OperaIcon className="ml-0.5 mr-1 inline-block size-3.5 align-[-0.125em] transition-colors group-hover:text-[#FF1B2D]" />
-              {intro.hrefLabel}
+              {siteConfig.nowAt}
             </a>{" "}
-            {intro.currentlyWorkingOn}{" "}
+            working on{" "}
             <a
-              href={intro.productHref}
+              href={siteConfig.productUrl}
               target="_blank"
               className="group whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
             >
               <PlaneIcon className="mr-1 inline-block size-4 align-middle transition-colors group-hover:text-[#07955F]" />
-              {intro.productLabel}
+              {siteConfig.product}
             </a>
-            {intro.currentlyDoing}
+            {" — crafting interfaces, managing design systems and building design tooling. Driven by an insatiable curiosity to learn and build things people can use day to day."}
           </p>
           <p className="text-text dark:text-text-muted">
             You can read more{" "}
@@ -55,7 +57,7 @@ export default function Home() {
             </a>{" "}
           </p>
         </section>
-        <SelectedWorkList items={selectedWork} />
+        <SelectedWorkList items={getAllWork()} />
         <ProjectGrid items={projects} />
         <WritingList notes={getAllPosts()} />
       </main>

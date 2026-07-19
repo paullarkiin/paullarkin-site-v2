@@ -1,4 +1,4 @@
-import type { ProjectItem } from "@/lib/site";
+import type { ProjectItem } from "@/lib/projects";
 import { iconMap } from "@/lib/icons";
 import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
 

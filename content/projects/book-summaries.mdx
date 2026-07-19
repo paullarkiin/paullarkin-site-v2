@@ -1,11 +1,186 @@
 ---
 title: "Book summaries"
 date: "2026-01-15"
-summary: "Something about this here."
+description: "React App"
+icon: "chat"
+heroImage: "/img/book-hero.png"
+summary: "An AI-powered reading companion built to explore React and practical AI workflows"
 role: "Design & Development"
 links:
-  - label: "Prototype"
-    url: "#"
+  - label: "Live Demo"
+    url: "####"
 ---
 
-Add content here
+### Overview
+
+Summaries is a personal side project exploring how AI can make discovering books faster and more accessible.
+
+The idea came from my own reading habits. When browsing bookstores, I often find interesting books but don't always know if they are worth adding to my reading list. I wanted a simple way to quickly understand what a book was about, save interesting titles, and decide what to explore further.
+
+<Highlights>
+  <>Built a personal AI-powered book summary application</>
+  <>Used OpenAI to generate structured summaries with consistent output</>
+  <>
+    Practised building a complete product experience from idea to implementation
+  </>
+</Highlights>
+
+---
+
+### Why I Built It
+
+After completing a React course, I wanted to apply what I had learned by building something practical rather than another tutorial project.
+
+I had previously used services like Blinkist and other short-form reading platforms, but I wanted a simpler version focused on my own workflow.
+
+The goal was not to replace these services, but to create a lightweight tool I could use myself while exploring modern frontend development and AI integration.
+
+---
+
+### How It Works
+
+The experience is designed around a simple flow:
+
+1. Find a book
+2. Generate a summary
+3. Decide whether to save it or skip it
+4. Keep a personal collection of interesting reads
+
+> Image:
+> User flow / screenshots
+
+<figure>
+  <img
+    src="/img/book-summary.png"
+    alt="explorations"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+---
+
+### Exploring AI Integration
+
+One of the interesting challenges was making AI output feel consistent.
+
+Instead of simply displaying generated text, I explored how to guide the model towards returning structured content that could reliably be displayed in the interface.
+
+This involved experimenting with:
+
+- Prompt structure
+- Formatting requirements
+- Handling inconsistent responses
+- Creating a predictable user experience
+
+```
+openai
+    .createChatCompletion({
+      model: "gpt-4.1",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a helpful assistant that gives summarizes of books. Respond ONLY in JSON, no extra text.",
+        },
+        {
+          role: "user",
+          content: `
+          Summarize the following book into this JSON format:
+          {
+            "title": "<book title>",
+            "author": "<author name>",
+            "short_summary": "1-2 lines max summary of the book",
+            "summary": "<full summary>",
+          }
+
+          prompt text:
+          ${text}
+        `,
+        },
+      ],
+      max_tokens: 1200,
+      temperature: 0.3,
+    })
+
+```
+
+```
+
+const useBookCoverFetch = (bookTitle: string, authorName: string) => {
+// ... state setup and useEffect ...
+
+const fetchCover = async () => {
+// 1. Try primary API
+try {
+const response = await fetch(`https://bookcover-api.com?title=${title}`);
+if (!response.ok) throw new Error("Primary API failed");
+
+      const data = await response.json();
+      if (data.url) return data.url;
+    } catch (error) {
+      console.warn("Primary failed, trying fallback:", error);
+    }
+
+    // 2. Fallback to Open Library
+    try {
+      const response = await fetch(`https://openlibrary.org/search.json?title=${title}`);
+      const data = await response.json();
+
+      if (data.docs[0]?.cover_i) return `https://covers.openlibrary.org/b/id/${data.docs[0].cover_i}-L.jpg`;
+      if (data.docs[0]?.isbn?.[0]) return `https://covers.openlibrary.org/b/isbn/${data.docs[0].isbn[0]}-L.jpg`;
+    } catch (error) {
+      console.error("Fallback also failed:", error);
+    }
+
+    return null;
+
+};
+
+// ... trigger fetch and return cover state ...
+};
+
+```
+
+---
+
+### Development Learnings
+
+This project was also a chance to experiment with tools and patterns I wanted to use in a real project.
+
+Examples:
+
+- Applying React patterns from my course
+- Exploring AI API integration
+- Testing UI feedback patterns
+- Using Emil's snackbar library in a personal project
+
+---
+
+### Current Status
+
+The project is currently paused while I evaluate the next direction.
+
+Completed:
+
+- Core application flow
+- AI summary generation
+- Book saving functionality
+- Initial UI
+
+Next:
+
+- Replace the current database solution
+- Revisit authentication
+- Finalise the UI experience
+- Continue improving the overall workflow
+
+---
+
+### Reflection
+
+Summaries started as a way to practise React, but became an opportunity to explore how AI can support small personal workflows.
+
+The biggest learning was that adding AI to an application is less about generating content and more about creating a reliable experience around unpredictable outputs.

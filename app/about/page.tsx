@@ -1,7 +1,33 @@
-import { experience } from "@/lib/site";
 import { SectionHead } from "@/components/SectionHead";
 import { BackLink } from "@/components/BackLink";
 import { PhotoGrid } from "@/components/PhotoGrid";
+
+// Uncomment when re-enabling the Experience section below:
+// type ExperienceItem = {
+//   company: string;
+//   role: string;
+//   period: string;
+//   href?: string;
+// };
+//
+// const experience: ExperienceItem[] = [
+//   {
+//     company: "Opera",
+//     role: "Design engineer · MiniPay",
+//     period: "2023 — Present",
+//     href: "https://www.opera.com",
+//   },
+//   {
+//     company: "Salt communications",
+//     role: "Intern software engineer",
+//     period: "2021 — 2022",
+//   },
+//   {
+//     company: "Freelance",
+//     role: "Design + Web development",
+//     period: "2018 - 2023",
+//   },
+// ];
 
 export default function About() {
   return (
