@@ -2,13 +2,21 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMemo } from "react";
+
+import { iconMap } from "@/lib/icons";
+
+const iconNames = Object.keys(iconMap);
 
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Writing", href: "/writing" },
+  // { label: "Gallery", href: "#" },
 ];
+
+// ICON CHANGE IS GOOD BUT NEEDS RE-FACTORED FOR PROD
 
 function navItemActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -25,6 +33,13 @@ export function FloatingBottomNav({
 }: FloatingBottomNavProps) {
   const pathname = usePathname();
   const isDark = variant === "onDark";
+
+  // Re-roll a random icon whenever the active page changes.
+  const RandomIcon = useMemo(
+    () => iconMap[iconNames[Math.floor(Math.random() * iconNames.length)]],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [pathname],
+  );
 
   const shell = isDark
     ? "border-white/12 bg-white/[0.07] shadow-lg"
@@ -54,9 +69,10 @@ export function FloatingBottomNav({
             <Link
               key={item.href}
               href={item.href}
-              className={`${base} ${state}`}
+              className={`${base} ${active ? "flex items-center gap-1.5" : ""} ${state}`}
               aria-current={active ? "page" : undefined}
             >
+              {active ? <RandomIcon aria-hidden /> : null}
               {item.label}
             </Link>
           );

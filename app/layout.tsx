@@ -4,6 +4,7 @@ import { ViewTransition } from "react";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
+import { FloatingBottomNav } from "@/components/FloatingBottomNav";
 
 const manrope = Manrope({
   variable: "--font-manrope",
