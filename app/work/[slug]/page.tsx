@@ -57,6 +57,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
   const metaFields = [
     { label: "Year", value: year },
+    { label: "Status", value: meta.status },
     { label: "Role", value: meta.role },
     { label: "Tools", value: meta.tools },
   ].filter((f) => typeof f.value === "string") as {

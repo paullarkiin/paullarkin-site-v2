@@ -8,6 +8,7 @@ export interface ContentMeta {
   date: string;
   summary?: string;
   readingTime?: string;
+  status?: string;
   heroImage?: string;
   [key: string]: unknown;
 }
@@ -75,6 +76,7 @@ export function getContentBySlug(dir: string, slug: string) {
       title: data.title ?? slug,
       date: data.date ?? "",
       summary: data.summary,
+      status: data.status,
       readingTime: data.readingTime,
       ...data,
       heroImage: isValidImage(data.heroImage) ? data.heroImage : undefined,
