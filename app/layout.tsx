@@ -4,7 +4,7 @@ import { ViewTransition } from "react";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
-import { FloatingBottomNavPill } from "@/components/FloatingBottomNavPill";
+import { FloatingBottomNav } from "@/components/FloatingBottomNav";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ViewTransition>{children}</ViewTransition>
         <Footer />
-        <FloatingBottomNavPill />
+        <FloatingBottomNav />
       </body>
     </html>
   );

@@ -4,9 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, PenLine, User, type LucideIcon } from "lucide-react";
 
-// Floating bottom nav using the "pill" pattern: the active item expands to
-// reveal its label + icon, while inactive items collapse to an icon only.
-
 type NavItem = {
   label: string;
   href: string;
@@ -24,7 +21,7 @@ function navItemActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function FloatingBottomNavPill() {
+export function FloatingBottomNav() {
   const pathname = usePathname();
 
   const shell = "border border-border-strong bg-surface/90 shadow-lg";
@@ -74,8 +71,6 @@ export function FloatingBottomNavPill() {
                   {item.label}
                 </span>
               </span>
-              {/* Screen readers should always hear the label even when the
-                  visual text is collapsed to zero width. */}
               {!active ? <span className="sr-only">{item.label}</span> : null}
             </Link>
           );
