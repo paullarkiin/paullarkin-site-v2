@@ -2,21 +2,27 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
 
 import { iconMap } from "@/lib/icons";
 
 const iconNames = Object.keys(iconMap);
 
+// Deterministically map a pathname to an icon so the same page always shows the
+// same icon. Keeps render pure and avoids server/client hydration mismatches.
+function iconForPath(pathname: string) {
+  let hash = 0;
+  for (let i = 0; i < pathname.length; i++) {
+    hash = (hash * 31 + pathname.charCodeAt(i)) | 0;
+  }
+  return iconMap[iconNames[Math.abs(hash) % iconNames.length]];
+}
+
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Writing", href: "/writing" },
-  // { label: "Gallery", href: "#" },
+  { label: "Playground", href: "#" },
 ];
-
-// ICON CHANGE IS GOOD BUT NEEDS RE-FACTORED FOR PROD
 
 function navItemActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -34,12 +40,7 @@ export function FloatingBottomNav({
   const pathname = usePathname();
   const isDark = variant === "onDark";
 
-  // Re-roll a random icon whenever the active page changes.
-  const RandomIcon = useMemo(
-    () => iconMap[iconNames[Math.floor(Math.random() * iconNames.length)]],
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [pathname],
-  );
+  const ActiveIcon = iconForPath(pathname);
 
   const shell = isDark
     ? "border-white/12 bg-white/[0.07] shadow-lg"
@@ -63,7 +64,7 @@ export function FloatingBottomNav({
               ? "bg-white/14 text-white shadow-sm"
               : "text-neutral-400 hover:bg-white/10 hover:text-neutral-100"
             : active
-              ? "bg-surface-higher text-text"
+              ? "bg-[#f8f8f8] text-text"
               : "text-text-muted hover:bg-surface-higher hover:text-text";
           return (
             <Link
@@ -72,7 +73,7 @@ export function FloatingBottomNav({
               className={`${base} ${active ? "flex items-center gap-1.5" : ""} ${state}`}
               aria-current={active ? "page" : undefined}
             >
-              {active ? <RandomIcon aria-hidden /> : null}
+              {active ? <ActiveIcon aria-hidden /> : null}
               {item.label}
             </Link>
           );
