@@ -22,7 +22,7 @@ export function ProjectCard({
     <Tag
       {...(!item.comingSoon ? { href: item.href, target: "_blank" } : {})}
       className={[
-        "group relative flex h-60 w-[min(248px,78vw)] shrink-0 flex-col overflow-hidden rounded-2xl outline-1 outline-black/5 bg-surface transition-[transform,box-shadow] duration-200 dark:outline-white/10",
+        "group relative flex h-60 w-[min(248px,78vw)] shrink-0 flex-col overflow-hidden rounded-2xl outline-1 outline-border-strong bg-surface transition-[transform,box-shadow] duration-200",
         "hover:z-50 hover:scale-[1.02] hover:shadow-sm",
         "focus-visible:z-50 focus-visible:outline-2 focus-visible:outline-offset-2",
         item.comingSoon ? "cursor-not-allowed" : "",
@@ -32,13 +32,13 @@ export function ProjectCard({
       ].join(" ")}
     >
       <div className="flex-1 p-3 pb-0">
-        <div className="flex h-full items-center justify-center rounded-xl bg-surface-higher/50 outline-1 outline-black/5 dark:outline-white/5">
+        <div className="flex h-full items-center justify-center rounded-xl bg-surface-higher/50 outline-1 outline-border-strong">
           <Icon className="h-10 w-10 text-text" label={item.iconLabel} />
         </div>
       </div>
 
       <div className="flex flex-col gap-1 p-4">
-        <p className="flex items-center gap-1.5 text-[14px] font-medium leading-snug tracking-tight text-text">
+        <p className="flex items-center gap-1.5 text-sm font-medium leading-snug tracking-tight text-text">
           {item.title}
           {item.comingSoon ? (
             <span className="rounded-full bg-surface-higher px-1.5 py-0.5 text-[10px] font-medium text-text-muted opacity-0 transition-opacity duration-200 group-hover:opacity-100">

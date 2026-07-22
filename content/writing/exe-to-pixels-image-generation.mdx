@@ -1,6 +1,6 @@
 ---
 title: "From Exe to Pixels: Image Generation For Malware Classification"
-date: "2026-03-15"
+date: "2020-06-22"
 summary: Exploring how to build a image dataset of windows executables
 ---
 
@@ -17,17 +17,32 @@ My idea was to build a benign image set to compare against the dataset sample im
 As am using a mac i did not direcly have access to windows files so the next best option was to boot up a window virtual machine and copy across the files. This didn't quite work as i had a few issues the VM guest additions instead i uploaded a copy of the program files from the C drive to Google Drive and then download them locally.
 
 <figure>
-  <Image src="/images/writing/exe-to-pixels-image-generation/windows-vm.png" alt="Windows VM" width={2348} height={1560} />
+  <Image
+    src="/images/writing/exe-to-pixels-image-generation/windows-vm.png"
+    alt="Windows VM"
+    width={2348}
+    height={1560}
+  />
 </figure>
 
 Once i had the windows files i sorted them into a folder containing only the executatables for this example.
 
 <figure className="flex flex-col items-center">
-  <Image src="/images/writing/exe-to-pixels-image-generation/windows-program-files.png" alt="Windows Program Files" width={703} height={542} />
+  <Image
+    src="/images/writing/exe-to-pixels-image-generation/windows-program-files.png"
+    alt="Windows Program Files"
+    width={703}
+    height={542}
+  />
 </figure>
 
 <figure className="flex flex-col items-center">
-  <Image src="/images/writing/exe-to-pixels-image-generation/windows-executables.png" alt="Windows Executables" width={658} height={722} />
+  <Image
+    src="/images/writing/exe-to-pixels-image-generation/windows-executables.png"
+    alt="Windows Executables"
+    width={658}
+    height={722}
+  />
 </figure>
 
 ### Image Generation
@@ -61,13 +76,23 @@ png.from_array(g, mode="L").save("/Users/user/Desktop/imgs/ieinstal.png")
 Image Generated example
 
 <figure>
-  <Image src="/images/writing/exe-to-pixels-image-generation/generated-pixel-image.png" alt="Generated pixel image" width={1102} height={1064} />
+  <Image
+    src="/images/writing/exe-to-pixels-image-generation/generated-pixel-image.png"
+    alt="Generated pixel image"
+    width={1102}
+    height={1064}
+  />
 </figure>
 
 Once working I continued processing all sample executables in the folder above making train and validation folders to work with. Born out of interest and curiously I look forward to contining to collecting more sample for the data set and running it through a CNN.
 
 <figure className="flex flex-col items-center">
-  <Image src="/images/writing/exe-to-pixels-image-generation/generated-images.png" alt="Images generated" width={692} height={542} />
+  <Image
+    src="/images/writing/exe-to-pixels-image-generation/generated-images.png"
+    alt="Images generated"
+    width={692}
+    height={542}
+  />
 </figure>
 
 Thanks for reading and I hope this give you a small insight into one method that can be used for malware classification and the tools to create your own datasets.

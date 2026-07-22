@@ -34,12 +34,12 @@ export function WritingList({
               <p className="text-base font-medium text-text">{note.title}</p>
 
               {showSummary && note.summary ? (
-                <p className="text-[14px] text-text-muted leading-normal mt-1 max-w-140">
+                <p className="text-sm text-text-muted leading-normal mt-1 max-w-140">
                   {note.summary}
                 </p>
               ) : null}
 
-              <p className="text-[14px] text-text-muted font-sans mt-1">
+              <p className="text-sm text-text-muted font-sans mt-1">
                 {formatNoteDate(note.date)}
                 {note.readingTime ? ` · ${note.readingTime}` : null}
               </p>

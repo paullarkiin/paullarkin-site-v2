@@ -31,7 +31,7 @@ export function SelectedWorkList({
             >
               <div className="flex gap-3 sm:grid sm:grid-cols-[3.25rem_1fr_minmax(0,1fr)] sm:items-center sm:gap-x-6">
                 {/* Year column — desktop only */}
-                <span className="hidden text-[14px] tabular-nums text-text-muted sm:block">
+                <span className="hidden text-sm tabular-nums text-text-muted sm:block">
                   {showYear ? item.year : "\u00a0"}
                 </span>
 
@@ -46,14 +46,14 @@ export function SelectedWorkList({
                     </div>
 
                     {/* Description — mobile only */}
-                    <p className="mt-1 text-[14px] leading-snug text-text-muted sm:hidden">
+                    <p className="mt-1 text-sm leading-snug text-text-muted sm:hidden">
                       {item.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Description — desktop only */}
-                <p className="hidden text-[14px] leading-snug text-text-muted sm:block sm:text-right">
+                <p className="hidden text-sm leading-snug text-text-muted sm:block sm:text-right">
                   {item.description}
                 </p>
               </div>

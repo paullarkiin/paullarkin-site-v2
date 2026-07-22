@@ -10,6 +10,7 @@ export interface ContentMeta {
   readingTime?: string;
   status?: string;
   heroImage?: string;
+  draft?: boolean;
   [key: string]: unknown;
 }
 
@@ -44,7 +45,7 @@ export function getAllContent(dir: string): ContentMeta[] {
 
   return files
     .filter((file) => /\.(md|mdx)$/.test(file))
-    .map((file) => {
+    .map((file): ContentMeta => {
       const slug = file.replace(/\.(md|mdx)$/, "");
       const raw = fs.readFileSync(path.join(fullPath, file), "utf-8");
       const { data } = matter(raw);
@@ -58,6 +59,8 @@ export function getAllContent(dir: string): ContentMeta[] {
         ...data,
       };
     })
+    // Hide drafts in production builds; keep them visible in `next dev` for previewing.
+    .filter((item) => process.env.NODE_ENV !== "production" || item.draft !== true)
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 }
 

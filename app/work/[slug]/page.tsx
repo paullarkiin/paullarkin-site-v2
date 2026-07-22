@@ -32,7 +32,7 @@ export async function generateMetadata({
 function MetaField({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-[14px] text-text-muted mb-1">{label}</p>
+      <p className="text-sm text-text-muted mb-1">{label}</p>
       <p className="text-sm text-text">{value}</p>
     </div>
   );
@@ -93,7 +93,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
             ))}
             {links.length > 0 && (
               <div>
-                <p className="text-[14px] text-text-muted mb-1">Links</p>
+                <p className="text-sm text-text-muted mb-1">Links</p>
                 <div className="flex flex-col gap-1">
                   {links.map((link, idx) => (
                     <a

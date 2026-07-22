@@ -38,6 +38,11 @@ export default async function WritingPost({ params }: { params: Params }) {
     notFound();
   }
 
+  // Drafts are previewable in dev but 404 in production.
+  if (process.env.NODE_ENV === "production" && post.meta.draft === true) {
+    notFound();
+  }
+
   const { default: Content } = await import(`@/content/writing/${slug}.mdx`);
 
   return (

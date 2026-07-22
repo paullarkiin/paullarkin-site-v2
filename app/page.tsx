@@ -59,7 +59,7 @@ export default function Home() {
         </section>
         <SelectedWorkList items={getAllWork()} />
         <ProjectGrid items={projects} />
-        <WritingList notes={getAllPosts()} />
+        <WritingList notes={getAllPosts().slice(0, 3)} />
       </main>
     </div>
   );
