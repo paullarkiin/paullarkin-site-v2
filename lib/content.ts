@@ -10,10 +10,7 @@ export interface ContentMeta {
   readingTime?: string;
   status?: string;
   heroImage?: string;
-<<<<<<< HEAD
   draft?: boolean;
-=======
->>>>>>> origin/main
   [key: string]: unknown;
 }
 

@@ -9,7 +9,6 @@ export default function About() {
           <SectionHead label="About" />
 
           <div className="space-y-6 text-base leading-relaxed text-text pt-3.5">
-          <div className="space-y-6 text-base leading-relaxed text-text pt-3.5">
             <p>
               I&apos;m Paul, Irish, living in Sweden. I&apos;m a designer and
               developer inspired by purposeful design, with a great love for
@@ -22,25 +21,9 @@ export default function About() {
               engineering closer together — working across teams, building
               product concepts, and informing product decisions through
               prototyping and internal tooling.
-              I&apos;m Paul, Irish, living in Sweden. I&apos;m a designer and
-              developer inspired by purposeful design, with a great love for
-              simplicity.
             </p>
 
             <p>
-              Right now I&apos;m a UI engineer at Opera, working primarily on
-              MiniPay. More recently, I&apos;ve focused on bringing design and
-              engineering closer together — working across teams, building
-              product concepts, and informing product decisions through
-              prototyping and internal tooling.
-            </p>
-
-            <p>
-              Before that, I was a chef until returning to education, where I
-              fell into a cybersecurity rabbit hole and thought I might become a
-              malware analyst. That was until COVID, when I reconnected with
-              design and interned as a software engineer at Salt Communications,
-              combining all three worlds.
               Before that, I was a chef until returning to education, where I
               fell into a cybersecurity rabbit hole and thought I might become a
               malware analyst. That was until COVID, when I reconnected with

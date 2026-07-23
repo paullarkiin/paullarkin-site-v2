@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllWork, getWorkBySlug } from "@/lib/work";
-import { getAllWork, getWorkBySlug } from "@/lib/work";
 import { BackLink } from "@/components/BackLink";
-import { HeroImage } from "@/components/HeroImage";
-import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
 import { HeroImage } from "@/components/HeroImage";
 import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
 
 export function generateStaticParams() {
-  return getAllWork().map((item) => ({ slug: item.slug }));
   return getAllWork().map((item) => ({ slug: item.slug }));
 }
 
@@ -23,7 +19,6 @@ export async function generateMetadata({
   const { slug } = await params;
 
   try {
-    const post = getWorkBySlug(slug);
     const post = getWorkBySlug(slug);
     return {
       title: `${post.meta.title} | Paul Larkin`,
@@ -49,7 +44,6 @@ export default async function ProjectPage({ params }: { params: Params }) {
   let post;
   try {
     post = getWorkBySlug(slug);
-    post = getWorkBySlug(slug);
   } catch {
     notFound();
   }
@@ -74,54 +68,18 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const links = Array.isArray(meta.links)
     ? (meta.links as { label: string; url: string }[])
     : [];
-  const { default: Content } = await import(`@/content/projects/${slug}.mdx`);
-
-  const year = meta.date
-    ? new Date(meta.date as string).getFullYear().toString()
-    : undefined;
-
-  const metaFields = [
-    { label: "Year", value: year },
-    { label: "Status", value: meta.status },
-    { label: "Role", value: meta.role },
-    { label: "Tools", value: meta.tools },
-  ].filter((f) => typeof f.value === "string") as {
-    label: string;
-    value: string;
-  }[];
-
-  const links = Array.isArray(meta.links)
-    ? (meta.links as { label: string; url: string }[])
-    : [];
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <article className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 pt-24">
       <article className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 pt-24">
         <BackLink />
 
         <div className="mb-10">
           <HeroImage src={meta.heroImage} alt={meta.title} />
         </div>
-        <div className="mb-10">
-          <HeroImage src={meta.heroImage} alt={meta.title} />
-        </div>
 
         <h1 className="text-2xl font-bold text-text">{meta.title}</h1>
-        <h1 className="text-2xl font-bold text-text">{meta.title}</h1>
 
-        {typeof meta.summary === "string" && (
-          <p className="text-base text-text-muted leading-relaxed mt-2">
-            {meta.summary}
-          </p>
-        )}
-
-        {(metaFields.length > 0 || links.length > 0) && (
-          <div className="flex flex-wrap gap-x-8 gap-y-4 border-t border-border pt-4 mt-4">
-            {metaFields.map((f) => (
-              <MetaField key={f.label} label={f.label} value={f.value} />
-            ))}
-            {links.length > 0 && (
         {typeof meta.summary === "string" && (
           <p className="text-base text-text-muted leading-relaxed mt-2">
             {meta.summary}
@@ -154,11 +112,8 @@ export default async function ProjectPage({ params }: { params: Params }) {
             )}
           </div>
         )}
-        )}
 
         {post.content.trim() && (
-          <div className="prose dark:prose-invert max-w-none text-text border-t border-border pt-10 mt-10">
-            <Content />
           <div className="prose dark:prose-invert max-w-none text-text border-t border-border pt-10 mt-10">
             <Content />
           </div>
