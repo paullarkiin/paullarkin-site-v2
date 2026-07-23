@@ -48,7 +48,7 @@ export default async function WritingPost({ params }: { params: Params }) {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
       <article className="flex flex-1 w-full max-w-3xl flex-col pt-32 px-8 sm:px-16 ">
-        <BackLink />
+        <BackLink href="/writing" />
         <header className="mb-8">
           <h1 className="text-2xl font-bold text-text">{post.meta.title}</h1>
           {post.meta.date && (

@@ -67,7 +67,7 @@ export function FloatingBottomNav() {
                 className={`size-4.5 shrink-0${
                   item.iconClassName ? ` ${item.iconClassName}` : ""
                 }`}
-                strokeWidth={active ? 2.25 : 1.75}
+                strokeWidth={active ? 2.0 : 1.75}
                 aria-hidden
               />
               {/* Grid-columns trick: animate from 0fr -> 1fr to reveal the

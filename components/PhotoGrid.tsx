@@ -4,9 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 
 const photos = [
-  { src: "/images/shared/photos/pride.webp", alt: "Pride parade" },
-  { src: "/images/shared/photos/lake.webp", alt: "Lake view" },
-  { src: "/images/shared/photos/hackathon.webp", alt: "Hackathon" },
+  { src: "/images/about/pride.webp", alt: "Pride parade" },
+  { src: "/images/about/lake.webp", alt: "Lake view" },
+  { src: "/images/about/hackathon.webp", alt: "Hackathon" },
 ];
 
 export function PhotoGrid() {

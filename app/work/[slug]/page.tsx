@@ -71,7 +71,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <article className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 pt-24">
+      <article className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 py-32">
         <BackLink />
 
         <div className="mb-10">
@@ -87,7 +87,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
         )}
 
         {(metaFields.length > 0 || links.length > 0) && (
-          <div className="flex flex-wrap gap-x-8 gap-y-4 border-t border-border pt-4 mt-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-4 border-t border-border pt-4 mt-4">
             {metaFields.map((f) => (
               <MetaField key={f.label} label={f.label} value={f.value} />
             ))}
