@@ -8,7 +8,7 @@
   --text-muted: #656564;
   --surface: #ffffff;
   --surface-higher: #f0f0ef;
-  --border-strong: rgba(0, 0, 0, 0.06);
+  --border-strong: hsla(0, 0%, 0%, 0.04);
   --border: #e8e8e8;
 }
 
@@ -20,7 +20,7 @@
     --text-muted: #b0b0b0;
     --surface: #262629;
     --surface-higher: #2f2f33;
-    --border-strong: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.06);
     --border: #3a3a3e;
   }
 }

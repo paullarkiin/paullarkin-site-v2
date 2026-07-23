@@ -8,11 +8,19 @@ type NavItem = {
   label: string;
   href: string;
   icon: LucideIcon;
+  // Optional optical adjustment for glyphs that read smaller than the others
+  // at the shared size (e.g. Lucide's User sits small in its box).
+  iconClassName?: string;
 };
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/", icon: Home },
-  { label: "About", href: "/about", icon: User },
+  {
+    label: "About",
+    href: "/about",
+    icon: User,
+    iconClassName: "scale-105",
+  },
   { label: "Writing", href: "/writing", icon: PenLine },
 ];
 
@@ -56,7 +64,9 @@ export function FloatingBottomNav() {
               aria-current={active ? "page" : undefined}
             >
               <Icon
-                className="size-4.5 shrink-0"
+                className={`size-4.5 shrink-0${
+                  item.iconClassName ? ` ${item.iconClassName}` : ""
+                }`}
                 strokeWidth={active ? 2.25 : 1.75}
                 aria-hidden
               />
