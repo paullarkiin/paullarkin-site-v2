@@ -6,7 +6,7 @@ export default function Writing() {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <main className="flex w-full max-w-3xl flex-1 flex-col px-8 p-32 sm:px-16 sm:items-start">
+      <main className="flex w-full max-w-3xl flex-1 flex-col px-6 py-32 sm:px-16 sm:items-start">
         <header className="mb-14 max-w-2xl">
           <div className="mb-4 flex items-center gap-3">
             <p className="text-sm text-text-muted">Writing</p>
@@ -20,7 +20,6 @@ export default function Writing() {
             things I&apos;ve learnt and built along the way.
           </p>
         </header>
-
         <WritingArchive posts={posts} />
       </main>
     </div>

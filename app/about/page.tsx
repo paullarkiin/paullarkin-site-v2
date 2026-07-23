@@ -4,7 +4,7 @@ import { PhotoGrid } from "@/components/PhotoGrid";
 export default function About() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 p-32 sm:items-start">
+      <main className="flex flex-1 w-full max-w-3xl flex-col px-6 sm:px-16 p-32 sm:items-start">
         <section className="mb-24 w-full">
           <SectionHead label="About" />
 

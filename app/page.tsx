@@ -14,7 +14,7 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col px-8 sm:px-16 p-32 sm:items-start">
+      <main className="flex flex-1 w-full max-w-3xl flex-col px-6 sm:px-16 p-32 sm:items-start">
         <Header />
         <section className="mb-32">
           <p className="mb-4 text-text dark:text-text-muted">
@@ -36,7 +36,9 @@ export default function Home() {
               <PlaneIcon className="mr-1 inline-block size-4 align-middle transition-colors group-hover:text-[#07955F]" />
               {siteConfig.product}
             </a>
-            {" — crafting interfaces, managing design systems and building design tooling. Driven by an insatiable curiosity to learn and build things people can use day to day."}
+            {
+              " — crafting interfaces, managing design systems and building design tooling. Driven by an insatiable curiosity to learn and build things people can use day to day."
+            }
           </p>
           <p className="text-text dark:text-text-muted">
             You can read more{" "}

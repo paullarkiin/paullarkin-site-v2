@@ -13,7 +13,7 @@ export function PhotoGrid() {
   const [loaded, setLoaded] = useState<boolean[]>(photos.map(() => false));
 
   return (
-    <div className="grid grid-cols-3 gap-2 pt-12">
+    <div className="grid grid-cols-1 gap-2 pt-12 md:grid-cols-3 sm:grid-cols-3">
       {photos.map(({ src, alt }, i) => (
         <div
           key={src}
