@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #f8f8f8;
@@ -32,11 +33,17 @@
   /* Semantic text colors */
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
   /* Surface colors */
+  --color-surface: var(--surface);
+  --color-surface-higher: var(--surface-higher);
   --color-surface: var(--surface);
   --color-surface-higher: var(--surface-higher);
 
   /* Border colors */
+  --color-border-strong: var(--border-strong);
+  --color-border: var(--border);
   --color-border-strong: var(--border-strong);
   --color-border: var(--border);
 
