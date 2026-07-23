@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { PostMeta } from "@/lib/posts";
-import { formatNoteDate } from "@/lib/format";
+import { formatDate } from "@/lib/format";
 import { IconBadge } from "@/components/IconBadge";
 import { SectionHead } from "@/components/SectionHead";
 
@@ -40,7 +40,7 @@ export function WritingList({
               ) : null}
 
               <p className="text-sm text-text-muted font-sans mt-1">
-                {formatNoteDate(note.date)}
+                {formatDate(note.date)}
                 {note.readingTime ? ` · ${note.readingTime}` : null}
               </p>
             </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
-import { formatNoteDate } from "@/lib/format";
+import { formatDate } from "@/lib/format";
 import { BackLink } from "@/components/BackLink";
 
 export function generateStaticParams() {
@@ -53,7 +53,7 @@ export default async function WritingPost({ params }: { params: Params }) {
           <h1 className="text-2xl font-bold text-text">{post.meta.title}</h1>
           {post.meta.date && (
             <p className="text-sm text-text-muted mt-2">
-              {formatNoteDate(post.meta.date)}
+              {formatDate(post.meta.date, "full")}
             </p>
           )}
         </header>

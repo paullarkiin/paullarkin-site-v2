@@ -1,18 +1,6 @@
 import Link from "next/link";
 import type { PostMeta } from "@/lib/posts";
-
-function formatPublicationDate(iso: string): string {
-  const date = new Date(iso);
-
-  if (Number.isNaN(date.getTime())) return iso;
-
-  return new Intl.DateTimeFormat("en-US", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(date);
-}
+import { formatDate } from "@/lib/format";
 
 export function WritingArchive({ posts }: { posts: PostMeta[] }) {
   return (
@@ -30,7 +18,7 @@ export function WritingArchive({ posts }: { posts: PostMeta[] }) {
               </h2>
               <p className="hidden shrink-0 text-xs text-text-muted sm:block">
                 <time dateTime={post.date}>
-                  {formatPublicationDate(post.date)}
+                  {formatDate(post.date, "full")}
                 </time>
                 {post.readingTime ? ` · ${post.readingTime}` : null}
               </p>
@@ -41,7 +29,9 @@ export function WritingArchive({ posts }: { posts: PostMeta[] }) {
               </p>
             ) : null}
             <p className="mt-2 text-xs text-text-muted sm:hidden">
-              <time dateTime={post.date}>{formatPublicationDate(post.date)}</time>
+              <time dateTime={post.date}>
+                {formatDate(post.date, "full")}
+              </time>
               {post.readingTime ? ` · ${post.readingTime}` : null}
             </p>
           </Link>
