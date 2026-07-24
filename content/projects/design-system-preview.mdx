@@ -5,16 +5,16 @@ description: "Internal tooling"
 icon: "grid"
 heroImage: "/images/projects/design-system-preview/hero.png"
 summary: "Bridging the gap between design and engineering through live component previews"
-role: "Product Design"
+role: "Product Designer"
 ---
 
 ### Overview
 
-Design System Preview was an internal tool created to help mobile teams better understand how design system components translated from Figma into implementation.
+Design System Preview was an internal tool that made it easier to explore how our design system had been implemented in the Android codebase.
 
-The goal was to create a shared reference point where designers and engineers could review components, themes, and typography together — improving consistency and making implementation decisions easier to discuss.
+Designers mainly worked with components and visual states in Figma, while engineers worked with the actual implementation. The preview gave both teams a shared place to look at what had been built, compare it with the designs, and discuss any differences.
 
-Due to the internal nature of the project, I can only share selected parts of the work.
+**_Due to the internal nature of the project, I can only share selected parts of the work._**
 
 <Highlights>
   <>Designed the previewing experence linking Figma to the Android code base.</>
@@ -26,26 +26,29 @@ Due to the internal nature of the project, I can only share selected parts of th
 
 ### The Challenge
 
-Design systems often live across different environments.
+The challenge was finding a way to make the Android implementation more visible to designers, so they could check it against the design system in Figma and spot anything that had drifted or been interpreted differently.
 
-Designers work primarily in Figma, while engineers work with code and implementation details. This can create gaps where components may look similar but behave differently across products.
+It also needed to give designers and engineers a clearer way to discuss the system using the same terminology.
 
-The challenge was finding a way to make implementation more visible and create a shared language between design and engineering teams.
-
+<figure>
+  <img
+    src="/images/projects/design-system-preview/components.png"
+    alt="Components"
+    width={2400}
+    height={1600}
+    loading="eager"
+    className="w-full rounded-2xl"
+  />
+</figure>
 ---
 
 ### The Approach
 
-I designed a live preview environment that connected our design system concepts with their Android implementation.
+I spoke with designers and engineers to understand what was difficult to check, what information was missing, and what they needed from a preview tool.
 
-Rather than treating design and code as separate sources of truth, the tool allowed teams to explore the relationship between the two and identify differences earlier in the process.
+From there, I explored different concepts for a live environment, looking at how components, states, typography, themes, and design tokens could be organised and presented.
 
-The focus was on:
-
-- Improving visibility between design and implementation
-- Creating shared terminology across disciplines
-- Helping designers better understand technical constraints
-- Supporting more consistent product experiences
+The concepts were refined into a tool where designers could explore the real Android implementation and compare it with the design system in Figma. Working closely with engineers also helped me understand how the system was structured in code and present that information in a way that was useful to designers.
 
 <figure>
   <img
@@ -60,65 +63,20 @@ The focus was on:
 
 ---
 
-### Key Features
-
-// if i even want this section, combine into one paragraph and use the image here.
-
-#### Components
-
-A dedicated space to explore design system components and their different states, allowing teams to compare intended designs with implemented behaviour.
-
-#### Design tokens
-
-A view of the foundational values behind the system, including:
-
-- Colour
-- Spacing
-- Typography
-- Theme values
-
-#### Typography
-
-A way to review how typography decisions translated from design into the Android implementation.
-
-<figure>
-  <img
-    src="/images/projects/design-system-preview/components.png"
-    alt="Components"
-    width={2400}
-    height={1600}
-    loading="eager"
-    className="w-full rounded-2xl"
-  />
-</figure>
----
-
-### Working Closer With Engineering
-
-A key part of the project was creating a closer relationship between design and engineering.
-
-By working more directly with Android implementation concepts and terminology, I was able to better understand technical constraints while helping designers become more familiar with how the system was built.
-
-The goal was not for designers to become engineers, but to create enough shared understanding that both teams could make better decisions together.
-
----
-
 ### Outcome
 
-The project helped identify and improve gaps on both sides of the design system.
+The project helped uncover places where the design system had started to drift between Figma and the Android implementation.
 
-It highlighted:
+It also gave designers more insight into how components were built and the terminology engineers used to describe them. This made it easier to find components that needed clearer definitions and discuss changes while looking at the real implementation.
 
-- Differences between design and implementation
-- Areas where components needed clearer definitions
-- Opportunities to improve collaboration around the design system
-
-More importantly, it helped start conversations around how design and engineering could align more effectively.
+The preview gave design and engineering a more practical way to review the system together as it continued to evolve.
 
 ---
 
 ### Reflection
 
-This project reinforced that a design system is more than a collection of components — it is a shared language between teams.
+Designing this tool gave me a much better understanding of how the design system was structured in the Android codebase and how engineers worked with components, themes, and tokens.
 
-By making implementation visible, Design System Preview helped move conversations from comparing screenshots towards understanding how products are built.
+It also showed me the value of involving both designers and engineers early in the process. Their different perspectives helped shape what information the preview needed to show and how it should be organised.
+
+The project pushed me to think beyond the design of the interface itself and consider how the tool could make technical concepts easier to understand without hiding the complexity behind them.

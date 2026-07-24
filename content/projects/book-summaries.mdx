@@ -6,19 +6,14 @@ icon: "chat"
 status: "WIP"
 heroImage: "/images/projects/book-summaries/hero.png"
 summary: "An AI-powered reading companion built to explore React and practical AI workflows"
-role: "Design & Development"
-links:
-  - label: "Live Demo"
-    url: "#"
-  - label: "Github"
-    url: "#"
+role: "Solo Design & Development"
 ---
 
 ### Overview
 
 Summaries is a personal side project exploring how AI can make discovering books faster and more accessible.
 
-The idea came from my own reading habits. When browsing bookstores, I often find interesting books but don't always know if they are worth adding to my reading list. I wanted a simple way to quickly understand what a book was about, save interesting titles, and decide what to explore further.
+The idea came from my own reading habits. When browsing bookstores, I often find interesting books but don't always know if they are worth buying. I wanted a simple way to quickly understand what a book was about, save interesting titles and write inital thoughts that I could come back too.
 
 <Highlights>
   <>Built a personal AI-powered book summary application</>
@@ -32,17 +27,21 @@ The idea came from my own reading habits. When browsing bookstores, I often find
 
 ### Why I Built It
 
-After completing a React course, I wanted to apply what I had learned by building something practical rather than another tutorial project.
+At the time, I had recently completing a React course, Having the idea floating around it gave me a good chance to apply what I had learned by building something practical for myself.
 
-I had previously used services like Blinkist and other short-form reading platforms, but I wanted a simpler version focused on my own workflow.
-
-The goal was not to replace these services, but to create a lightweight tool I could use myself while exploring modern frontend development and AI integration.
+Inspiration came from services like Blinkist and other short-form reading platforms that I had previously used but I wanted a simpler version focused on my own goals.
 
 ---
 
 ### How It Works
 
-The experience is designed around a simple flow:
+Practically it a minamistic looking frontend that puts the focus on the books.
+
+This is done with a grid layout, supabase backend (which will be swapped out) and an API server that sends request to OpenAI complications API endpoint and returns structured JSON.
+
+When the user saves a book they grid item with an inner page which contains the same information as the modal and along with the ability to add comments. Which has been added but not styled which is why it not shared here.
+
+The whole experience is designed around a simple flow:
 
 1. Find a book
 2. Generate a summary
@@ -62,18 +61,19 @@ The experience is designed around a simple flow:
 
 ---
 
-### Exploring AI Integration
+### Challenges
+
+<h4 className="mt-8"> Prompt engineering </h4>
 
 One of the interesting challenges was making AI output feel consistent.
 
-Instead of simply displaying generated text, I explored how to guide the model towards returning structured content that could reliably be displayed in the interface.
+Instead of simply displaying generated text, I looked into how to return structured content that I mentioned about. This was key to the user experence of the project. It took a few attempts but am now happy with the output. Below you can see the final code used on the API server.
 
-This involved experimenting with:
+The experimenting involved:
 
 - Prompt structure
 - Formatting requirements
 - Handling inconsistent responses
-- Creating a predictable user experience
 
 ```
 openai
@@ -107,19 +107,11 @@ openai
 
 ```
 
----
+<h4 className="mt-12"> Cover fallback </h4>
 
-### Development Learnings
+Another challenge to do with user experence of the project was fetching and handling book covers these API's are not very well documented if at all. They could accept and use different serch parameters to complete a cover look up. This impacts the ability to find the book cover.
 
-This project was also a chance to experiment with tools and patterns I wanted to use in a real project.
-
-Examples:
-
-- Applying React patterns from my course
-- Exploring AI API integration
-- Testing UI feedback patterns
-- Fallback pattern for book covers
-- Using Emil's [Sonner](https://sonner.emilkowal.ski/) snackbar library in a personal project
+To help improve the success rate of a book cover being found I would check the first as it had a better results at the time. If this failed it would fallback to the second and if nothing was found it would show the default placeholder.
 
 ```
 
@@ -160,6 +152,19 @@ if (!response.ok) throw new Error("Primary API failed");
 
 ---
 
+### Other experiments
+
+A quick overview of other things I also had the chance to experiment with. Tools and patterns I wanted to use in a real project.
+
+Examples:
+
+- Applying React UI patterns.
+- Exploring newer AI API integration.
+- Testing UI feedback patterns.
+- Emil's [Sonner](https://sonner.emilkowal.ski/) snackbar library.
+
+---
+
 ### Current Status
 
 The project is currently paused while I evaluate the next direction.
@@ -176,12 +181,9 @@ Next:
 - Replace the current database solution
 - Revisit authentication
 - Finalise the UI experience
-- Continue improving the overall workflow
 
 ---
 
 ### Reflection
 
-Summaries started as a way to practise React, but became an opportunity to explore how AI can support small personal workflows.
-
-The biggest learning was that adding AI to an application is less about generating content and more about creating a reliable experience around unpredictable outputs.
+Summaries was a great project to really learn from, taking my time to build something for myself and others in the future. Covering all the core aspect of a modern frontend app and experimenting with new tech without any risk. I look forward continuing to improve this project and use it.
