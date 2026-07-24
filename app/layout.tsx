@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { ViewTransition } from "react";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/lib/site";
@@ -33,6 +34,7 @@ export default function RootLayout({
         <ViewTransition>{children}</ViewTransition>
         <Footer />
         <FloatingBottomNav />
+        <Analytics />
       </body>
     </html>
   );
