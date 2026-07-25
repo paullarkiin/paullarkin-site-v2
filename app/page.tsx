@@ -17,7 +17,7 @@ export default function Home() {
       <main className="flex flex-1 w-full max-w-3xl flex-col px-6 sm:px-16 p-32 sm:items-start">
         <Header />
         <section className="mb-32">
-          <p className="mb-4 text-text dark:text-text-muted">
+          <p className="mb-4 text-text dark:text-text-muted ">
             Currently at{" "}
             <a
               href={siteConfig.nowAtUrl}
@@ -37,7 +37,7 @@ export default function Home() {
               {siteConfig.product}
             </a>
             {
-              " — crafting interfaces, managing design systems and building design tooling. Driven by an insatiable curiosity to learn and build things people can use day to day."
+              " — crafting interfaces and building design tooling. I enjoy making useful things and care a lot about making them feel simple and considered."
             }
           </p>
           <p className="text-text dark:text-text-muted">
@@ -56,7 +56,8 @@ export default function Home() {
             >
               <EmailIcon className="mr-1 inline-block size-4 align-middle" />
               email
-            </a>{" "}
+            </a>
+            {"."}
           </p>
         </section>
         <SelectedWorkList items={getAllWork()} />

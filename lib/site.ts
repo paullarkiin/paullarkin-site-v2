@@ -11,5 +11,3 @@ export const siteConfig = {
   github: "https://github.com/paullarkiin",
   copyright: `© ${new Date().getFullYear()} Paul Larkin`,
 };
-
-// this can be filtered into the correct places and the file deleted later
