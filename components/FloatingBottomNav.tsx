@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, PenLine, User, type LucideIcon } from "lucide-react";
+import {
+  Home,
+  PenLine,
+  PanelsTopLeft,
+  User,
+  type LucideIcon,
+} from "lucide-react";
 
 type NavItem = {
   label: string;
@@ -11,17 +17,24 @@ type NavItem = {
   // Optional optical adjustment for glyphs that read smaller than the others
   // at the shared size (e.g. Lucide's User sits small in its box).
   iconClassName?: string;
+  inactiveIconClassName?: string;
 };
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/", icon: Home },
+  { label: "Work", href: "/work", icon: PanelsTopLeft },
   {
     label: "About",
     href: "/about",
     icon: User,
     iconClassName: "scale-105",
   },
-  { label: "Writing", href: "/writing", icon: PenLine },
+  {
+    label: "Writing",
+    href: "/writing",
+    icon: PenLine,
+    inactiveIconClassName: "scale-95 translate-y-0.5",
+  },
 ];
 
 function navItemActive(pathname: string, href: string) {
@@ -64,8 +77,12 @@ export function FloatingBottomNav() {
               aria-current={active ? "page" : undefined}
             >
               <Icon
-                className={`size-4.5 shrink-0${
+                className={`size-4.5 shrink-0 transition-transform duration-300 ease-out${
                   item.iconClassName ? ` ${item.iconClassName}` : ""
+                }${
+                  !active && item.inactiveIconClassName
+                    ? ` ${item.inactiveIconClassName}`
+                    : ""
                 }`}
                 strokeWidth={active ? 2.0 : 1.75}
                 aria-hidden

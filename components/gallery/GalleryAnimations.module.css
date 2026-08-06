@@ -1,0 +1,208 @@
+.gradientStage,
+.blobStage {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  place-items: center;
+  overflow: hidden;
+  background: var(--surface-higher);
+}
+
+.gradientStage {
+  padding: clamp(1.5rem, 8vw, 4rem);
+}
+
+.gradientTile {
+  width: min(56%, 18.75rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: clamp(0.75rem, 2.5vw, 1rem);
+  background: #f5f9ff;
+  box-shadow:
+    0 1rem 3rem rgb(42 51 71 / 8%),
+    inset 0 0 0 1px rgb(42 51 71 / 4%);
+}
+
+.gradientWash {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgb(255 160 180 / 80%) 0%,
+      rgb(255 180 200 / 40%) 25%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgb(180 160 255 / 75%) 0%,
+      rgb(200 180 255 / 35%) 25%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgb(160 210 255 / 75%) 0%,
+      rgb(180 220 255 / 35%) 25%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, #fef5f8, #f8f9fe, #f5f9ff);
+  background-size: 220% 220%;
+  filter: blur(clamp(1.5rem, 5vw, 2.5rem)) saturate(1.1);
+  transform: scale(1.18);
+  animation: gradientDrift 12s ease-in-out infinite;
+}
+
+.blobStage {
+  padding: clamp(1.25rem, 7vw, 3rem);
+}
+
+.phoneFrame {
+  width: min(34%, 13.75rem);
+  aspect-ratio: 375 / 740;
+  padding: clamp(0.3rem, 1.3vw, 0.7rem);
+  overflow: hidden;
+  border-radius: clamp(1rem, 4.5vw, 2.4rem);
+  background: #1a1a1a;
+  box-shadow: 0 1.25rem 3.75rem rgb(0 0 0 / 24%);
+}
+
+.phoneScreen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: clamp(0.7rem, 3.4vw, 1.75rem);
+  background: #fff;
+}
+
+.blobField {
+  position: absolute;
+  inset: 54% 0 0;
+}
+
+.blob {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  opacity: 0.65;
+  filter: blur(clamp(1rem, 4vw, 3rem));
+  will-change: transform;
+}
+
+.blobOne {
+  top: -70%;
+  left: -58%;
+  width: 190%;
+  background: radial-gradient(
+    circle,
+    rgb(255 160 180 / 95%) 0%,
+    rgb(255 180 200 / 50%) 50%,
+    transparent 70%
+  );
+  animation: blobDriftOne 20s ease-in-out infinite;
+}
+
+.blobTwo {
+  top: -52%;
+  right: -55%;
+  width: 175%;
+  background: radial-gradient(
+    circle,
+    rgb(180 160 255 / 85%) 0%,
+    rgb(200 180 255 / 50%) 50%,
+    transparent 70%
+  );
+  animation: blobDriftTwo 18s ease-in-out infinite;
+}
+
+.blobThree {
+  bottom: -78%;
+  left: 4%;
+  width: 160%;
+  background: radial-gradient(
+    circle,
+    rgb(160 210 255 / 85%) 0%,
+    rgb(180 220 255 / 50%) 50%,
+    transparent 70%
+  );
+  animation: blobDriftThree 22s ease-in-out infinite;
+}
+
+@keyframes gradientDrift {
+  0%,
+  100% {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 50% 50%;
+  }
+
+  33% {
+    background-position: 30% 40%, 70% 60%, 20% 80%, 50% 50%;
+  }
+
+  66% {
+    background-position: 60% 20%, 40% 80%, 80% 40%, 50% 50%;
+  }
+}
+
+@keyframes blobDriftOne {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(14%, 10%) scale(1.1);
+  }
+
+  50% {
+    transform: translate(7%, 20%) scale(0.95);
+  }
+
+  75% {
+    transform: translate(-7%, 13%) scale(1.05);
+  }
+}
+
+@keyframes blobDriftTwo {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(-11%, 15%) scale(1.15);
+  }
+
+  50% {
+    transform: translate(-22%, 7%) scale(0.9);
+  }
+
+  75% {
+    transform: translate(-15%, -4%) scale(1.08);
+  }
+}
+
+@keyframes blobDriftThree {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(-14%, -8%) scale(1.12);
+  }
+
+  50% {
+    transform: translate(10%, -16%) scale(0.88);
+  }
+
+  75% {
+    transform: translate(-6%, -12%) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradientWash,
+  .blob {
+    animation: none;
+  }
+}
