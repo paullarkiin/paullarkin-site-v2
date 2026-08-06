@@ -9,7 +9,7 @@ export default function About() {
       <section className="mb-24 w-full">
         <Header title="About" />
 
-        <div className="space-y-6 text-base leading-relaxed">
+        <div className="space-y-6 mt-8 text-base leading-relaxed">
           <p>
             I&apos;m Paul, Irish, living in Sweden. I&apos;m a designer and
             developer inspired by purposeful design, with a great love for
@@ -19,17 +19,17 @@ export default function About() {
           <p>
             Right now I&apos;m a UI engineer at Opera, working primarily on
             MiniPay. More recently, I&apos;ve focused on bringing design and
-            engineering closer together — working across teams, building
-            product concepts, and informing product decisions through
-            prototyping and internal tooling.
+            engineering closer together — working across teams, building product
+            concepts, and informing product decisions through prototyping and
+            internal tooling.
           </p>
 
           <p>
             Before that, I was a chef until returning to education, where I fell
-            into a cybersecurity rabbit hole and thought I might become a malware
-            analyst. That was until COVID, when I reconnected with design and
-            interned as a software engineer at Salt Communications, combining all
-            three worlds.
+            into a cybersecurity rabbit hole and thought I might become a
+            malware analyst. That was until COVID, when I reconnected with
+            design and interned as a software engineer at Salt Communications,
+            combining all three worlds.
           </p>
 
           <p>
