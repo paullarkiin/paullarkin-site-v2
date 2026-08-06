@@ -19,8 +19,8 @@ I designed and developed a central dashboard where people could browse research,
 **_Due to the internal nature of the project, I can only share selected parts of the work._**
 
 <Highlights>
-  <>Centralised user research to improve sharability and discoverability.</>
-  <>Used Notion developer APIs so managing content stayed easy and familiar.</>
+  <>Centralised user research to improve shareability and discoverability.</>
+  <>Used the Notion API so managing content stayed easy and familiar.</>
   <>Added AI-generated summaries to help users grasp key findings fast.</>
 </Highlights>
 ---
@@ -43,7 +43,7 @@ After initial feedback, I created a proof of concept to explore:
 - How users would discover content
 - How existing tools could support the experience
 
-When i got feedback on the direction, I started developing the dashboard and initally hosting it on vercel before later working with DevOps to host the solution internally with real data and test how it could work beyond the initial group.
+When I received feedback on the direction, I started developing the dashboard. I initially hosted it on Vercel, then later worked with DevOps to host the solution internally using real data and test how it could work beyond the initial group.
 
 <figure>
   <img
@@ -73,9 +73,8 @@ The dashboard was built with Next.js and the Notion API. Users can browse resear
     className="w-full rounded-2xl"
   />{" "}
 </figure>
-Notion acts as the database source, with research pulled from different pages
-via the API and converted into structured data, and reconstructed inside the
-application.
+Notion acts as the data source. Research is pulled from different pages via the
+API, converted into structured data, and reconstructed within the application.
 
 <figure>
   {" "}

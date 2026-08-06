@@ -4,15 +4,13 @@ import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
 
 type ProjectCardProps = {
   item: ProjectItem;
-  rotation: string;
-  zClass: string;
+  className?: string;
   isLast: boolean;
 };
 
 export function ProjectCard({
   item,
-  rotation,
-  zClass,
+  className,
   isLast,
 }: ProjectCardProps) {
   const Icon = iconMap[item.icon];
@@ -26,10 +24,11 @@ export function ProjectCard({
         "hover:z-50 hover:scale-[1.02] hover:shadow-sm",
         "focus-visible:z-50 focus-visible:outline-2 focus-visible:outline-offset-2",
         item.comingSoon ? "cursor-not-allowed" : "",
-        rotation,
-        zClass,
+        className,
         isLast ? "" : "sm:-mr-14",
-      ].join(" ")}
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       <div className="flex-1 p-3 pb-0">
         <div className="flex h-full items-center justify-center rounded-xl bg-surface-higher/50 outline-1 outline-border-strong">
@@ -38,7 +37,7 @@ export function ProjectCard({
       </div>
 
       <div className="flex flex-col gap-1 p-4">
-        <p className="flex items-center gap-1.5 text-sm font-medium leading-snug tracking-tight text-text">
+        <p className="flex items-center gap-1.5 text-sm font-medium leading-snug tracking-tight">
           {item.title}
           {item.comingSoon ? (
             <span className="rounded-full bg-surface-higher px-1.5 py-0.5 text-[10px] font-medium text-text-muted opacity-0 transition-opacity duration-200 group-hover:opacity-100">

@@ -1,12 +1,19 @@
-import { siteConfig } from "@/lib/site";
+import type { ReactNode } from "react";
 
-export function Header() {
+type HeaderProps = {
+  title: ReactNode;
+  subtitle?: ReactNode;
+  children?: ReactNode;
+};
+
+export function Header({ title, subtitle, children }: HeaderProps) {
   return (
     <header className="mb-12">
-      <p className="text-base font-semibold text-text leading-tight">
-        {siteConfig.name}
-      </p>
-      <p className="text-base text-text-muted mt-0.5">{siteConfig.role}</p>
+      <h1 className="text-base font-semibold leading-tight">{title}</h1>
+      {subtitle ? (
+        <div className="mt-0.5 text-base text-text-muted">{subtitle}</div>
+      ) : null}
+      {children}
     </header>
   );
 }

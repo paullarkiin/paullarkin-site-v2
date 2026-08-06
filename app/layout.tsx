@@ -30,8 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+    <html
+      lang="en"
+      className={`${manrope.variable} h-full scheme-light-dark antialiased`}
+    >
+      <body className="flex min-h-full flex-col bg-background font-sans text-text">
         <ViewTransition>{children}</ViewTransition>
         <Footer />
         <FloatingBottomNav />

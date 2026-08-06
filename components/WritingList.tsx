@@ -31,7 +31,7 @@ export function WritingList({
             <IconBadge icon="lines" />
 
             <div className="min-w-0 flex-1">
-              <p className="text-base font-medium text-text">{note.title}</p>
+              <p className="text-base font-medium">{note.title}</p>
 
               {showSummary && note.summary ? (
                 <p className="text-sm text-text-muted leading-normal mt-1 max-w-140">
@@ -39,7 +39,7 @@ export function WritingList({
                 </p>
               ) : null}
 
-              <p className="text-sm text-text-muted font-sans mt-1">
+              <p className="text-sm text-text-muted mt-1">
                 {formatDate(note.date)}
                 {note.readingTime ? ` · ${note.readingTime}` : null}
               </p>

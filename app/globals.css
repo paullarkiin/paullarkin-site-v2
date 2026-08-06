@@ -52,9 +52,3 @@
 html {
   overflow-y: scroll;
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-}

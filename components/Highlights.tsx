@@ -14,7 +14,7 @@ export function Highlights({ children }: { children: ReactNode }) {
         {items.map((item, i) => (
           <li
             key={i}
-            className="flex items-baseline gap-2.5 text-sm leading-relaxed text-text"
+            className="flex items-baseline gap-2.5 text-sm leading-relaxed"
           >
             <span aria-hidden className="text-[13px] text-mint">
               →
