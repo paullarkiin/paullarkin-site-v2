@@ -6,7 +6,7 @@ export function MonoIcon({
   label?: string;
 }) {
   return (
-    <span className={`font-sans text-[12px] text-text-muted ${className ?? ""}`}>
+    <span className={`text-[12px] text-text-muted ${className ?? ""}`}>
       {label ?? "$ > _"}
     </span>
   );

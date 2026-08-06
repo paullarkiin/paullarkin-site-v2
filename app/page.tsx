@@ -10,60 +10,59 @@ import { projects } from "@/lib/projects";
 import { getAllPosts } from "@/lib/posts";
 import { getAllWork } from "@/lib/work";
 import { ProjectGrid } from "@/components/ProjectGrid";
+import { PageShell } from "@/components/PageShell";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col px-6 sm:px-16 p-32 sm:items-start">
-        <Header />
-        <section className="mb-32">
-          <p className="mb-4 text-text dark:text-text-muted ">
-            Currently at{" "}
-            <a
-              href={siteConfig.nowAtUrl}
-              target="_blank"
-              className="group whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
-            >
-              <OperaIcon className="ml-0.5 mr-1 inline-block size-3.5 align-[-0.125em] transition-colors group-hover:text-[#FF1B2D]" />
-              {siteConfig.nowAt}
-            </a>{" "}
-            working on{" "}
-            <a
-              href={siteConfig.productUrl}
-              target="_blank"
-              className="group whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
-            >
-              <PlaneIcon className="mr-1 inline-block size-4 align-middle transition-colors group-hover:text-[#07955F]" />
-              {siteConfig.product}
-            </a>
-            {
-              " — crafting interfaces and building design tooling. I enjoy making useful things and care a lot about making them feel simple and considered."
-            }
-          </p>
-          <p className="text-text dark:text-text-muted">
-            You can read more{" "}
-            <Link
-              href="/about"
-              className="font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
-            >
-              about me
-            </Link>{" "}
-            or reach me by{" "}
-            <a
-              href={`mailto:${siteConfig.email}`}
-              target="_blank"
-              className="whitespace-nowrap font-semibold text-text underline underline-offset-4 decoration-(--color-border) hover:decoration-text transition-colors"
-            >
-              <EmailIcon className="mr-1 inline-block size-4 align-middle" />
-              email
-            </a>
-            {"."}
-          </p>
-        </section>
-        <SelectedWorkList items={getAllWork()} />
-        <ProjectGrid items={projects} />
-        <WritingList notes={getAllPosts().slice(0, 3)} />
-      </main>
-    </div>
+    <PageShell className="py-32 sm:items-start">
+      <Header title={siteConfig.name} subtitle={siteConfig.role} />
+      <section className="mb-32">
+        <p className="mb-4 text-text">
+          Currently at{" "}
+          <a
+            href={siteConfig.nowAtUrl}
+            target="_blank"
+            className="group whitespace-nowrap font-semibold text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-text"
+          >
+            <OperaIcon className="ml-0.5 mr-1 inline-block size-3.5 align-[-0.125em] transition-colors group-hover:text-[#FF1B2D]" />
+            {siteConfig.nowAt}
+          </a>{" "}
+          working on{" "}
+          <a
+            href={siteConfig.productUrl}
+            target="_blank"
+            className="group whitespace-nowrap font-semibold text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-text"
+          >
+            <PlaneIcon className="mr-1 inline-block size-4 align-middle transition-colors group-hover:text-[#07955F]" />
+            {siteConfig.product}
+          </a>
+          {
+            " — crafting interfaces and building design tooling. I enjoy making useful things and care a lot about making them feel simple and considered."
+          }
+        </p>
+        <p className="text-text">
+          You can read more{" "}
+          <Link
+            href="/about"
+            className="font-semibold text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-text"
+          >
+            about me
+          </Link>{" "}
+          or reach me by{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            target="_blank"
+            className="whitespace-nowrap font-semibold text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-text"
+          >
+            <EmailIcon className="mr-1 inline-block size-4 align-middle" />
+            email
+          </a>
+          {"."}
+        </p>
+      </section>
+      <SelectedWorkList items={getAllWork()} />
+      <ProjectGrid items={projects} />
+      <WritingList notes={getAllPosts().slice(0, 3)} />
+    </PageShell>
   );
 }

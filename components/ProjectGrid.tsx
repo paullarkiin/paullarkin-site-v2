@@ -8,7 +8,11 @@ type ProjectGridProps = {
   meta?: string;
 };
 
-const ROTATIONS = ["-rotate-[1.1deg]", "rotate-[0.85deg]", "-rotate-[0.55deg]"];
+const CARD_STYLES = [
+  "sm:-rotate-[1.1deg] z-30",
+  "sm:rotate-[0.85deg] z-20",
+  "sm:-rotate-[1.85deg] z-10",
+] as const;
 
 export function ProjectGrid({
   items,
@@ -24,8 +28,7 @@ export function ProjectGrid({
             <ProjectCard
               key={item.title}
               item={item}
-              rotation={`sm:${ROTATIONS[i % ROTATIONS.length]}`}
-              zClass={`z-${30 - i * 10}`}
+              className={CARD_STYLES[i % CARD_STYLES.length]}
               isLast={i === items.length - 1}
             />
           ))}

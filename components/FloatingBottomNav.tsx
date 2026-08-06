@@ -66,7 +66,7 @@ export function FloatingBottomNav() {
             "group flex shrink-0 items-center rounded-xl py-2.5 text-sm font-medium transition-all duration-300 ease-out";
 
           const state = active
-            ? "bg-background text-text px-3.5"
+            ? "bg-background px-3.5"
             : "text-text-muted hover:bg-surface-higher hover:text-text px-2.5";
 
           return (

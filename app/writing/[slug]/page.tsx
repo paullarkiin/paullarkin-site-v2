@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { formatDate } from "@/lib/format";
 import { BackLink } from "@/components/BackLink";
+import { PageShell } from "@/components/PageShell";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -46,22 +47,20 @@ export default async function WritingPost({ params }: { params: Params }) {
   const { default: Content } = await import(`@/content/writing/${slug}.mdx`);
 
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
-      <article className="flex flex-1 w-full max-w-3xl flex-col pt-32 px-8 sm:px-16 ">
-        <BackLink href="/writing" />
-        <header className="mb-8">
-          <h1 className="text-2xl font-bold text-text">{post.meta.title}</h1>
-          {post.meta.date && (
-            <p className="text-sm text-text-muted mt-2">
-              {formatDate(post.meta.date, "full")}
-            </p>
-          )}
-        </header>
+    <PageShell as="article" className="pt-32">
+      <BackLink href="/writing" />
+      <header className="mb-8">
+        <h1 className="text-2xl font-bold">{post.meta.title}</h1>
+        {post.meta.date && (
+          <p className="text-sm text-text-muted mt-2">
+            {formatDate(post.meta.date, "full")}
+          </p>
+        )}
+      </header>
 
-        <div className="prose dark:prose-invert max-w-none text-text mb-32">
-          <Content />
-        </div>
-      </article>
-    </div>
+      <div className="prose dark:prose-invert max-w-none text-text mb-32">
+        <Content />
+      </div>
+    </PageShell>
   );
 }

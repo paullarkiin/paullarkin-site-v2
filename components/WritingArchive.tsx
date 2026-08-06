@@ -13,7 +13,7 @@ export function WritingArchive({ posts }: { posts: PostMeta[] }) {
             className="group rounded-xl py-5 transition-all duration-200 group-hover/list:opacity-40 hover:bg-surface-higher/60 hover:opacity-100! sm:-mx-4 sm:px-4"
           >
             <div className="flex items-baseline justify-between gap-6">
-              <h2 className="text-base font-semibold leading-snug text-text">
+              <h2 className="text-base font-semibold leading-snug">
                 {post.title}
               </h2>
               <p className="hidden shrink-0 text-xs text-text-muted sm:block">

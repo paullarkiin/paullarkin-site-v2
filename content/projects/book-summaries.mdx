@@ -13,7 +13,7 @@ role: "Solo Design & Development"
 
 Summaries is a personal side project exploring how AI can make discovering books faster and more accessible.
 
-The idea came from my own reading habits. When browsing bookstores, I often find interesting books but don't always know if they are worth buying. I wanted a simple way to quickly understand what a book was about, save interesting titles and write inital thoughts that I could come back too.
+The idea came from my own reading habits. When browsing bookstores, I often find interesting books but don't always know if they are worth buying. I wanted a simple way to quickly understand what a book was about, save interesting titles, and write initial thoughts that I could come back to.
 
 <Highlights>
   <>Built a personal AI-powered book summary application</>
@@ -27,19 +27,19 @@ The idea came from my own reading habits. When browsing bookstores, I often find
 
 ### Why I Built It
 
-At the time, I had recently completing a React course, Having the idea floating around it gave me a good chance to apply what I had learned by building something practical for myself.
+At the time, I had recently completed a React course. Having the idea floating around gave me a good chance to apply what I had learned by building something practical for myself.
 
-Inspiration came from services like Blinkist and other short-form reading platforms that I had previously used but I wanted a simpler version focused on my own goals.
+Inspiration came from services like Blinkist and other short-form reading platforms that I had previously used, but I wanted a simpler version focused on my own goals.
 
 ---
 
 ### How It Works
 
-Practically it a minamistic looking frontend that puts the focus on the books.
+In practice, it is a minimalist frontend that puts the focus on the books.
 
-This is done with a grid layout, supabase backend (which will be swapped out) and an API server that sends request to OpenAI complications API endpoint and returns structured JSON.
+This is done with a grid layout, a Supabase backend (which will be replaced), and an API server that sends requests to OpenAI's Chat Completions API and returns structured JSON.
 
-When the user saves a book they grid item with an inner page which contains the same information as the modal and along with the ability to add comments. Which has been added but not styled which is why it not shared here.
+When a user saves a book, it appears as a grid item with its own page. The page contains the same information as the modal, along with the ability to add comments. Commenting has been implemented but not yet styled, which is why it is not shown here.
 
 The whole experience is designed around a simple flow:
 
@@ -67,9 +67,9 @@ The whole experience is designed around a simple flow:
 
 One of the interesting challenges was making AI output feel consistent.
 
-Instead of simply displaying generated text, I looked into how to return structured content that I mentioned about. This was key to the user experence of the project. It took a few attempts but am now happy with the output. Below you can see the final code used on the API server.
+Instead of simply displaying generated text, I explored how to return the structured content described above. This was key to the user experience of the project. It took a few attempts, but I am now happy with the output. Below you can see the final code used on the API server.
 
-The experimenting involved:
+The experimentation involved:
 
 - Prompt structure
 - Formatting requirements
@@ -83,7 +83,7 @@ openai
         {
           role: "system",
           content:
-            "You are a helpful assistant that gives summarizes of books. Respond ONLY in JSON, no extra text.",
+            "You are a helpful assistant that summarizes books. Respond ONLY in JSON, no extra text.",
         },
         {
           role: "user",
@@ -109,9 +109,9 @@ openai
 
 <h4 className="mt-12"> Cover fallback </h4>
 
-Another challenge to do with user experence of the project was fetching and handling book covers these API's are not very well documented if at all. They could accept and use different serch parameters to complete a cover look up. This impacts the ability to find the book cover.
+Another user experience challenge was fetching and handling book covers. These APIs are not very well documented, if at all, and accept different search parameters for looking up covers. This affects the ability to reliably find the correct cover.
 
-To help improve the success rate of a book cover being found I would check the first as it had a better results at the time. If this failed it would fallback to the second and if nothing was found it would show the default placeholder.
+To improve the success rate of finding a book cover, I first checked the API that produced better results at the time. If that failed, I fell back to the second API. If neither returned a cover, the app displayed a default placeholder.
 
 ```
 
@@ -159,7 +159,7 @@ A quick overview of other things I also had the chance to experiment with. Tools
 Examples:
 
 - Applying React UI patterns.
-- Exploring newer AI API integration.
+- Exploring newer AI API integrations.
 - Testing UI feedback patterns.
 - Emil's [Sonner](https://sonner.emilkowal.ski/) snackbar library.
 
@@ -186,4 +186,4 @@ Next:
 
 ### Reflection
 
-Summaries was a great project to really learn from, taking my time to build something for myself and others in the future. Covering all the core aspect of a modern frontend app and experimenting with new tech without any risk. I look forward continuing to improve this project and use it.
+Summaries was a great project to learn from. It allowed me to take my time building something for myself and potentially others in the future. It covers all the core aspects of a modern frontend app and lets me experiment with new technology without any risk. I look forward to continuing to improve and use it.
