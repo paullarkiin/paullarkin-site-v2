@@ -9,7 +9,7 @@ export default function About() {
       <section className="mb-24 w-full">
         <Header title="About" />
 
-        <div className="space-y-6 mt-8 text-base leading-relaxed">
+        <div className="space-y-6 text-base leading-relaxed">
           <p>
             I&apos;m Paul, Irish, living in Sweden. I&apos;m a designer and
             developer inspired by purposeful design, with a great love for
@@ -39,16 +39,6 @@ export default function About() {
           </p>
 
           <p>Thanks for stopping by. Always happy to chat.</p>
-
-          <p>
-            Reach me at{" "}
-            <a
-              href="mailto:hello@paullarkin.info"
-              className="font-semibold text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-text"
-            >
-              hello@paullarkin.info
-            </a>
-          </p>
         </div>
 
         <PhotoGrid />

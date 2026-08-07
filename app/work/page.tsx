@@ -8,8 +8,8 @@ export default function Work() {
     <PageShell className="py-32 sm:items-start">
       <Header title="Work">
         <p className="mt-4 max-w-2xl text-base leading-relaxed">
-          A collection of interface design, product concepts, and side projects
-          from across my design and engineering work.
+          A selection of product experiences, UI components, and side projects
+          across design and engineering—from early concepts to shipped work.
         </p>
       </Header>
       <WorkGallery items={GalleryItems} />

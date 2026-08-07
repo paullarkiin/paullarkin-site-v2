@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { SelectedWorkList } from "@/components/SelectedWorkList";
 import { WritingList } from "@/components/WritingList";
 import { EmailIcon } from "@/components/icons/EmailIcon";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { OperaIcon } from "@/components/icons/OperaIcon";
 import { PlaneIcon } from "@/components/icons/PlaneIcon";
 import { siteConfig } from "@/lib/site";
@@ -41,21 +42,30 @@ export default function Home() {
           }
         </p>
         <p className="text-text">
-          You can read more{" "}
+          Read more{" "}
           <Link
             href="/about"
             className="font-semibold text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-text"
           >
             about me
-          </Link>{" "}
-          or reach me by{" "}
+          </Link>
+          {", contact me by "}
           <a
             href={`mailto:${siteConfig.email}`}
-            target="_blank"
             className="whitespace-nowrap font-semibold text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-text"
           >
             <EmailIcon className="mr-1 inline-block size-4 align-middle" />
             email
+          </a>
+          {", or see my code on "}
+          <a
+            href={siteConfig.github}
+            target="_blank"
+            rel="noreferrer"
+            className="whitespace-nowrap font-semibold text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-text"
+          >
+            <GithubIcon className="mr-1 inline-block size-4 align-middle" />
+            GitHub
           </a>
           {"."}
         </p>

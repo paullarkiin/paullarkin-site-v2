@@ -19,7 +19,7 @@ export function WorkGallery({
           <figure key={index} className="w-full min-w-0">
             <div className="group relative w-full overflow-hidden rounded-[14px] bg-surface-higher outline-1 outline-border-strong sm:rounded-2xl">
               {(about || tech) && (
-                <div className="pointer-events-none absolute bottom-4 left-4 z-10 flex flex-wrap gap-2 opacity-100 transition duration-200 sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
+                <div className="pointer-events-none absolute bottom-4 left-4 z-10 flex flex-wrap gap-2 opacity-0 transition duration-300 sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
                   {about && (
                     <div className="rounded-lg bg-surface px-3 py-2 text-sm text-text">
                       {about}
