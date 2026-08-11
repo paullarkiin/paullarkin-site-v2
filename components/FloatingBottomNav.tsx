@@ -85,7 +85,7 @@ export function FloatingBottomNav() {
                     : ""
                 }`}
                 strokeWidth={active ? 2.0 : 1.75}
-                aria-hidden
+                aria-hidden="true"
               />
               {/* Grid-columns trick: animate from 0fr -> 1fr to reveal the
                   label's intrinsic width smoothly instead of snapping. */}

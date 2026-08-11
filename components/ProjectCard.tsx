@@ -31,7 +31,10 @@ export function ProjectCard({
         .join(" ")}
     >
       <div className="flex-1 p-3 pb-0">
-        <div className="flex h-full items-center justify-center rounded-xl bg-surface-higher/50 outline-1 outline-border-strong">
+        <div
+          className="flex h-full items-center justify-center rounded-xl bg-surface-higher/50 outline-1 outline-border-strong"
+          aria-hidden="true"
+        >
           <Icon className="h-10 w-10 text-text" label={item.iconLabel} />
         </div>
       </div>

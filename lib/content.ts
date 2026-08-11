@@ -9,6 +9,7 @@ export interface ContentMeta {
   summary?: string;
   readingTime?: string;
   status?: string;
+  tools?: string;
   heroImage?: string;
   draft?: boolean;
   [key: string]: unknown;
@@ -43,25 +44,29 @@ export function getAllContent(dir: string): ContentMeta[] {
   const fullPath = resolveDir(dir);
   const files = fs.readdirSync(fullPath);
 
-  return files
-    .filter((file) => /\.(md|mdx)$/.test(file))
-    .map((file): ContentMeta => {
-      const slug = file.replace(/\.(md|mdx)$/, "");
-      const raw = fs.readFileSync(path.join(fullPath, file), "utf-8");
-      const { data } = matter(raw);
+  return (
+    files
+      .filter((file) => /\.(md|mdx)$/.test(file))
+      .map((file): ContentMeta => {
+        const slug = file.replace(/\.(md|mdx)$/, "");
+        const raw = fs.readFileSync(path.join(fullPath, file), "utf-8");
+        const { data } = matter(raw);
 
-      return {
-        slug,
-        title: data.title ?? slug,
-        date: data.date ?? "",
-        summary: data.summary,
-        readingTime: data.readingTime,
-        ...data,
-      };
-    })
-    // Hide drafts in production builds; keep them visible in `next dev` for previewing.
-    .filter((item) => process.env.NODE_ENV !== "production" || item.draft !== true)
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
+        return {
+          slug,
+          title: data.title ?? slug,
+          date: data.date ?? "",
+          summary: data.summary,
+          readingTime: data.readingTime,
+          ...data,
+        };
+      })
+      // Hide drafts in production builds; keep them visible in `next dev` for previewing.
+      .filter(
+        (item) => process.env.NODE_ENV !== "production" || item.draft !== true,
+      )
+      .sort((a, b) => (a.date > b.date ? -1 : 1))
+  );
 }
 
 export function getContentBySlug(dir: string, slug: string) {

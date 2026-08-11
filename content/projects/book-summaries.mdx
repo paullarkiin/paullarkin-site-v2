@@ -3,23 +3,27 @@ title: "Book summaries"
 date: "2026-01-15"
 description: "React App"
 icon: "chat"
-status: "WIP"
+status: "Version 2 - WIP"
 heroImage: "/images/projects/book-summaries/hero.png"
-summary: "An AI-powered reading companion built to explore React and practical AI workflows"
+summary: "A React app to help make it easier to decide what to read next."
 role: "Solo Design & Development"
 ---
 
 ### Overview
 
-Summaries is a personal side project exploring how AI can make discovering books faster and more accessible.
+Book summaries is a side project that explores how AI can make discovering what to read next much faster.
 
 The idea came from my own reading habits. When browsing bookstores, I often find interesting books but don't always know if they are worth buying. I wanted a simple way to quickly understand what a book was about, save interesting titles, and write initial thoughts that I could come back to.
 
 <Highlights>
   <>Built a personal AI-powered book summary application</>
-  <>Used OpenAI to generate structured summaries with consistent output</>
   <>
-    Practised building a complete product experience from idea to implementation
+    Created a REST API endpoint to explore system prompts that would return
+    consistent JSON output for summaries.{" "}
+  </>
+  <>
+    Used code to build a better user experience through fallback patterns and
+    clear messaging.
   </>
 </Highlights>
 
@@ -51,7 +55,7 @@ The whole experience is designed around a simple flow:
 <figure>
   <img
     src="/images/projects/book-summaries/summary.png"
-    alt="explorations"
+    alt="Image of the output results from the app"
     width={2400}
     height={1600}
     loading="eager"
@@ -186,4 +190,4 @@ Next:
 
 ### Reflection
 
-Summaries was a great project to learn from. It allowed me to take my time building something for myself and potentially others in the future. It covers all the core aspects of a modern frontend app and lets me experiment with new technology without any risk. I look forward to continuing to improve and use it.
+The project gave me an end-to-end view of how interface decisions, API reliability and AI output shape the same product experience. The most useful lesson was designing for unreliable external data—from inconsistent model responses to missing book covers—rather than treating each integration as a happy path.
