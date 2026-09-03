@@ -1,0 +1,80 @@
+---
+title: "Write-up for UnCrackable Level 1"
+date: "2026-08-24"
+summary: "OWASP Android reverse-engineering challenge"
+draft: true
+---
+
+I've been exploring the **OWASP UnCrackable1** Android applications recently and will writing about how I solved this challenge. I found two ways one with static analysis and the other with Frida.
+
+### Getting Started
+
+I started by downloaded here and install the apk on a non-rooted emulator to begin with ...
+
+### Exploring the code
+
+<figure>
+  <Image
+    src="/images/writing/uncrackable-one/manifest.png"
+    alt="android manifest"
+    width={2718}
+    height={1312}
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+<figure>
+  <Image
+    src="/images/writing/uncrackable-one/main.png"
+    alt="android manifest"
+    width={2718}
+    height={1312}
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+<figure>
+  <Image
+    src="/images/writing/uncrackable-one/systems-checks.png"
+    alt="android manifest"
+    width={2718}
+    height={1312}
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+<figure>
+  <Image
+    src="/images/writing/uncrackable-one/secret.png"
+    alt="android manifest"
+    width={2718}
+    height={1312}
+    className="w-full rounded-2xl"
+  />
+</figure>
+
+### Decoding the secret message
+
+Once i found ...
+
+```python
+import base64
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
+
+key_hex = "8d127684cbc37c17616d806cf50473cc"
+encoded = "5UJiFctbmgbDoLXmpL12mkno8HT4Lv8dlat8FxR2GOc="
+
+key = bytes.fromhex(key_hex)
+ciphertext = base64.b64decode(encoded)
+cipher = AES.new(key, AES.MODE_ECB)
+
+plaintext_padded = cipher.decrypt(ciphertext)
+print("Raw decrypted:", plaintext_padded)
+
+plaintext = unpad(plaintext_padded, AES.block_size)
+print("Plaintext:", plaintext.decode())
+
+```
+
+Add terminal output from the file
