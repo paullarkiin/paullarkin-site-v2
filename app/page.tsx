@@ -8,16 +8,17 @@ import { OperaIcon } from "@/components/icons/OperaIcon";
 import { PlaneIcon } from "@/components/icons/PlaneIcon";
 import { siteConfig } from "@/lib/site";
 import { projects } from "@/lib/projects";
-import { getAllPosts } from "@/lib/posts";
-import { getAllWork } from "@/lib/work";
+import { curatedWorkList } from "@/lib/curatedWorkList";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { PageShell } from "@/components/PageShell";
+import { CuratedWorkList } from "@/components/CuratedWorkList";
+import { getAllPosts } from "@/lib/posts";
 
 export default function Home() {
   return (
-    <PageShell className="py-32 sm:items-start">
+    <PageShell className="py-30 sm:items-start">
       <Header title={siteConfig.name} subtitle={siteConfig.role} />
-      <section className="mb-32">
+      <section className="mb-24">
         <p className="mb-4 text-text">
           Currently at{" "}
           <a
@@ -70,9 +71,11 @@ export default function Home() {
           {"."}
         </p>
       </section>
-      <SelectedWorkList items={getAllWork()} />
+      {/* <SelectedWorkList items={getAllWork()} /> */}
+
+      <CuratedWorkList items={curatedWorkList} />
+      <WritingList notes={getAllPosts().slice(0, 1)} />
       <ProjectGrid items={projects} />
-      <WritingList notes={getAllPosts().slice(0, 3)} />
     </PageShell>
   );
 }

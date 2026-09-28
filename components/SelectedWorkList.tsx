@@ -11,7 +11,7 @@ type SelectedWorkListProps = {
 
 export function SelectedWorkList({
   items,
-  label = "Featured work",
+  label = "Selected work",
   meta,
 }: SelectedWorkListProps) {
   return (

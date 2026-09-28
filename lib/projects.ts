@@ -11,22 +11,22 @@ export type ProjectItem = {
 
 export const projects: ProjectItem[] = [
   {
-    title: "UI Kitchen",
-    description: "Exploration of UI concepts",
-    icon: "layers",
-    href: "#",
-    comingSoon: true,
+    title: "ElevateNI",
+    description: "Co-founded a student-led conference",
+    icon: "elevate",
+    href: "https://www.instagram.com/ElevateNI",
   },
   {
-    title: "Trigger Free",
-    description: "Hackathon project",
+    title: "Lakrits UI",
+    description: "React Component Library",
     icon: "planet",
     href: "https://www.behance.net/gallery/150200543/UIUX-Case-Study-Trigger-Free",
   },
   {
-    title: "ElevateNI",
-    description: "Conference organizing",
-    icon: "elevate",
-    href: "https://www.instagram.com/ElevateNI",
+    title: "UI Kitchen",
+    description: "UI Experiments built in code",
+    icon: "layers",
+    href: "#",
+    comingSoon: true,
   },
 ];

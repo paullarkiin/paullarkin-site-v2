@@ -8,11 +8,7 @@ type ProjectCardProps = {
   isLast: boolean;
 };
 
-export function ProjectCard({
-  item,
-  className,
-  isLast,
-}: ProjectCardProps) {
+export function ProjectCard({ item, className, isLast }: ProjectCardProps) {
   const Icon = iconMap[item.icon];
   const Tag = item.comingSoon ? "div" : "a";
 
@@ -50,7 +46,7 @@ export function ProjectCard({
             <ArrowUpRightIcon className="size-3.5 text-text-muted opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
           )}
         </p>
-        <p className="text-[13px] leading-normal text-text-muted sm:text-[12px]">
+        <p className="text-sm leading-normal text-text-muted sm:text-[12px]">
           {item.description}
         </p>
       </div>

@@ -1,5 +1,36 @@
 import Image from "next/image";
-import type { ComponentGalleryItem, GalleryItem } from "@/lib/gallery";
+import Link from "next/link";
+import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
+import type {
+  ComponentGalleryItem,
+  GalleryItem,
+  GalleryLink,
+} from "@/lib/gallery";
+
+const captionLinkClassName =
+  "inline-flex items-center gap-0.5 font-medium text-text underline decoration-border underline-offset-2 transition-colors hover:decoration-text";
+
+function CaptionLink({ link }: { link: GalleryLink }) {
+  if (link.external) {
+    return (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noreferrer"
+        className={captionLinkClassName}
+      >
+        {link.label}
+        <ArrowUpRightIcon className="size-3" />
+      </a>
+    );
+  }
+
+  return (
+    <Link href={link.href} className={captionLinkClassName}>
+      {link.label}
+    </Link>
+  );
+}
 
 export function WorkGallery({
   items,
@@ -49,8 +80,14 @@ export function WorkGallery({
               )}
             </div>
 
-            <figcaption className="mt-3 text-center text-xs leading-4.5 text-text-muted">
-              {item.caption}
+            <figcaption className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-xs leading-4.5 text-text-muted">
+              <span>{item.caption}</span>
+              {item.link && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <CaptionLink link={item.link} />
+                </>
+              )}
             </figcaption>
           </figure>
         );
