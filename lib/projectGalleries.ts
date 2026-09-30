@@ -15,19 +15,19 @@ export const projectGalleries = {
   minipay: {
     title: "MiniPay",
     description:
-      "Selected product design work for MiniPay, covering core payment flows and supporting experiences.",
+      "At MiniPay, I design core payment experiences across sending, exchange, recovery, and cards. My work moves between interaction design, prototyping, and web implementation, in close collaboration with product and engineering.",
     items: getProjectGalleryItems("minipay"),
   },
   "browser-ai": {
     title: "Opera Browser AI",
     description:
-      "Selected product design and development work for AI-powered experiences in Opera.",
+      "At Opera, I work on AI-powered browser experiences across chat, media, and content management. I move between product design and front-end development, taking ideas from early interaction concepts through to production UI.",
     items: getProjectGalleryItems("browser-ai"),
   },
   "opera-for-android": {
     title: "Opera for Android",
     description:
-      "Selected product and design-system work for Opera’s Android browser.",
+      "On Opera for Android, I designed product features and the systems and tools behind them. My work covered onboarding, personalisation, downloads, content experiences, and contributions to the browser’s design system.",
     items: getProjectGalleryItems("opera-for-android"),
   },
   other: {

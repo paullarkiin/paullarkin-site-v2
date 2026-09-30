@@ -27,7 +27,7 @@ export function BackLink({ href = "/" }: { href?: string }) {
     <Link
       href={href}
       onClick={handleClick}
-      className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-text transition-colors mb-8"
+      className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-text transition-colors mb-12"
     >
       <ArrowLeft className="size-3.5" aria-hidden="true" />
       Back

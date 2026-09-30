@@ -20,13 +20,13 @@ export const projects: ProjectItem[] = [
     title: "Lakrits UI",
     description: "React Component Library",
     icon: "planet",
-    href: "https://www.behance.net/gallery/150200543/UIUX-Case-Study-Trigger-Free",
+    href: "https://lakrits.paullarkin.info/",
   },
   {
     title: "UI Kitchen",
     description: "UI Experiments built in code",
     icon: "layers",
-    href: "#",
+    href: "",
     comingSoon: true,
   },
 ];

@@ -32,6 +32,34 @@ function CaptionLink({ link }: { link: GalleryLink }) {
   );
 }
 
+function GalleryItemLink({
+  link,
+  caption,
+}: {
+  link: GalleryLink;
+  caption: string;
+}) {
+  const className =
+    "absolute inset-0 z-20 cursor-pointer rounded-[14px] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-text sm:rounded-2xl";
+  const ariaLabel = `${link.label}: ${caption}`;
+
+  if (link.external) {
+    return (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={ariaLabel}
+        className={className}
+      />
+    );
+  }
+
+  return (
+    <Link href={link.href} aria-label={ariaLabel} className={className} />
+  );
+}
+
 export function WorkGallery({
   items,
 }: {
@@ -77,6 +105,10 @@ export function WorkGallery({
                   sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 767px) calc(100vw - 128px), 640px"
                   className="block h-auto w-full"
                 />
+              )}
+
+              {item.link && (
+                <GalleryItemLink link={item.link} caption={item.caption} />
               )}
             </div>
 

@@ -2,39 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Home,
-  PenLine,
-  PanelsTopLeft,
-  User,
-  type LucideIcon,
-} from "lucide-react";
+import { Home, PenLine, User, type LucideIcon } from "lucide-react";
 
 type NavItem = {
   label: string;
   href: string;
   icon: LucideIcon;
-  // Optional optical adjustment for glyphs that read smaller than the others
-  // at the shared size (e.g. Lucide's User sits small in its box).
-  iconClassName?: string;
-  inactiveIconClassName?: string;
 };
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/", icon: Home },
-  // { label: "Work", href: "/work", icon: PanelsTopLeft },
-  {
-    label: "About",
-    href: "/about",
-    icon: User,
-    iconClassName: "scale-105",
-  },
-  {
-    label: "Writing",
-    href: "/writing",
-    icon: PenLine,
-    inactiveIconClassName: "scale-95 translate-y-0.5",
-  },
+  { label: "About", href: "/about", icon: User },
+  { label: "Writing", href: "/writing", icon: PenLine },
 ];
 
 function navItemActive(pathname: string, href: string) {
@@ -45,50 +24,37 @@ function navItemActive(pathname: string, href: string) {
 export function FloatingBottomNav() {
   const pathname = usePathname();
 
-  const shell = "border border-border-strong bg-surface/90 shadow-lg";
-
   return (
     <nav
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center px-3 pb-[max(16px,env(safe-area-inset-bottom))] pt-4"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center px-3 pb-[max(1rem,env(safe-area-inset-bottom))]"
       style={{ viewTransitionName: "floating-nav" }}
       aria-label="Primary pages"
     >
-      <div
-        className={`pointer-events-auto flex max-w-full items-center gap-0.5 overflow-x-auto rounded-2xl px-1 py-1 backdrop-blur-md [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden sm:gap-1 sm:px-1.5 ${shell}`}
-      >
+      <div className="pointer-events-auto flex items-center gap-1 rounded-2xl border border-border-strong bg-surface/90 p-1 shadow-lg backdrop-blur-md">
         {navItems.map((item) => {
           const active = navItemActive(pathname, item.href);
           const Icon = item.icon;
 
-          // Base sizing: icon-only items are square; the active item grows to
-          // fit its label. transition-all + the grid trick animate the width.
           const base =
-            "group flex shrink-0 items-center rounded-xl py-2.5 text-sm font-medium transition-all duration-300 ease-out";
+            "flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-xl px-3 py-2.5 text-sm font-medium transition-colors duration-200";
 
           const state = active
-            ? "bg-background px-3.5"
-            : "text-text-muted hover:bg-surface-higher hover:text-text px-2.5";
+            ? "bg-background"
+            : "text-text-muted hover:bg-surface-higher hover:text-text";
 
           return (
             <Link
               key={item.href}
               href={item.href}
               className={`${base} ${state}`}
+              aria-label={item.label}
               aria-current={active ? "page" : undefined}
             >
               <Icon
-                className={`size-4.5 shrink-0 transition-transform duration-300 ease-out${
-                  item.iconClassName ? ` ${item.iconClassName}` : ""
-                }${
-                  !active && item.inactiveIconClassName
-                    ? ` ${item.inactiveIconClassName}`
-                    : ""
-                }`}
-                strokeWidth={active ? 2.0 : 1.75}
+                className="size-4.5 shrink-0"
+                strokeWidth={active ? 2 : 1.75}
                 aria-hidden="true"
               />
-              {/* Grid-columns trick: animate from 0fr -> 1fr to reveal the
-                  label's intrinsic width smoothly instead of snapping. */}
               <span
                 className={`grid overflow-hidden transition-all duration-300 ease-out ${
                   active ? "ml-1.5 grid-cols-[1fr]" : "grid-cols-[0fr]"
@@ -98,7 +64,6 @@ export function FloatingBottomNav() {
                   {item.label}
                 </span>
               </span>
-              {!active ? <span className="sr-only">{item.label}</span> : null}
             </Link>
           );
         })}
