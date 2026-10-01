@@ -8,11 +8,7 @@ type ProjectCardProps = {
   isLast: boolean;
 };
 
-export function ProjectCard({
-  item,
-  className,
-  isLast,
-}: ProjectCardProps) {
+export function ProjectCard({ item, className, isLast }: ProjectCardProps) {
   const Icon = iconMap[item.icon];
   const Tag = item.comingSoon ? "div" : "a";
 
@@ -21,7 +17,7 @@ export function ProjectCard({
       {...(!item.comingSoon ? { href: item.href, target: "_blank" } : {})}
       className={[
         "group relative flex h-60 w-[min(248px,78vw)] shrink-0 flex-col overflow-hidden rounded-2xl outline-1 outline-border-strong bg-surface transition-[transform,box-shadow] duration-200",
-        "hover:z-50 hover:scale-[1.02] hover:shadow-sm",
+        "hover:z-50 hover:shadow-sm motion-safe:hover:scale-[1.02]",
         "focus-visible:z-50 focus-visible:outline-2 focus-visible:outline-offset-2",
         item.comingSoon ? "cursor-not-allowed" : "",
         className,
@@ -50,7 +46,7 @@ export function ProjectCard({
             <ArrowUpRightIcon className="size-3.5 text-text-muted opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
           )}
         </p>
-        <p className="text-[13px] leading-normal text-text-muted sm:text-[12px]">
+        <p className="text-sm leading-normal text-text-muted sm:text-[12px]">
           {item.description}
         </p>
       </div>

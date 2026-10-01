@@ -13,35 +13,29 @@ type WritingListProps = {
 
 export function WritingList({
   notes,
-  label = "Writing",
+  label = "Latest Writing",
   meta,
-  showSummary = false,
 }: WritingListProps) {
   return (
-    <section className=" w-full">
+    <section className="mb-16 w-full">
       <SectionHead label={label} meta={meta} />
 
-      <div className="group/list flex flex-col">
+      <div className="group/list flex flex-col w-full">
         {notes.map((note) => (
           <Link
-            key={note.slug}
             href={`/writing/${note.slug}`}
-            className="group flex items-start gap-3 rounded-xl px-0 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-higher/70 sm:-mx-3 sm:px-3"
+            key={note.slug}
+            className="group rounded-xl px-0 py-4 transition-all duration-200 opacity-100 group-hover/list:opacity-40 hover:opacity-100! hover:bg-surface-higher/70 sm:-mx-3 sm:px-3"
           >
-            <IconBadge icon="lines" />
+            <div className="flex w-full flex-nowrap items-center justify-between gap-3">
+              <div className="flex min-w-0 items-center gap-3">
+                <IconBadge icon="lines" />
 
-            <div className="min-w-0 flex-1">
-              <p className="text-base font-medium">{note.title}</p>
+                <p className="truncate text-base font-medium">{note.title}</p>
+              </div>
 
-              {showSummary && note.summary ? (
-                <p className="text-sm text-text-muted leading-normal mt-1 max-w-140">
-                  {note.summary}
-                </p>
-              ) : null}
-
-              <p className="text-sm text-text-muted mt-1">
+              <p className="shrink-0 whitespace-nowrap text-sm text-text-muted">
                 {formatDate(note.date)}
-                {note.readingTime ? ` · ${note.readingTime}` : null}
               </p>
             </div>
           </Link>

@@ -6,6 +6,20 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/writing/cyber-gamificiation",
+        destination: "/writing/cyber-gamification",
+        permanent: true,
+      },
+      {
+        source: "/writing/picoCTF-2018",
+        destination: "/writing/pico-ctf-2018",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const withMDX = createMDX({

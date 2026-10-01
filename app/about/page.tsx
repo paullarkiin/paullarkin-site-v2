@@ -19,7 +19,7 @@ export default function About() {
           <p>
             Right now I&apos;m a UI engineer at Opera, working primarily on
             MiniPay. More recently, I&apos;ve focused on bringing design and
-            engineering closer together — working across teams,shipping product
+            engineering closer together — working across teams, shipping product
             interfaces, prototyping new ideas, contributing to design systems
             and building internal tools that help teams make decisions.
           </p>

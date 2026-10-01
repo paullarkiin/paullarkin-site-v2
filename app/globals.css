@@ -49,6 +49,38 @@
   animation-duration: 1s;
 }
 
+.gallery-meta {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-meta {
+    opacity: 0;
+    transform: translateY(0.5rem);
+    transition:
+      opacity 300ms,
+      transform 300ms;
+  }
+
+  .group:hover .gallery-meta,
+  .group:focus-within .gallery-meta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 150ms;
+  }
+
+  .gallery-meta {
+    transform: none;
+    transition-property: opacity;
+  }
+}
+
 html {
-  overflow-y: scroll;
+  scrollbar-gutter: stable both-edges;
 }

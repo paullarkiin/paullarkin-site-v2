@@ -11,51 +11,59 @@ I've been exploring the **OWASP UnCrackable1** Android applications recently an
 
 I started by downloaded here and install the apk on a non-rooted emulator to begin with ...
 
-### Exploring the code
+## Exploring the code
+
+I opened the APK in JADX and started with `AndroidManifest.xml`. The package name is `owasp.mstg.uncrackable1`, and its launcher activity is `sg.vantagepoint.uncrackable1.MainActivity`.
 
 <figure>
   <Image
     src="/images/writing/uncrackable-one/manifest.png"
-    alt="android manifest"
+    alt="Android manifest showing the UnCrackable Level 1 launcher activity"
     width={2718}
     height={1312}
     className="w-full rounded-2xl"
   />
 </figure>
+
+`MainActivity.onCreate()` calls three root checks and a separate debuggable check. If any check succeeds, the app shows a warning dialog whose button calls `System.exit(0)`.
 
 <figure>
   <Image
     src="/images/writing/uncrackable-one/main.png"
-    alt="android manifest"
+    alt="Decompiled MainActivity showing the root and debuggable checks"
     width={2718}
     height={1312}
     className="w-full rounded-2xl"
   />
 </figure>
+
+The methods in `sg.vantagepoint.a.c` look for a `su` binary on the device path, `test-keys` in `Build.TAGS`, and known root-related files. These are simple indicators rather than proof that a device is rooted, but any one of them is enough to stop the app.
 
 <figure>
   <Image
     src="/images/writing/uncrackable-one/systems-checks.png"
-    alt="android manifest"
+    alt="Decompiled helper class containing the three root checks"
     width={2718}
     height={1312}
     className="w-full rounded-2xl"
   />
 </figure>
+
+The `verify()` method passes the entered value to `sg.vantagepoint.uncrackable1.a.a()`. That method converts a hard-coded hexadecimal key to bytes, Base64-decodes a hard-coded ciphertext, decrypts it, and compares the result with the user's input.
 
 <figure>
   <Image
     src="/images/writing/uncrackable-one/secret.png"
-    alt="android manifest"
+    alt="Decompiled verification method containing the AES key and ciphertext"
     width={2718}
     height={1312}
     className="w-full rounded-2xl"
   />
 </figure>
 
-### Decoding the secret message
+### Decoding the secret with static analysis
 
-Once i found ...
+At this point everything needed to recover the secret is inside the APK. The key is `8d127684cbc37c17616d806cf50473cc`, and the ciphertext is `5UJiFctbmgbDoLXmpL12mkno8HT4Lv8dlat8FxR2GOc=`. The helper class uses AES with ECB mode and PKCS#7 padding, which I reproduced in Python:
 
 ```python
 import base64
@@ -74,7 +82,18 @@ print("Raw decrypted:", plaintext_padded)
 
 plaintext = unpad(plaintext_padded, AES.block_size)
 print("Plaintext:", plaintext.decode())
-
 ```
 
-Add terminal output from the file
+Running the script produces:
+
+```text
+$ python3 solve.py
+Raw decrypted: b'I want to believe\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f'
+Plaintext: I want to believe
+```
+
+The repeated `\x0f` bytes are the PKCS#7 padding. After removing them, the secret is **`I want to believe`**.
+
+### Takeaway
+
+The challenge demonstrates why secrets should not rely on client-side protection alone. The key, ciphertext, and decryption logic are all stored inside the APK, so static analysis is enough to recover the plaintext without modifying or instrumenting the running app.
