@@ -11,14 +11,14 @@ export type CuratedWorkListItem = {
 export const curatedWorkList: CuratedWorkListItem[] = [
   {
     title: "MiniPay",
-    description: "Product Design",
+    description: "Design, Prototyping & Web",
     icon: "dollar",
     href: "/work/minipay",
     date: "2026",
   },
   {
     title: "Opera Browser AI",
-    description: "Product Design & Web Development",
+    description: "React, UI Systems & R&D",
     icon: "chat",
     href: "/work/browser-ai",
     date: "2025",
@@ -31,7 +31,7 @@ export const curatedWorkList: CuratedWorkListItem[] = [
     date: "2025",
   },
   {
-    title: "Other",
+    title: "Other Projects",
     description: "Client & Personal",
     icon: "grid",
     href: "/work",

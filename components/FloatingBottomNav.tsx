@@ -56,7 +56,7 @@ export function FloatingBottomNav() {
                 aria-hidden="true"
               />
               <span
-                className={`grid overflow-hidden transition-all duration-300 ease-out ${
+                className={`grid overflow-hidden transition-all duration-300 ease-out motion-reduce:transition-none ${
                   active ? "ml-1.5 grid-cols-[1fr]" : "grid-cols-[0fr]"
                 }`}
               >

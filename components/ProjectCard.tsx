@@ -17,7 +17,7 @@ export function ProjectCard({ item, className, isLast }: ProjectCardProps) {
       {...(!item.comingSoon ? { href: item.href, target: "_blank" } : {})}
       className={[
         "group relative flex h-60 w-[min(248px,78vw)] shrink-0 flex-col overflow-hidden rounded-2xl outline-1 outline-border-strong bg-surface transition-[transform,box-shadow] duration-200",
-        "hover:z-50 hover:scale-[1.02] hover:shadow-sm",
+        "hover:z-50 hover:shadow-sm motion-safe:hover:scale-[1.02]",
         "focus-visible:z-50 focus-visible:outline-2 focus-visible:outline-offset-2",
         item.comingSoon ? "cursor-not-allowed" : "",
         className,

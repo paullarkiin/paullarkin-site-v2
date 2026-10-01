@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { SelectedWorkList } from "@/components/SelectedWorkList";
 import { WritingList } from "@/components/WritingList";
 import { EmailIcon } from "@/components/icons/EmailIcon";
 import { GithubIcon } from "@/components/icons/GithubIcon";
@@ -71,8 +70,6 @@ export default function Home() {
           {"."}
         </p>
       </section>
-      {/* <SelectedWorkList items={getAllWork()} /> */}
-
       <CuratedWorkList items={curatedWorkList} />
       <WritingList notes={getAllPosts().slice(0, 1)} />
       <ProjectGrid items={projects} />

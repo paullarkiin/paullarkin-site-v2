@@ -51,6 +51,10 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
   const { meta } = post;
   const { default: Content } = await import(`@/content/projects/${slug}.mdx`);
+  const heroImageWidth =
+    typeof meta.heroImageWidth === "number" ? meta.heroImageWidth : undefined;
+  const heroImageHeight =
+    typeof meta.heroImageHeight === "number" ? meta.heroImageHeight : undefined;
 
   const year = meta.date
     ? new Date(meta.date as string).getFullYear().toString()
@@ -75,7 +79,12 @@ export default async function ProjectPage({ params }: { params: Params }) {
       <BackLink />
 
       <div className="mb-10">
-        <HeroImage src={meta.heroImage} alt={meta.title} />
+        <HeroImage
+          src={meta.heroImage}
+          alt={meta.title}
+          width={heroImageWidth}
+          height={heroImageHeight}
+        />
       </div>
 
       <h1 className="text-2xl font-bold">{meta.title}</h1>

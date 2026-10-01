@@ -29,16 +29,18 @@ export function CuratedWorkList({
               <div className="flex w-full items-start gap-4 sm:items-center">
                 <IconBadge icon={item.icon} />
 
-                <span className="text-text text-base font-medium ">
-                  {item.title}
-                </span>
+                <div className="min-w-0">
+                  <span className="block text-base font-medium text-text">
+                    {item.title}
+                  </span>
 
-                <p className="mt-1 text-sm text-text-muted sm:hidden">
-                  {item.description}
-                </p>
+                  <p className="mt-1 text-sm text-text-muted sm:hidden">
+                    {item.description}
+                  </p>
+                </div>
               </div>
 
-              <p className="hidden text-sm text-text-muted leading-tight sm:block sm:text-right">
+              <p className="hidden text-sm leading-tight text-text-muted sm:block sm:text-right">
                 {item.description}
               </p>
 

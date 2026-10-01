@@ -15,25 +15,25 @@ export const projectGalleries = {
   minipay: {
     title: "MiniPay",
     description:
-      "At MiniPay, I design core payment experiences across sending, exchange, recovery, and cards. My work moves between interaction design, prototyping, and web implementation, in close collaboration with product and engineering.",
+      "MiniPay is a self-custodial stablecoin wallet for sending dollar-based funds globally using a phone number. I design its core sending, exchange, recovery, and card experiences, working across interaction design, prototyping, and web implementation.",
     items: getProjectGalleryItems("minipay"),
   },
   "browser-ai": {
     title: "Opera Browser AI",
     description:
-      "At Opera, I work on AI-powered browser experiences across chat, media, and content management. I move between product design and front-end development, taking ideas from early interaction concepts through to production UI.",
+      "Opera Browser AI is an assistant built into the browser for searching, creating, and working with online content. I design and build experiences across chat, media, and content management, taking ideas from early interaction concepts through to production React UI.",
     items: getProjectGalleryItems("browser-ai"),
   },
   "opera-for-android": {
     title: "Opera for Android",
     description:
-      "On Opera for Android, I designed product features and the systems and tools behind them. My work covered onboarding, personalisation, downloads, content experiences, and contributions to the browser’s design system.",
+      "Opera for Android is a feature-rich mobile browser for phones and tablets. I designed onboarding, personalisation, downloads, and content experiences, while contributing to the design system and internal tools used across the wider product team.",
     items: getProjectGalleryItems("opera-for-android"),
   },
   other: {
-    title: "Work",
+    title: "Independent Projects",
     description:
-      "A selection of product experiences, UI components, and side projects across design and engineering—from early concepts to shipped work.",
+      "A selection of client work, UI components, and side projects across design and engineering—from early concepts to shipped work.",
     items: getProjectGalleryItems("other"),
   },
 } satisfies Record<ProjectGalleryId, ProjectGallery>;
