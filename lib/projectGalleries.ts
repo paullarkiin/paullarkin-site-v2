@@ -31,7 +31,7 @@ export const projectGalleries = {
     items: getProjectGalleryItems("opera-for-android"),
   },
   other: {
-    title: "Independent Projects",
+    title: "Independent Work",
     description:
       "A selection of client work, UI components, and side projects across design and engineering—from early concepts to shipped work.",
     items: getProjectGalleryItems("other"),
